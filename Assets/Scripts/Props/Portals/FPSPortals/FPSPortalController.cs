@@ -12,6 +12,8 @@ namespace Props.Portals.FPSPortals
         private Material _portalMaterial;
         private RenderTexture _portalTexture;
         private GameObject _mainCamera;
+        private int _resolutionX;
+        private int _resolutionY;
         
         private void Awake()
         {
@@ -19,7 +21,9 @@ namespace Props.Portals.FPSPortals
             _myFPSPortalComponent = transform.parent.GetComponent<FPSPortal>();
             _isActive = _myFPSPortalComponent.IsActive;
             _portalMaterial = _myFPSPortalComponent.PortalCustomShader;
-            _portalTexture = new RenderTexture(1920, 1080, GraphicsFormat.R8G8B8A8_UNorm,
+            _resolutionX = _myFPSPortalComponent.ResolutionX;
+            _resolutionY = _myFPSPortalComponent.ResolutionY;
+            _portalTexture = new RenderTexture(_resolutionX, _resolutionY, GraphicsFormat.R8G8B8A8_UNorm,
                 GraphicsFormat.D32_SFloat_S8_UInt);
         }
         private void Start()
@@ -39,7 +43,6 @@ namespace Props.Portals.FPSPortals
             {
                 _myFPSPortalComponent.PlayerTeleportation(other.transform.parent.transform);
                 other.enabled = false;
-                GameEvents.OnPortalTriggered.Invoke(_myFPSPortalComponent.IsOneWayTeleportation);
                 _myFPSPortalComponent.ActiveComponentOfDestination();
             }
         }

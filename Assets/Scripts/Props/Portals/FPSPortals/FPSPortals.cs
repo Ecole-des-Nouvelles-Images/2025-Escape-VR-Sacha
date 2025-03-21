@@ -7,13 +7,15 @@ namespace Props.Portals.FPSPortals
         [SerializeField] private GameObject _destinationPortal;
         [SerializeField] private Material _portalCustomShader;
         [SerializeField] private bool _isActive = true;
-        [SerializeField] private bool _isOneWayTeleportation;
+        [SerializeField] private int _resolutionX;
+        [SerializeField] private int _resolutionY;
         
         public Transform TargetTransform {get{return _targetTransform;}}
         public Transform SourceTransform {get{return _sourceTransform;}}
         public Material PortalCustomShader {get{return _portalCustomShader;}}
         public bool IsActive {get{return _isActive;}}
-        public bool IsOneWayTeleportation {get{return _isOneWayTeleportation;}}
+        public int ResolutionX {get{return _resolutionX;}}
+        public int ResolutionY {get{return _resolutionY;}}
         
         private GameObject _myCamera;
         private Transform _targetTransform;
@@ -33,8 +35,6 @@ namespace Props.Portals.FPSPortals
             offset += _targetTransform.position;
             offset.y = player.position.y;
             player.position = offset;
-            //Rotation
-            player.rotation = player.rotation;
         }
 
         public void SetupCameraRenderTexture(RenderTexture portalTexture)

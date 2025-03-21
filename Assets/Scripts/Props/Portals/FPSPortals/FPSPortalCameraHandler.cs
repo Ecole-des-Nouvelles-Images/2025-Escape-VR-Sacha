@@ -11,8 +11,8 @@ namespace Props.Portals.FPSPortals
         private void Start()
         {
             _mainCameraTransform = GameObject.FindGameObjectWithTag("MainCamera")?.transform;
-            _targetTransform = transform.parent.GetComponent<VRPortal>().TargetTransform;
-            _sourceTransform = transform.parent.GetComponent<VRPortal>().SourceTransform;
+            _targetTransform = transform.parent.GetComponent<FPSPortal>().TargetTransform;
+            _sourceTransform = transform.parent.GetComponent<FPSPortal>().SourceTransform;
             if (_mainCameraTransform != null)
                 transform.GetComponent<Camera>().fieldOfView = _mainCameraTransform.GetComponent<Camera>().fieldOfView;
         }
