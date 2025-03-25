@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Props.Portals.FPSPortals
+namespace Props.Portals
 {
-    public class FPSPortalCameraHandler : MonoBehaviour
+    public class PortalCameraHandler : MonoBehaviour
     {
         private Transform _targetTransform;
         private Transform _sourceTransform;
@@ -11,8 +11,8 @@ namespace Props.Portals.FPSPortals
         private void Start()
         {
             _mainCameraTransform = GameObject.FindGameObjectWithTag("MainCamera")?.transform;
-            _targetTransform = transform.parent.GetComponent<FPSPortal>().TargetTransform;
-            _sourceTransform = transform.parent.GetComponent<FPSPortal>().SourceTransform;
+            _targetTransform = transform.parent.GetComponent<Portal>().TargetTransform;
+            _sourceTransform = transform.parent.GetComponent<Portal>().SourceTransform;
             if (_mainCameraTransform != null)
                 transform.GetComponent<Camera>().fieldOfView = _mainCameraTransform.GetComponent<Camera>().fieldOfView;
         }

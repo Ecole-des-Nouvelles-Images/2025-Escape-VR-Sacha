@@ -1,13 +1,12 @@
-using Manager;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
-namespace Props.Portals.FPSPortals
+namespace Props.Portals
 {
-    public class FPSPortalController : MonoBehaviour
+    public class PortalController : MonoBehaviour
     {
         private bool _isActive = true;
-        private FPSPortal _myFPSPortalComponent;
+        private Portal _myPortalComponent;
         private MeshRenderer _portalRenderer;
         private Material _portalMaterial;
         private RenderTexture _portalTexture;
@@ -18,17 +17,17 @@ namespace Props.Portals.FPSPortals
         private void Awake()
         {
             _portalRenderer = GetComponent<MeshRenderer>();
-            _myFPSPortalComponent = transform.parent.GetComponent<FPSPortal>();
-            _isActive = _myFPSPortalComponent.IsActive;
-            _portalMaterial = _myFPSPortalComponent.PortalCustomShader;
-            _resolutionX = _myFPSPortalComponent.ResolutionX;
-            _resolutionY = _myFPSPortalComponent.ResolutionY;
+            _myPortalComponent = transform.parent.GetComponent<Portal>();
+            _isActive = _myPortalComponent.IsActive;
+            _portalMaterial = _myPortalComponent.PortalCustomShader;
+            _resolutionX = _myPortalComponent.ResolutionX;
+            _resolutionY = _myPortalComponent.ResolutionY;
             _portalTexture = new RenderTexture(_resolutionX, _resolutionY, GraphicsFormat.R8G8B8A8_UNorm,
                 GraphicsFormat.D32_SFloat_S8_UInt);
         }
         private void Start()
         {
-            _myFPSPortalComponent.SetupCameraRenderTexture(_portalTexture);
+            _myPortalComponent.SetupCameraRenderTexture(_portalTexture);
             _portalRenderer.material = _portalMaterial;
         }
         
@@ -41,9 +40,9 @@ namespace Props.Portals.FPSPortals
         {
             if (other.gameObject.CompareTag("MainCamera"))
             {
-                _myFPSPortalComponent.PlayerTeleportation(other.transform.parent.transform);
+                _myPortalComponent.PlayerTeleportation(other.transform.parent.transform);
                 other.enabled = false;
-                _myFPSPortalComponent.ActiveComponentOfDestination();
+                _myPortalComponent.ActiveComponentOfDestination();
             }
         }
     }
