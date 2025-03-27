@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Props.PortalV2
 {
     public class PortalV2 : MonoBehaviour
     {
         [SerializeField] private GameObject _destinationPortal;
-        [SerializeField] private bool _isOneWay;
+        [SerializeField] private bool _isOneUse;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -23,7 +24,7 @@ namespace Props.PortalV2
             offset += _destinationPortal.transform.position;
             offset.y = player.position.y;
             player.position = offset;
-            if (_isOneWay)
+            if (_isOneUse)
             {
                 _destinationPortal.SetActive(false);
                 gameObject.SetActive(false);
