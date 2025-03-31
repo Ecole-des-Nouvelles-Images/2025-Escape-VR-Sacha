@@ -1,18 +1,19 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace PuzzleCorridor
 {
     public class FirstPuzzleCorridor : PuzzleCorridor
     {
-        [SerializeField] private MainCamDetector _unlockDetector;
-        [SerializeField] private MainCamDetector _lockDetector;
+        [FormerlySerializedAs("_unlockDetector")] [SerializeField] private ObjectDetectorByTag _unlockDetectorByTag;
+        [FormerlySerializedAs("_lockDetector")] [SerializeField] private ObjectDetectorByTag _lockDetectorByTag;
 
         private void Update()
         {
-            if(_lockDetector.CamDetected)
+            if(_lockDetectorByTag.CamDetected)
                 LockPortal();
-            if(_unlockDetector.CamDetected)
+            if(_unlockDetectorByTag.CamDetected)
                 UnlockPortal();
         }
     }
