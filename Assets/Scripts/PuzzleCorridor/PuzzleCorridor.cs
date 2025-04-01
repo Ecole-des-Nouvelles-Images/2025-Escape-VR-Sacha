@@ -14,11 +14,13 @@ namespace PuzzleCorridor
 
         protected void UnlockPortal()
         {
-            _portalToUnlock.SetActive(true);
+            if(_portalToUnlock.activeSelf == false)
+                _portalToUnlock.SetActive(true);
         }
         protected void LockPortal()
         {
-            _portalToUnlock.SetActive(false);
+            if(_portalToUnlock.activeSelf)
+                _portalToUnlock.SetActive(false);
         }
     }
 }
