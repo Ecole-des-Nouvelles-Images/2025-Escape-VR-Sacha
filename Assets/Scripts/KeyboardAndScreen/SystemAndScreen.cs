@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,7 +12,12 @@ namespace KeyboardAndScreen
         [SerializeField] private TMP_Text _display;
         [SerializeField] private string _keyInputs;
         
-        private string _listInput ;
+        private string _listInput = "" ;
+
+        private void Start()
+        {
+            Display();
+        }
 
         private void Validation()
         {
@@ -23,6 +29,7 @@ namespace KeyboardAndScreen
             {
                 IsUnlock = false;
                 _listInput = "";
+                Display();
             }
         }
 
