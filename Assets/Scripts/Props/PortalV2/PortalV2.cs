@@ -1,4 +1,5 @@
 using System;
+using Manager;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -8,6 +9,7 @@ namespace Props.PortalV2
     {
         [SerializeField] private GameObject _destinationPortal;
         [SerializeField] private bool _isOneUse;
+        [SerializeField] private string _destinationRoomID;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -20,6 +22,7 @@ namespace Props.PortalV2
 
         private void Teleport(Transform player)
         {
+            GameEvents.OnRoomChanged.Invoke(_destinationRoomID);
             Vector3 offset = player.position - transform.position;
             offset += _destinationPortal.transform.position;
             offset.y = player.position.y;

@@ -6,6 +6,7 @@ namespace Props
 {
     public class DecorPlayerDetector : MonoBehaviour
     {
+        [SerializeField] private bool _isTriggerByEnter;
         private SceneFader _sceneFader;
 
         private void Awake()
@@ -17,8 +18,16 @@ namespace Props
         {
             if (other.CompareTag("MainCamera"))
             {
-                _sceneFader.OnFadeIn.Invoke(_sceneFader.CurrentFadeType);
-                Debug.Log("On Fade Out");
+                if (_isTriggerByEnter)
+                {
+                    _sceneFader.OnFadeOut.Invoke(_sceneFader.CurrentFadeType);
+                    Debug.Log("On Fade In");
+                }
+                else
+                {
+                    _sceneFader.OnFadeIn.Invoke(_sceneFader.CurrentFadeType);
+                    Debug.Log("On Fade Out");
+                }
             }
         }
 
@@ -26,8 +35,16 @@ namespace Props
         {
             if (other.CompareTag("MainCamera"))
             {
-                _sceneFader.OnFadeOut.Invoke(_sceneFader.CurrentFadeType);
-                Debug.Log("On Fade In");
+                if (_isTriggerByEnter)
+                {
+                    _sceneFader.OnFadeIn.Invoke(_sceneFader.CurrentFadeType);
+                    Debug.Log("On Fade Out");
+                }
+                else
+                {
+                    _sceneFader.OnFadeOut.Invoke(_sceneFader.CurrentFadeType);
+                    Debug.Log("On Fade In");
+                }
             }
         }
     }
