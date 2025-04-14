@@ -2,6 +2,7 @@ using System;
 using Manager;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Utils;
 
 namespace Props.PortalV2
 {
@@ -9,7 +10,18 @@ namespace Props.PortalV2
     {
         [SerializeField] private GameObject _destinationPortal;
         [SerializeField] private bool _isOneUse;
+        [SerializeField] private string _portalID;
         [SerializeField] private string _destinationRoomID;
+
+        private void OnEnable()
+        {
+            GameEvents.OnPuzzleCompleted += PortalEnabled;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.OnPuzzleCompleted -= PortalEnabled;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -19,7 +31,6 @@ namespace Props.PortalV2
                 Teleport(other.transform.parent.transform);
             }
         }
-
         private void Teleport(Transform player)
         {
             GameEvents.OnRoomChanged.Invoke(_destinationRoomID);
@@ -31,6 +42,14 @@ namespace Props.PortalV2
             {
                 _destinationPortal.SetActive(false);
                 gameObject.SetActive(false);
+            }
+        }
+
+        private void PortalEnabled(string portalID)
+        {
+            if (portalID == _portalID && !gameObject.activeSelf)
+            {
+                gameObject.SetActive(true);
             }
         }
     }
