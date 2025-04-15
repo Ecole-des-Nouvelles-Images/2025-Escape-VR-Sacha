@@ -5,17 +5,18 @@ namespace Puzzles.Corridors
 {
     public class SecondPuzzle : Puzzle
     {
-        [SerializeField] GameObject[] _allPuzzleObjects;
-        [SerializeField] GameObject[] _allKeyObjects;
-        [SerializeField] Material _ghostMat;
-        [SerializeField] Material _mainMat;
+        [SerializeField] private GameObject[] _allPuzzleObjects;
+        [SerializeField] private GameObject[] _allKeyObjects;
+        [SerializeField] private Material _ghostMat;
         
+        private Material _mainMat;
         private int _keyIndex;
 
         private void Start()
         {
             _keyIndex = RandomSelect(_allKeyObjects);
             ActivationObject(_allKeyObjects);
+            _mainMat = _allKeyObjects[_keyIndex].GetComponent<MeshRenderer>().material;
             _allKeyObjects[_keyIndex].GetComponent<MeshRenderer>().material = _ghostMat;
             _allPuzzleObjects[_keyIndex].tag = "KeyObject";
             LockPortal();
