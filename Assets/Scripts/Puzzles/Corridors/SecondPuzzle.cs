@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace PuzzleCorridor
+namespace Puzzles.Corridors
 {
-    public class SecondPuzzleCorridor : PuzzleCorridor
+    public class SecondPuzzle : Puzzle
     {
         [SerializeField] GameObject[] _allPuzzleObjects;
         [SerializeField] GameObject[] _allKeyObjects;

@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace PuzzleCorridor
+namespace Puzzles.Corridors
 {
-    public class FirstPuzzleCorridor : PuzzleCorridor
+    public class FirstPuzzle : Puzzle
     {
         [FormerlySerializedAs("_unlockDetector")] [SerializeField] private ObjectDetectorByTag _unlockDetectorByTag;
         [FormerlySerializedAs("_lockDetector")] [SerializeField] private ObjectDetectorByTag _lockDetectorByTag;

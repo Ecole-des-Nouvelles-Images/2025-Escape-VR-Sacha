@@ -3,15 +3,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Utils;
 
 namespace KeyboardAndScreen
 {
-    public class SystemAndScreen : MonoBehaviour
+    public class VirtualKeyboard : MonoBehaviour
     {
-        public bool IsUnlock;
-        
         [SerializeField] private TMP_Text _display;
         [SerializeField] private Image _displayBackground;
+        [SerializeField] private string _keyboardUnlockID;
         [SerializeField] private string _keyInputs;
         
         private string _listInput = "" ;
@@ -34,12 +34,11 @@ namespace KeyboardAndScreen
         {
             if (_listInput == _keyInputs)
             {
-                IsUnlock = true;
+                GameEvents.OnKeyboardUnlock.Invoke(_keyboardUnlockID);
                 _displayBackground.color = Color.green;
             }
             else
             {
-                IsUnlock = false;
                 _listInput = "";
                 Display();
                 _isTimer = true;
