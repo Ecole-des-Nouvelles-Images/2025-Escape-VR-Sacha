@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using Random = UnityEngine.Random;
 
 namespace Puzzles.Corridors
@@ -28,6 +30,12 @@ namespace Puzzles.Corridors
             {
                 other.gameObject.SetActive(false);
                 _allKeyObjects[_keyIndex].GetComponent<MeshRenderer>().material = _mainMat;
+                for (int i = 0; i < _allPuzzleObjects.Length; i++)
+                {
+                    _allPuzzleObjects[i].transform.GetComponent<XRGeneralGrabTransformer>().enabled = false;
+                    _allPuzzleObjects[i].transform.GetComponent<XRGrabInteractable>().enabled = false;
+                    _allPuzzleObjects[i].transform.gameObject.layer = 7;
+                }
                 UnlockPortal();
             }
         }
