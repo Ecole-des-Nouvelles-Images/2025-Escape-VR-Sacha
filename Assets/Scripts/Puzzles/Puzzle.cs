@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Utils;
 
@@ -6,6 +7,11 @@ namespace Puzzles
     public abstract class Puzzle : MonoBehaviour
     {
         [SerializeField] private string _portalsToUnlockID;
+
+        private void Start()
+        {
+            LockPortal();
+        }
 
         protected void UnlockPortal()
         {

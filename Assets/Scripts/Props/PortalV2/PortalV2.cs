@@ -12,16 +12,8 @@ namespace Props.PortalV2
         [SerializeField] private bool _isOneUse;
         [SerializeField] private string _portalID;
         [SerializeField] private string _destinationRoomID;
-
-        private void OnEnable()
-        {
-            GameEvents.OnPuzzleCompleted += PortalEnabled;
-        }
-
-        private void OnDisable()
-        {
-            GameEvents.OnPuzzleCompleted -= PortalEnabled;
-        }
+        
+        public string portalID => _portalID;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -42,14 +34,6 @@ namespace Props.PortalV2
             {
                 _destinationPortal.SetActive(false);
                 gameObject.SetActive(false);
-            }
-        }
-
-        private void PortalEnabled(string portalID)
-        {
-            if (portalID == _portalID && !gameObject.activeSelf)
-            {
-                gameObject.SetActive(true);
             }
         }
     }
