@@ -7,16 +7,12 @@ namespace Salle3
         [SerializeField]private Transform _mainCamera; 
         [SerializeField]private Transform _mirror;
 
-        void LateUpdate()
+        void Update()
         {
-            Vector3 mirrorNormal = _mirror.forward;
-
-            transform.position = _mirror.position;
-
-            Vector3 lookDir = _mainCamera.position - _mirror.position;
-            Vector3 reflectedDir = lookDir - 2 * Vector3.Dot(lookDir, mirrorNormal) * mirrorNormal;
-
-            transform.rotation = Quaternion.LookRotation(reflectedDir, Vector3.up);
+            Vector3 localPlayer = _mirror.InverseTransformPoint(_mainCamera.position);
+            Vector3 lookAtMirror = _mirror.TransformPoint(new Vector3(-localPlayer.x, localPlayer.y, localPlayer.z));
+            transform.LookAt(lookAtMirror);
         }
+
     }
 }

@@ -15,7 +15,8 @@ namespace Salle3 {
         private void Update() 
         {
             if (AllObjectsCorrectlyPlaced()&&!_puzzleCompleted) {
-                GameEvents.OnPuzzleCompleted.Invoke("toFill");
+                Debug.Log("Done!");
+                //GameEvents.OnPuzzleCompleted.Invoke("toFill");
                 _puzzleCompleted = true;
                 enabled = false;
             }
