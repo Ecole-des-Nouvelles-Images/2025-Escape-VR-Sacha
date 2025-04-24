@@ -1,16 +1,17 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ObjectDetectorByTag : MonoBehaviour
 {
-    public bool CamDetected;
+    [FormerlySerializedAs("CamDetected")] public bool ObjectDetected;
     [SerializeField]private string _tagName;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(_tagName))
         {
-            CamDetected = true;
+            ObjectDetected = true;
         }
     }
 
@@ -18,7 +19,7 @@ public class ObjectDetectorByTag : MonoBehaviour
     {
         if (other.CompareTag(_tagName))
         {
-            CamDetected = false;
+            ObjectDetected = false;
         }
     }
 }

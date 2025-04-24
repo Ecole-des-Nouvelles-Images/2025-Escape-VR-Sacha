@@ -10,9 +10,9 @@ namespace Puzzles.Corridors
 
         private void Update()
         {
-            if(_lockDetectorByTag.CamDetected)
+            if(_lockDetectorByTag.ObjectDetected)
                 LockPortal();
-            if(_unlockDetectorByTag.CamDetected)
+            if(_unlockDetectorByTag.ObjectDetected)
                 UnlockPortal();
         }
     }
