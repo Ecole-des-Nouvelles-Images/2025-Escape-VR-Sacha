@@ -2,17 +2,12 @@ using UnityEngine;
 
 namespace Salle3 {
     public class OfficeObject : MonoBehaviour {
-
+        
         //public string ObjectName;
         public bool IsCorrectlyPlaced = false;
 
-        [Header("Cible de placement")]
         [SerializeField] private GameObject _target;
-
-        [Header("Tolérances")]
-        [SerializeField] private float _positionTolerance = 0.1f;
-        [SerializeField] private float _rotationTolerance = 5f;
-
+        private float _positionTolerance = 0.25f;
         private bool _alreadySnapped = false;
         
         private void Update() {
@@ -23,9 +18,8 @@ namespace Salle3 {
         
         private void CheckPlacement() {
             bool positionCheck = Vector3.Distance(transform.localPosition, _target.transform.localPosition) <= _positionTolerance;
-            bool rotationCheck = Quaternion.Angle(transform.localRotation, _target.transform.localRotation) <= _rotationTolerance;
 
-            IsCorrectlyPlaced = positionCheck && rotationCheck;
+            IsCorrectlyPlaced = positionCheck;
 
             if (IsCorrectlyPlaced && !_alreadySnapped) {
                 Debug.Log("yes");
@@ -37,15 +31,6 @@ namespace Salle3 {
         private void SnapToTarget() {
             transform.localPosition = _target.transform.localPosition;
             transform.localRotation = _target.transform.localRotation;
-
-        }
-        
-        private void OnDrawGizmos() {
-            if (_target != null) {
-                Gizmos.color = Color.cyan;
-                Gizmos.DrawWireSphere(_target.transform.position, 0.05f);
-                Gizmos.DrawLine(_target.transform.position, _target.transform.position + _target.transform.forward * 0.2f);
-            }
         }
     }
 }
