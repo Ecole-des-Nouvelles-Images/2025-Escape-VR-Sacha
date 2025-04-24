@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProtoElias.Salle1 {
+namespace Salle1 {
     public class EmplacementComponent : MonoBehaviour {
 
         [SerializeField] private WordHandler _wordHandler;

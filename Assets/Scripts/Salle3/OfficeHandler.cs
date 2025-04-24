@@ -1,8 +1,9 @@
+using Puzzles;
 using UnityEngine;
 using Utils;
 
 namespace Salle3 {
-    public class ObjectPlacementManager : MonoBehaviour 
+    public class ObjectPlacementManager : Puzzle
     {
         [SerializeField] private OfficeObject[] _officeObjects;
         private bool _puzzleCompleted = false;
@@ -10,13 +11,14 @@ namespace Salle3 {
         private void Start()
         {
             _officeObjects = GetComponentsInChildren<OfficeObject>();
+            LockPortal();
         }
 
         private void Update() 
         {
             if (AllObjectsCorrectlyPlaced()&&!_puzzleCompleted) {
                 Debug.Log("Done!");
-                //GameEvents.OnPuzzleCompleted.Invoke("toFill");
+                UnlockPortal();
                 _puzzleCompleted = true;
                 enabled = false;
             }
