@@ -1,20 +1,13 @@
-using System;
-using Manager;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 
-namespace Props.PortalV2
+namespace Props.Portal
 {
-    public class PortalV2 : MonoBehaviour
+    public class TeleportationByContact : MonoBehaviour
     {
         [SerializeField] private GameObject _destinationPortal;
         [SerializeField] private bool _isOneUse;
-        [SerializeField] private string _portalID;
         [SerializeField] private string _destinationRoomID;
-        
-        public string portalID => _portalID;
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("MainCamera"))

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Props
@@ -7,13 +8,21 @@ namespace Props
         [SerializeField] private float _timeBeforeRespawn;
         
         private Vector3 _beginPos;
+        private Quaternion _beginRot;
         private float _currentTime;
         private bool _isGrabbed;
-        
+        private Rigidbody _rigidbody;
+
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody>();
+        }
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             _beginPos = transform.position;
+            _beginRot = transform.rotation;
         }
 
         // Update is called once per frame
@@ -36,9 +45,16 @@ namespace Props
 
             if (_currentTime >= _timeBeforeRespawn)
             {
-                transform.position = _beginPos;
+                ResetObject();
                 _currentTime = 0;
             }
+        }
+
+        private void ResetObject()
+        {
+            transform.position = _beginPos;
+            transform.rotation = _beginRot;
+            _rigidbody.linearVelocity = Vector3.zero;
         }
     }
 }

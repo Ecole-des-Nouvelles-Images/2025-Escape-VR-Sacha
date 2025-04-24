@@ -1,4 +1,5 @@
-using Props.PortalV2;
+using System;
+using Props.Portal;
 using UnityEngine;
 using Utils;
 
@@ -6,7 +7,9 @@ namespace Manager
 {
     public class PortalManager : MonoBehaviour
     {
-        [SerializeField] private PortalV2[] _portalsEntry;
+        [SerializeField] private Portal[] _portalsEntry;
+        
+        private Animator _portalAnimator;
         
         private void OnEnable()
         {
@@ -19,10 +22,10 @@ namespace Manager
             GameEvents.OnPuzzleCompleted -= PortalEnabled;
             GameEvents.OnSetupPuzzle -= PortalDisabled;
         }
-        
+
         private void PortalEnabled(string portalID)
         {
-            foreach (PortalV2 portalScript in _portalsEntry)
+            foreach (Portal portalScript in _portalsEntry)
             {
                 if (portalScript.portalID == portalID && portalScript.gameObject.activeSelf == false)
                 {
@@ -34,7 +37,7 @@ namespace Manager
         
         private void PortalDisabled(string portalID)
         {
-            foreach (PortalV2 portalScript in _portalsEntry)
+            foreach (Portal portalScript in _portalsEntry)
             {
                 if (portalScript.portalID == portalID && portalScript.gameObject.activeSelf)
                 {
