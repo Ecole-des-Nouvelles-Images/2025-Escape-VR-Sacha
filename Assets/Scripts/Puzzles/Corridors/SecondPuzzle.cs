@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
@@ -8,11 +9,21 @@ namespace Puzzles.Corridors
     public class SecondPuzzle : Puzzle
     {
         [SerializeField] private GameObject[] _allPuzzleObjects;
+        [SerializeField] private GameObject[] _allPuzzleObjectsCopy;
         [SerializeField] private GameObject[] _allKeyObjects;
         [SerializeField] private Material _ghostMat;
         
         private Material _mainMat;
         private int _keyIndex;
+
+        private void Awake()
+        {
+            for (int i = 0; i < _allPuzzleObjectsCopy.Length; i++)
+            {
+                if(_allPuzzleObjectsCopy[i].activeSelf)
+                    _allPuzzleObjectsCopy[i].SetActive(false);
+            }
+        }
 
         private void Start()
         {
@@ -32,9 +43,9 @@ namespace Puzzles.Corridors
                 _allKeyObjects[_keyIndex].GetComponent<MeshRenderer>().material = _mainMat;
                 for (int i = 0; i < _allPuzzleObjects.Length; i++)
                 {
-                    _allPuzzleObjects[i].transform.GetComponent<XRGeneralGrabTransformer>().enabled = false;
-                    _allPuzzleObjects[i].transform.GetComponent<XRGrabInteractable>().enabled = false;
-                    _allPuzzleObjects[i].transform.gameObject.layer = 7;
+                    _allPuzzleObjects[i].SetActive(false);
+                    if(i != _keyIndex)
+                        _allPuzzleObjectsCopy[i].SetActive(true);
                 }
                 UnlockPortal();
             }
