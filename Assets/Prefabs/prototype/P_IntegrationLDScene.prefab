@@ -837,7 +837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143637304302516121}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 40, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -846,7 +846,7 @@ Transform:
   - {fileID: 51983042660145848}
   - {fileID: 5634334159036291967}
   m_Father: {fileID: 9121899455985384217}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1242268692411526681
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242268692411526681}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 50, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -881,7 +881,7 @@ Transform:
   - {fileID: 6622986207119221908}
   - {fileID: 2412679779118497259}
   m_Father: {fileID: 9121899455985384217}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1402947318899392631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,7 +2103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3527574038460179661}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 60, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2113,7 +2113,7 @@ Transform:
   - {fileID: 3664615621762500949}
   - {fileID: 559580667491268892}
   m_Father: {fileID: 9121899455985384217}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3589190952721288008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3589190952721288008}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 30, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2149,7 +2149,7 @@ Transform:
   - {fileID: 6039629063963236419}
   - {fileID: 9009539338931749060}
   m_Father: {fileID: 9121899455985384217}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3696394458804586740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,13 +3369,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5479907030037800363}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3991160856730139639}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &4189477091355546917
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6133,7 +6133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9121899455985384217}
   m_Layer: 0
-  m_Name: GlobalLDWithPortals
+  m_Name: P_IntegrationLDScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7415,7 +7415,8 @@ PrefabInstance:
     - {fileID: 8297531051689793855, guid: 767d84e1b2980b340a9010a0177e6729, type: 3}
     - {fileID: 182599682363929426, guid: 767d84e1b2980b340a9010a0177e6729, type: 3}
     - {fileID: 7169961365801140958, guid: 767d84e1b2980b340a9010a0177e6729, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4037760752274991731, guid: 767d84e1b2980b340a9010a0177e6729, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1525910819676327003, guid: 767d84e1b2980b340a9010a0177e6729, type: 3}
       insertIndex: -1
