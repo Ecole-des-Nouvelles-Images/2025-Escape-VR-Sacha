@@ -11,7 +11,7 @@ namespace Salle3 {
         private void Start()
         {
             _officeObjects = GetComponentsInChildren<OfficeObject>();
-            LockPortal();
+            //LockPortal();
         }
 
         private void Update() 
