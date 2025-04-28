@@ -10,5 +10,7 @@ namespace Utils
         public static Action<string> OnPuzzleCompleted;
         public static Action<string> OnPlayCutscene;
         public static Action<bool> OnPortalTriggered;
+        public static Action OnCandleInside;
+        public static Action OnCandleOutside;
     }
 }
