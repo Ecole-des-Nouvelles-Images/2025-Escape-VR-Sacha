@@ -44,7 +44,7 @@ namespace Puzzles.LivingRoom
 
         private void Update()
         {
-            ActualiseSocketsPreset();
+            ActualiseSocketsPreSet();
         }
 
         private void CandleEnter(Candle candle)
@@ -113,19 +113,18 @@ namespace Puzzles.LivingRoom
             Debug.Log(_debugCode);
         }
 
-        private void ActualiseSocketsPreset()
+        private void ActualiseSocketsPreSet()
         {
-            for (int i = 0; i < _candlesSockets.Length; i++)
+            if (_candlesSockets[_candleSocketsStates].gameObject.activeSelf == false)
             {
-                if (i == _candleSocketsStates && !_candlesSockets[i].gameObject.activeSelf)
-                {
-                    _candlesSockets[i].gameObject.SetActive(true);
-                }
-                else
+                for (int i = 0; i < _candlesSockets.Length; i++)
                 {
                     _candlesSockets[i].gameObject.SetActive(false);
                 }
+                _candlesSockets[_candleSocketsStates].gameObject.SetActive(true);
+                Debug.Log("ActualiseSocketsPreSet =>" + _candleSocketsStates);
             }
+            
         }
     }
 }
