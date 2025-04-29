@@ -3,7 +3,7 @@ using UnityEngine;
 using Utils;
 
 namespace Salle3 {
-    public class ObjectPlacementManager : Puzzle
+    public class OfficeHandler : Puzzle
     {
         [SerializeField] private OfficeObject[] _officeObjects;
         private bool _puzzleCompleted = false;

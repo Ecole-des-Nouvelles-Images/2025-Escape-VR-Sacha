@@ -17,7 +17,8 @@ namespace Salle3 {
         }
         
         private void CheckPlacement() {
-            bool positionCheck = Vector3.Distance(transform.localPosition, _target.transform.localPosition) <= _positionTolerance;
+            bool positionCheck = Vector3.Distance(transform.localPosition, _target.transform.localPosition) 
+                                 <= _positionTolerance;
 
             IsCorrectlyPlaced = positionCheck;
 
