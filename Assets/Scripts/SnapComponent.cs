@@ -4,7 +4,8 @@ using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class SnapInteractable : MonoBehaviour {
+public class SnapComponent : MonoBehaviour 
+{
     [SerializeField] private Transform _target;
     [SerializeField] private float _positionTolerance = 0.25f;
 
@@ -13,17 +14,31 @@ public class SnapInteractable : MonoBehaviour {
     private XRGrabInteractable _grabInteractable;
 
     public UnityEvent OnSnapped;
-    public Action<SnapInteractable> SnappedCallback;
+    public Action<SnapComponent> SnappedCallback;
+    
+    private RigidbodyConstraints _originalConstraints;
+    private bool _originalUseGravity;
 
     private void Awake() {
         _rb = GetComponent<Rigidbody>();
         _grabInteractable = GetComponent<XRGrabInteractable>();
 
+        _originalConstraints = _rb.constraints;
+        _originalUseGravity = _rb.useGravity;
+
         _grabInteractable.selectExited.AddListener(OnReleased);
+        _grabInteractable.selectEntered.AddListener(OnGrabbed);
+    }
+
+    private void OnGrabbed(SelectEnterEventArgs args) {
+        if (_alreadySnapped) {
+            Unsnap();
+        }
     }
 
     private void OnDestroy() {
         _grabInteractable.selectExited.RemoveListener(OnReleased);
+        _grabInteractable.selectEntered.RemoveListener(OnGrabbed);
     }
 
     private void OnReleased(SelectExitEventArgs args) {
@@ -32,6 +47,10 @@ public class SnapInteractable : MonoBehaviour {
         float distance = Vector3.Distance(transform.position, _target.position);
         if (distance <= _positionTolerance) {
             Snap();
+        }
+        else
+        {
+            _rb.useGravity = true;
         }
     }
 
@@ -54,7 +73,7 @@ public class SnapInteractable : MonoBehaviour {
     public void Unsnap() {
         _alreadySnapped = false;
         if (_rb != null) {
-            _rb.constraints = RigidbodyConstraints.None;
+            _rb.constraints = _originalConstraints;
             _rb.useGravity = true;
         }
     }

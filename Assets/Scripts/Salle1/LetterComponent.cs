@@ -1,8 +1,7 @@
 using UnityEngine;
 
 namespace Salle1 {
-    public class LettersComponent : MonoBehaviour {
-        
+    public class LetterComponent : MonoBehaviour {
         public string LetterValue;
     }
 }
