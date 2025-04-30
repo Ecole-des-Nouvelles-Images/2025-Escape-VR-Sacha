@@ -663,15 +663,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6142791364832593809}
   - component: {fileID: 4964590569828898448}
-  - component: {fileID: 38932796134691568}
-  - component: {fileID: 8858373126831100958}
   m_Layer: 7
   m_Name: SimpleSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6142791364832593809
 Transform:
   m_ObjectHideFlags: 0
@@ -700,33 +698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32daf7f664938f8438ca33cd4ebba07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _candlesSocket: []
---- !u!114 &38932796134691568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5771914412465970112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32daf7f664938f8438ca33cd4ebba07a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _candlesSocket: []
---- !u!114 &8858373126831100958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5771914412465970112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32daf7f664938f8438ca33cd4ebba07a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _candlesSocket: []
+  _candlesSocket:
+  - {fileID: 5335971874001870167}
 --- !u!1 &6430919016781804471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,7 +1593,7 @@ MonoBehaviour:
   _candles: []
   _smartphones: []
   _candlesSockets:
-  - {fileID: 8858373126831100958}
+  - {fileID: 4964590569828898448}
   - {fileID: 4173211640365508263}
   - {fileID: 8917367971008309077}
   - {fileID: 2313317176124095208}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Utils;
 
 namespace Puzzles.LivingRoom
@@ -15,13 +16,14 @@ namespace Puzzles.LivingRoom
         [SerializeField] private int[] _thirdCode;
         [SerializeField] private int[] _bonusCode;
         
-        private int _candleSocketsStates;
+        private int _candleCount;
         private int _puzzleStates; //1-3 + 1 (bonus)
         private int[] _currentCode; // 0=empty, 1=0, 2=1, etc...
         private string _debugCode;
 
         private void Awake()
         {
+            _candleCount = 0;
             _currentCode = new int[5];
             _puzzleStates = 1;
         }
@@ -30,6 +32,8 @@ namespace Puzzles.LivingRoom
         {
             if (other.CompareTag("Candle"))
             {
+                
+                Debug.Log("contact =>"+ other.name);
                 CandleEnter(other.transform.GetComponent<Candle>());
             }
         }
@@ -42,26 +46,28 @@ namespace Puzzles.LivingRoom
             }
         }
 
-        private void Update()
-        {
-            ActualiseSocketsPreSet();
-        }
-
         private void CandleEnter(Candle candle)
         {
-            if (_candleSocketsStates >= 0 && _candleSocketsStates < 5)
+            candle.transform.GetComponent<XRGrabInteractable>().enabled = false;
+            _currentCode[_candleCount] = candle.MyValue;
+            Debug.Log("CandleEnter =>"+ candle.MyValue);
+            _candlesSockets[_candleCount].AddCandle(candle.gameObject, _candleCount);
+            //ActualiseSocketsPreSet();
+            //candle.transform.parent = _candlesSockets[_candleSocketsStates].transform.GetChild(_candleSocketsStates);
+            //_candlesSockets[_candleCount-1].gameObject.SetActive(true);
+            // if (_candleCount > 1)
+            // {
+            //     MoveCandleToActualPreset(true);
+            // }
+            //_candlesSockets[_candleCount].RefreshCandles();
+            //CodeValidation();
+            /*if (_candleCount is >= 0 and < 5)
             {
-                _currentCode[_candleSocketsStates] = candle.MyValue;
-                Debug.Log("CandleEnter =>"+ candle.MyValue);
-                candle.transform.parent = _candlesSockets[_candleSocketsStates].transform.GetChild(_candleSocketsStates);
-                candle.transform.position = Vector3.zero;
-                candle.transform.rotation = Quaternion.identity;
-                candle.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-                candle.transform.GetComponent<Rigidbody>().constraints =
-                    RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-                _candleSocketsStates++;
-                CodeValidation();
-            }
+                
+            }*/
+            candle.transform.GetComponent<XRGrabInteractable>().enabled = true;
+            
+            _candleCount ++;
         }
         private void CandleExit(Candle candle)
         {
@@ -72,12 +78,13 @@ namespace Puzzles.LivingRoom
                     _currentCode[i] = 0;
                     Debug.Log(candle.MyValue + " => CandleExit");
                     candle.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    _candleSocketsStates--;
+                    _candleCount-=1;
+                    ActualiseSocketsPreSet();
+                    MoveCandleToActualPreset(false);
                     CodeValidation();
                 }
             }
         }
-
         private void CodeValidation()
         {
             switch (_puzzleStates)
@@ -112,19 +119,51 @@ namespace Puzzles.LivingRoom
             }
             Debug.Log(_debugCode);
         }
-
         private void ActualiseSocketsPreSet()
         {
-            if (_candlesSockets[_candleSocketsStates].gameObject.activeSelf == false)
+            for (int i = 0; i < _candlesSockets.Length; i++)
             {
-                for (int i = 0; i < _candlesSockets.Length; i++)
+                if (i != _candleCount)
                 {
                     _candlesSockets[i].gameObject.SetActive(false);
                 }
-                _candlesSockets[_candleSocketsStates].gameObject.SetActive(true);
-                Debug.Log("ActualiseSocketsPreSet =>" + _candleSocketsStates);
+                else
+                {
+                    _candlesSockets[i].gameObject.SetActive(true);
+                }
             }
-            
         }
+        private void MoveCandleToActualPreset(bool toNextPreset)
+        {
+            if (_candleCount > 1 && toNextPreset)
+            {
+                _candlesSockets[_candleCount-2].TransferCandles(_candlesSockets[_candleCount-1]);
+                Debug.Log("MoveCandleToNextPreset =>" + _candleCount);
+                // for (int i = 0; i < _candleCount; i++)
+                // {
+                //     _candlesSockets[_candleCount - 1].transform.GetChild(i).transform.GetChild(0).transform
+                //             .parent =
+                //         _candlesSockets[_candleCount].transform.GetChild(i).transform;
+                // }
+            }
+            if (_candleCount < 5 && toNextPreset == false)
+            {
+                for (int i = 0; i <= _candleCount; i++)
+                {
+                    _candlesSockets[_candleCount + 1].transform.GetChild(i).transform.GetChild(0).transform
+                            .parent =
+                        _candlesSockets[_candleCount].transform.GetChild(i).transform;
+                }
+                Debug.Log("MoveCandleToLastPreset =>" + _candleCount);
+            }
+        }
+
+        // private void RefreshCandlesInSocketPreset(CandlesSockets candlesSockets)
+        // {
+        //     for (int i = 0; i < candlesSockets.transform.; i++)
+        //     {
+        //         
+        //     }
+        // }
     }
 }
