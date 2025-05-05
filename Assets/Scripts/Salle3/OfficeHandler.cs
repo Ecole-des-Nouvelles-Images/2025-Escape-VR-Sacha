@@ -1,6 +1,8 @@
 using System.Collections;
 using Puzzles;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Salle3 {
     public class OfficeHandler : Puzzle 
@@ -9,6 +11,9 @@ namespace Salle3 {
         private bool _puzzleCompleted = false;
         private int _lastStepReached = 0;
         
+        [SerializeField] private GameObject _drawerMirrorObject;
+        [SerializeField] private XRGrabInteractable _closetObjectGrab;
+        
         [SerializeField] private GameObject _drawer;
         [SerializeField] private GameObject _closetDoor1, _closetDoor2;
 
@@ -16,6 +21,9 @@ namespace Salle3 {
             if (_officeObjects == null || _officeObjects.Length == 0) {
                 _officeObjects = GetComponentsInChildren<SnapComponent>();
             }
+            
+            _drawerMirrorObject.SetActive(false);
+            _closetObjectGrab.enabled = false;
             //LockPortal();
         }
 
@@ -29,7 +37,7 @@ namespace Salle3 {
                     case 1:
                         OpenDrawer();
                         break;
-                    case 2:
+                    case 3:
                         OpenCloset();
                         break;
                 }
@@ -57,6 +65,7 @@ namespace Salle3 {
             Vector3 targetPos = startPos + Vector3.right * 0.5f;
             StartCoroutine(MoveOverTime(_drawer.transform, startPos, targetPos, 1f));
             Debug.Log("Le tiroir s'ouvre !");
+            _drawerMirrorObject.SetActive(true);
         }
 
 
@@ -76,6 +85,7 @@ namespace Salle3 {
             ));
 
             Debug.Log("L'armoire est ouverte !");
+            _closetObjectGrab.enabled = true;
         }
 
         private IEnumerator MoveOverTime(Transform obj, Vector3 from, Vector3 to, float duration) {
