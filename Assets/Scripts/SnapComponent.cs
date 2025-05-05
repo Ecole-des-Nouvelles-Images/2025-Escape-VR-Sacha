@@ -1,12 +1,13 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class SnapComponent : MonoBehaviour 
+public class SnapComponent : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+    [SerializeField] private List<Transform> _snapTargets;
     [SerializeField] private float _positionTolerance = 0.25f;
 
     private bool _alreadySnapped = false;
@@ -15,52 +16,62 @@ public class SnapComponent : MonoBehaviour
 
     public UnityEvent OnSnapped;
     public Action<SnapComponent> SnappedCallback;
-    
-    private RigidbodyConstraints _originalConstraints;
-    private bool _originalUseGravity;
 
-    private void Awake() {
+    private void Awake()
+    {
         _rb = GetComponent<Rigidbody>();
         _grabInteractable = GetComponent<XRGrabInteractable>();
 
-        _originalConstraints = _rb.constraints;
-        _originalUseGravity = _rb.useGravity;
+        if (_snapTargets == null || _snapTargets.Count == 0)
+        {
+            var handler = FindObjectOfType<Salle1.WordHandler>();
+            if (handler != null)
+            {
+                _snapTargets = handler.GetEmplacements();
+            }
+        }
 
         _grabInteractable.selectExited.AddListener(OnReleased);
         _grabInteractable.selectEntered.AddListener(OnGrabbed);
     }
 
-    private void OnGrabbed(SelectEnterEventArgs args) {
-        if (_alreadySnapped) {
-            Unsnap();
-        }
-    }
-
-    private void OnDestroy() {
-        _grabInteractable.selectExited.RemoveListener(OnReleased);
-        _grabInteractable.selectEntered.RemoveListener(OnGrabbed);
-    }
-
-    private void OnReleased(SelectExitEventArgs args) {
-        if (_alreadySnapped || _target == null) return;
-
-        float distance = Vector3.Distance(transform.position, _target.position);
-        if (distance <= _positionTolerance) {
-            Snap();
-        }
-        else
+    private void OnDestroy()
+    {
+        if (_grabInteractable != null)
         {
-            _rb.useGravity = true;
+            _grabInteractable.selectExited.RemoveListener(OnReleased);
+            _grabInteractable.selectEntered.RemoveListener(OnGrabbed);
         }
     }
 
-    public void Snap() {
-        if (_alreadySnapped || _target == null) return;
+    private void OnGrabbed(SelectEnterEventArgs args)
+    {
+        Unsnap();
+    }
 
-        transform.position = _target.position;
-        transform.rotation = _target.rotation;
+    private void OnReleased(SelectExitEventArgs args)
+    {
+        if (_snapTargets == null || _snapTargets.Count == 0) return;
 
-        if (_rb != null) {
+        foreach (var target in _snapTargets)
+        {
+            float distance = Vector3.Distance(transform.position, target.position);
+            if (distance <= _positionTolerance)
+            {
+                Snap(target);
+                return;
+            }
+        }
+        _rb.useGravity = true;
+    }
+
+    private void Snap(Transform target)
+    {
+        transform.position = target.position;
+        transform.rotation = target.rotation;
+
+        if (_rb != null)
+        {
             _rb.constraints = RigidbodyConstraints.FreezeAll;
             _rb.useGravity = false;
         }
@@ -70,10 +81,12 @@ public class SnapComponent : MonoBehaviour
         SnappedCallback?.Invoke(this);
     }
 
-    public void Unsnap() {
+    private void Unsnap()
+    {
         _alreadySnapped = false;
-        if (_rb != null) {
-            _rb.constraints = _originalConstraints;
+        if (_rb != null)
+        {
+            _rb.constraints = RigidbodyConstraints.None;
             _rb.useGravity = true;
         }
     }

@@ -24,7 +24,7 @@ namespace Salle3 {
             
             _drawerMirrorObject.SetActive(false);
             _closetObjectGrab.enabled = false;
-            //LockPortal();
+            LockPortal();
         }
 
         private void Update() {
@@ -101,7 +101,7 @@ namespace Salle3 {
 
 
         private void RoomFinished() {
-            //UnlockPortal();
+            UnlockPortal();
             Debug.Log("La pièce est finie !");
         }
     }
