@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
-using Utils;
 
-namespace Puzzles.LivingRoom
+namespace Utils
 {
     public class ClueActivator : MonoBehaviour
     { 

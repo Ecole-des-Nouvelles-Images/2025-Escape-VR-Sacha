@@ -12,6 +12,7 @@ namespace Puzzles.LivingRoom
         public static readonly int IsCakeOpen = Animator.StringToHash("isCakeOpen");
         
         [SerializeField] private GameObject[] _candles;
+        [SerializeField] private GameObject _lettre;
         [SerializeField] private GameObject[] _candlesSockets;
         [SerializeField] private Animator _cakeAnimator;
         [SerializeField] private int[] _firstCode;
@@ -26,6 +27,7 @@ namespace Puzzles.LivingRoom
 
         private void Awake()
         {
+            _lettre.SetActive(false);
             _currentCode = new int[3];
             _puzzleStates = 1;
             if(_candlesSockets[1].activeSelf)
@@ -38,7 +40,12 @@ namespace Puzzles.LivingRoom
                 }
             }
             _cakeAnimator.SetBool(IsCakeOpen, false);
+        }
+
+        private void Start()
+        {
             GameEvents.OnActualizeClue.Invoke("LivingRoom",0);
+            LockPortal();
         }
 
         private void OnTriggerExit(Collider other)
@@ -85,6 +92,7 @@ namespace Puzzles.LivingRoom
                     if (!Helper.IntArrayEquals(_currentCode,_thirdCode))
                         return;
                     _puzzleStates = 4;
+                    _lettre.SetActive(true);
                     _cakeAnimator.SetBool(IsCakeOpen, true);
                     GameEvents.OnActualizeClue.Invoke("LivingRoom",3);
                     UnlockPortal();
@@ -95,7 +103,6 @@ namespace Puzzles.LivingRoom
                     //increase alternative score
                     break;
             }
-           
         }
 
         public void AddValueInCode(int value, int index)
