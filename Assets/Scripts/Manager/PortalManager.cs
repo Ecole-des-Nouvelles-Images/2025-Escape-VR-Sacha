@@ -7,7 +7,7 @@ namespace Manager
 {
     public class PortalManager : MonoBehaviour
     {
-        [SerializeField] private Portal[] _portalsEntry;
+        [SerializeField] private PortalEntry[] _portalsEntry;
         
         private Animator _portalAnimator;
         
@@ -25,7 +25,7 @@ namespace Manager
 
         private void PortalEnabled(string portalID)
         {
-            foreach (Portal portalScript in _portalsEntry)
+            foreach (PortalEntry portalScript in _portalsEntry)
             {
                 if (portalScript.portalID == portalID && portalScript.gameObject.activeSelf == false)
                 {
@@ -37,7 +37,7 @@ namespace Manager
         
         private void PortalDisabled(string portalID)
         {
-            foreach (Portal portalScript in _portalsEntry)
+            foreach (PortalEntry portalScript in _portalsEntry)
             {
                 if (portalScript.portalID == portalID && portalScript.gameObject.activeSelf)
                 {

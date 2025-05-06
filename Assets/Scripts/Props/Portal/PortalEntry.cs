@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Props.Portal
 {
-    public class Portal : MonoBehaviour
+    public class PortalEntry : MonoBehaviour
     {
         public static readonly int IsFrontOpen = Animator.StringToHash("isFrontOpen");
         public static readonly int IsBackOpen = Animator.StringToHash("isBackOpen");
@@ -10,6 +10,7 @@ namespace Props.Portal
         [SerializeField] private string _portalID;
         [SerializeField] private ObjectDetectorByTag _frontDetector;
         [SerializeField] private ObjectDetectorByTag _backDetector;
+        [SerializeField] private PortalExit _portalExit;
         
         public string portalID => _portalID;
         
@@ -25,12 +26,14 @@ namespace Props.Portal
             if(_backDetector.ObjectDetected)
             {
                 _animator.SetBool(IsFrontOpen, true);
+                _portalExit.OpenFront();
             }
             else 
                 _animator.SetBool(IsFrontOpen, false);
             if(_frontDetector.ObjectDetected)
             {
                 _animator.SetBool(IsBackOpen, true);
+                _portalExit.OpenBack();
             }
             else 
                 _animator.SetBool(IsBackOpen, false);
