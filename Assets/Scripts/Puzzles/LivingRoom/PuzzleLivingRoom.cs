@@ -1,102 +1,100 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Utils;
 
 namespace Puzzles.LivingRoom
 {
     public class PuzzleLivingRoom : Puzzle
     {
+        public static readonly int IsCakeOpen = Animator.StringToHash("isCakeOpen");
+        
         [SerializeField] private GameObject[] _candles;
-        [SerializeField] private GameObject[] _smartphones;
-        [SerializeField] private CandlesSockets[] _candlesSockets;
+        [SerializeField] private GameObject _lettre;
+        [SerializeField] private GameObject[] _candlesSockets;
+        [SerializeField] private Animator _cakeAnimator;
         [SerializeField] private int[] _firstCode;
         [SerializeField] private int[] _secondCode;
         [SerializeField] private int[] _thirdCode;
         [SerializeField] private int[] _bonusCode;
         
-        private int _candleSocketsStates;
+        private int _candleCount;
         private int _puzzleStates; //1-3 + 1 (bonus)
         private int[] _currentCode; // 0=empty, 1=0, 2=1, etc...
         private string _debugCode;
 
         private void Awake()
         {
-            _currentCode = new int[5];
+            _lettre.SetActive(false);
+            _currentCode = new int[3];
             _puzzleStates = 1;
+            if(_candlesSockets[1].activeSelf)
+                _candlesSockets[1].SetActive(false);
+            for (int i = 0; i < _candles.Length; i++)
+            {
+                if (i != 1 && i != 8)
+                {
+                    _candles[i].SetActive(false);
+                }
+            }
+            _cakeAnimator.SetBool(IsCakeOpen, false);
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void Start()
         {
-            if (other.CompareTag("Candle"))
-            {
-                CandleEnter(other.transform.GetComponent<Candle>());
-            }
+            GameEvents.OnActualizeClue.Invoke("LivingRoom",0);
+            LockPortal();
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Candle"))
+            if (other.CompareTag("KeyObject"))
             {
-                CandleExit(other.transform.GetComponent<Candle>());
-            }
-        }
-
-        private void Update()
-        {
-            ActualiseSocketsPreSet();
-        }
-
-        private void CandleEnter(Candle candle)
-        {
-            if (_candleSocketsStates >= 0 && _candleSocketsStates < 5)
-            {
-                _currentCode[_candleSocketsStates] = candle.MyValue;
-                Debug.Log("CandleEnter =>"+ candle.MyValue);
-                candle.transform.parent = _candlesSockets[_candleSocketsStates].transform.GetChild(_candleSocketsStates);
-                candle.transform.position = Vector3.zero;
-                candle.transform.rotation = Quaternion.identity;
-                candle.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-                candle.transform.GetComponent<Rigidbody>().constraints =
-                    RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-                _candleSocketsStates++;
-                CodeValidation();
-            }
-        }
-        private void CandleExit(Candle candle)
-        {
-            for (int i = 0; i < _currentCode.Length; i++)
-            {
-                if (candle.MyValue == _currentCode[i])
-                {
-                    _currentCode[i] = 0;
-                    Debug.Log(candle.MyValue + " => CandleExit");
-                    candle.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    _candleSocketsStates--;
-                    CodeValidation();
-                }
+                _cakeAnimator.SetBool(IsCakeOpen, false);
             }
         }
 
         private void CodeValidation()
         {
+            _debugCode = "";
+            for (int i = 0; i < _currentCode.Length; i++)
+            {
+                _debugCode += _currentCode[i].ToString();
+            }
+            Debug.Log(_debugCode);
             switch (_puzzleStates)
             {
                 case 1:
                     if (!Helper.IntArrayEquals(_currentCode,_firstCode))
                         return;
-                    _puzzleStates++;
+                    _puzzleStates = 2;
+                    _candlesSockets[1].SetActive(true);
+                    _candles[0].SetActive(true);
+                    _candles[2].SetActive(true);
+                    _candles[4].SetActive(true);
+                    _candles[6].SetActive(true);
+                    GameEvents.OnActualizeClue.Invoke("LivingRoom",1);
                     Debug.Log("passage à l'étape : " + _puzzleStates);
                     break;
                 case 2:
                     if (!Helper.IntArrayEquals(_currentCode,_secondCode))
                         return;
-                    _puzzleStates++;
+                    _puzzleStates = 3;
+                    _candles[3].SetActive(true);
+                    _candles[5].SetActive(true);
+                    _candles[7].SetActive(true);
+                    _candles[9].SetActive(true);
+                    GameEvents.OnActualizeClue.Invoke("LivingRoom",2);
                     break;
                 case 3:
                     if (!Helper.IntArrayEquals(_currentCode,_thirdCode))
                         return;
-                    _puzzleStates++;
+                    _puzzleStates = 4;
+                    _lettre.SetActive(true);
+                    _cakeAnimator.SetBool(IsCakeOpen, true);
+                    GameEvents.OnActualizeClue.Invoke("LivingRoom",3);
                     UnlockPortal();
                     break;
                 case 4:
@@ -105,26 +103,17 @@ namespace Puzzles.LivingRoom
                     //increase alternative score
                     break;
             }
-            _debugCode = "";
-            for (int i = 0; i < _currentCode.Length; i++)
-            {
-                _debugCode += _currentCode[i].ToString();
-            }
-            Debug.Log(_debugCode);
         }
 
-        private void ActualiseSocketsPreSet()
+        public void AddValueInCode(int value, int index)
         {
-            if (_candlesSockets[_candleSocketsStates].gameObject.activeSelf == false)
-            {
-                for (int i = 0; i < _candlesSockets.Length; i++)
-                {
-                    _candlesSockets[i].gameObject.SetActive(false);
-                }
-                _candlesSockets[_candleSocketsStates].gameObject.SetActive(true);
-                Debug.Log("ActualiseSocketsPreSet =>" + _candleSocketsStates);
-            }
-            
+            _currentCode[index] = value;
+            CodeValidation();
+        }
+        public void RemoveValueInCode(int index)
+        {
+            _currentCode[index] = 0;
+            CodeValidation();
         }
     }
 }
