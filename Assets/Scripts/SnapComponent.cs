@@ -88,7 +88,6 @@ public class SnapComponent : MonoBehaviour
         _rb.constraints = RigidbodyConstraints.None;
         _rb.useGravity = true;
 
-        // Clear any previous occupant if needed
         foreach (var target in _snapTargets)
         {
             if (target.TryGetComponent(out Salle1.EmplacementComponent emplacement))
