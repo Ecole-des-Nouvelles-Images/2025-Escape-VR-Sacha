@@ -19,6 +19,7 @@ namespace Props.Portal
         private void Teleport(Transform player)
         {
             GameEvents.OnRoomChanged.Invoke(_destinationRoomID);
+            GameEvents.OnTeleport.Invoke();
             Vector3 offset = player.position - transform.position;
             offset += _destinationPortal.TpTarget.position;
             offset.y = player.position.y;

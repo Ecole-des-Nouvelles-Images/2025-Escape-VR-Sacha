@@ -29,7 +29,6 @@ namespace Manager
             {
                 if (portalScript.portalID == portalID && portalScript.gameObject.activeSelf == false)
                 {
-                    Debug.Log($"Portal {portalScript.portalID} is enabled");
                     portalScript.gameObject.SetActive(true);
                 }
             }
@@ -41,7 +40,6 @@ namespace Manager
             {
                 if (portalScript.portalID == portalID && portalScript.gameObject.activeSelf)
                 {
-                    Debug.Log($"Portal {portalScript.portalID} is disabled");
                     portalScript.gameObject.SetActive(false);
                 }
             }
