@@ -8,7 +8,7 @@ namespace Utils
         [SerializeField] private bool _isFilteredByTag;
         [SerializeField] private string[] _objectsTagToSpawn;
         [SerializeField] private GameObject _spawnAnchor;
-        private void OnTriggerExit(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             if (_isFilteredByTag)
             {
