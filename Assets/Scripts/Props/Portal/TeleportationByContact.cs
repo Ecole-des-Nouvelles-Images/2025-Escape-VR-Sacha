@@ -23,7 +23,7 @@ namespace Props.Portal
             offset += _destinationPortal.TpTarget.position;
             offset.y = player.position.y;
             player.position = offset;
-            gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
         }
     }
 }
