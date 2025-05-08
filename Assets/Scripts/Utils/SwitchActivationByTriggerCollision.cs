@@ -7,16 +7,21 @@ namespace Utils
     {
         [SerializeField] private GameObject _activeObjectIn;
         [SerializeField] private GameObject _activeObjectOut;
+        [SerializeField] private ObjectDetectorByTag _detector;
 
-        private void OnTriggerEnter(Collider other)
+        private void Update()
         {
-            _activeObjectIn.SetActive(true);
-            _activeObjectOut.SetActive(false);
-        }
-        private void OnTriggerExit(Collider other)
-        {
-            _activeObjectIn.SetActive(false);
-            _activeObjectOut.SetActive(true);
+            
+            if (_detector.ObjectDetected)
+            {
+                _activeObjectIn.SetActive(true);
+                _activeObjectOut.SetActive(false);
+            }
+            else
+            {
+                _activeObjectIn.SetActive(false);
+                _activeObjectOut.SetActive(true);
+            }
         }
     }
 }
