@@ -1,16 +1,22 @@
   using System;
+  using UnityEngine;
 
-namespace Utils
+  namespace Utils
 {
     public static class GameEvents
     {
+        public static Action OnTeleport;
+        
         public static Action<string> OnRoomChanged;
         public static Action<string> OnKeyboardUnlock;
         public static Action<string> OnSetupPuzzle;
         public static Action<string> OnPuzzleCompleted;
         public static Action<string> OnPlayCutscene;
-        public static Action<string,int> OnActualizeClue;
-        public static Action<bool> OnPortalTriggered;
-        public static Action OnTeleport;
+        
+        public static Action<string, int> OnActualizeClue;
+        
+        public static Action<string, float> OnSliderModified;
+        
+        public static Action<string, bool, int, AudioSource> OnPlaySound;
     }
 }
