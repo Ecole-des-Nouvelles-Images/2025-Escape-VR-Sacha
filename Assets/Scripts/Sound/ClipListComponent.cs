@@ -15,8 +15,13 @@ namespace Sound
         {
             if (_randomSelection)
             {
-                _myAudioSource.clip = _myClipList[Random.Range(0, _myClipList.Count - 1)];
+                SelectRandomClip();
             }
+        }
+
+        public void SelectRandomClip()
+        {
+            _myAudioSource.clip = _myClipList[Random.Range(0, _myClipList.Count - 1)];
         }
     }
 }
