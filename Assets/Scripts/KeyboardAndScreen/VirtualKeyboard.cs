@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Manager;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace KeyboardAndScreen
         [SerializeField] private string _keyInputs;
         
         private string _listInput = "" ;
+        private List<int> _values = new List<int>();
         private float _timerError = 0.5f;
         private bool _isTimer;
 
@@ -31,7 +33,7 @@ namespace KeyboardAndScreen
                 Timer();
         }
 
-        private void Validation()
+        public void Validation()
         {
             if (_listInput == _keyInputs)
             {
@@ -66,16 +68,32 @@ namespace KeyboardAndScreen
             _display.text = _listInput;
         }
         
-        public void AddInputs(string value)
+        public void AddInputs(int value)
         {
             if (_listInput.Length < _keyInputs.Length)
             {
+                _values.Add(value);
                 _listInput += value;
                 Display();
             }
-            if (_listInput.Length == _keyInputs.Length || _listInput.Length > _keyInputs.Length)
+            /*if (_listInput.Length == _keyInputs.Length || _listInput.Length > _keyInputs.Length)
             {
                 Validation();
+            }*/
+        }
+
+        public void RemoveInput()
+        {
+            if (_listInput != "" && _values.Count > 0)
+            {
+                _values.Remove(_values[_values.Count-1]);
+                _listInput="";
+                foreach (int value in _values)
+                {
+                    _listInput+=value;
+                }
+                Debug.Log(_listInput);
+                Display();
             }
         }
     }

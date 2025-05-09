@@ -6,12 +6,17 @@ namespace KeyboardAndScreen
 {
     public class VNumpadInput : MonoBehaviour
     {
-        [FormerlySerializedAs("_myKeyboardSystem")] [FormerlySerializedAs("_mySystem")] [SerializeField] private VirtualKeyboard _myVirtualKeyboardSystem;
-        [SerializeField] private string _myValue;
+        [SerializeField] private VirtualKeyboard _myVirtualKeyboardSystem;
+        [SerializeField] private int _myValue;
 
         public void EnterInput()
         {
-            _myVirtualKeyboardSystem.AddInputs(_myValue);
+            if(_myValue == 999)
+                _myVirtualKeyboardSystem.RemoveInput();
+            else if(_myValue == 666)
+                _myVirtualKeyboardSystem.Validation();
+            else
+                _myVirtualKeyboardSystem.AddInputs(_myValue);
         }
     }
 }
