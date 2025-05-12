@@ -1,45 +1,48 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _mainPanel;
+    [SerializeField] private GameObject _settingPanel;
     
-    //private InputAction _menuButton;
+    private InputAction _menuButton;
     private InputAction _menuButtonInteraction;
 
     private void Awake()
     {
-        //_menuButton = InputSystem.actions.FindAction("XRI Left/MenuButton", true);
-        _menuButtonInteraction = InputSystem.actions.FindAction("XRI Left Interaction/MenuButton", true);
+        _menuButton = InputSystem.actions.FindAction("XRI Left/MenuButton", true);
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+        if (_pauseMenu.activeSelf)
+        {
+            _pauseMenu.SetActive(false);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (_menuButtonInteraction.IsPressed())
+        if (_menuButton.triggered)
         {
             SwitchMenuActivation();
         }
     }
-
-    private void SwitchMenuActivation()
+    public void SwitchMenuActivation()
     {
-        if (_pauseMenu.activeSelf)
-        {
-            Time.timeScale = 1;
-        }
-        else
-        {
-            Time.timeScale = 0;
-        }
         _pauseMenu.SetActive(!_pauseMenu.activeSelf);
+    }
+
+    public void SwitchSettingsActivation()
+    {
+        _mainPanel.SetActive(!_mainPanel.activeSelf);
+        _settingPanel.SetActive(!_settingPanel.activeSelf);
+    }
+
+    public void ReturnMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

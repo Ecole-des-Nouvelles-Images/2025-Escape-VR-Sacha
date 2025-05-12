@@ -76,10 +76,10 @@ namespace KeyboardAndScreen
                 _listInput += value;
                 Display();
             }
-            /*if (_listInput.Length == _keyInputs.Length || _listInput.Length > _keyInputs.Length)
+            if (_listInput.Length == _keyInputs.Length || _listInput.Length > _keyInputs.Length)
             {
                 Validation();
-            }*/
+            }
         }
 
         public void RemoveInput()
