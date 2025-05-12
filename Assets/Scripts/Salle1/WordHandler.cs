@@ -22,6 +22,7 @@ namespace Salle1 {
             _wordActions.Add("OUVRE", OnOpenDrawer);
             _wordActions.Add("PORTE", OnOpenTrap);
             _wordActions.Add("OURS", OnOpenTeddy);
+            _wordActions.Add("VALISE", OnOpenSuitCase);
             _wordActions.Add("SOUVENIR", OnUnlockFinalChest);
 
             LockPortal();
@@ -75,6 +76,8 @@ namespace Salle1 {
 
         private void OnOpenTrap() => Debug.Log("La trappe magique apparaît !");
         private void OnOpenTeddy() => Debug.Log("Le nounours s'ouvre !");
+        
+        private void OnOpenSuitCase() {}
         private void OnUnlockFinalChest() => Debug.Log("Le coffre final est déverrouillé !");
     }
 }
