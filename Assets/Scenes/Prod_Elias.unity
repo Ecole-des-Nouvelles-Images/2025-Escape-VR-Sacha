@@ -191,7 +191,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 4920
+  m_ColorTemperature: 4280
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -1212,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.55
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: e4f332aea9a46b34bab01d9d6d17f588, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2033,6 +2033,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetObject: {fileID: 845594500}
   _introHandler: {fileID: 2102428588}
+--- !u!1001 &724483754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.011755943
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301224224367367150, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9088642315445337472, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
+      propertyPath: m_Name
+      value: P_Kidroom_MeshandMat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac93cb7b6a27141479d20c6360b1f246, type: 3}
 --- !u!1 &756192406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,9 +4241,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PH_KidRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 2345888545089910432, guid: 2b44950a3aeb2d14dbd61f3fe0584104, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6298674822216046973, guid: 2b44950a3aeb2d14dbd61f3fe0584104, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7031704683796504380, guid: 2b44950a3aeb2d14dbd61f3fe0584104, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4311,3 +4372,4 @@ SceneRoots:
   - {fileID: 756192408}
   - {fileID: 2092139010}
   - {fileID: 971858395}
+  - {fileID: 724483754}
