@@ -4,23 +4,31 @@ using Puzzles;
 using UnityEngine;
 
 namespace Salle1 {
-    public class WordHandler : Puzzle {
+    public class WordHandler : Puzzle
+    {
 
         [Serializable]
-        private class WordEvent {
+        private class WordEvent
+        {
             public string TargetWord;
             public Action OnWordCorrect;
         }
 
         [SerializeField] private List<EmplacementComponent> _emplacements;
 
+        [SerializeField] private GameObject _closedTeddyBear;
+        [SerializeField] private GameObject _openTeddyBear;
+        [SerializeField] private GameObject _suitcase;
+        [SerializeField] private GameObject _chest;
+
         private Dictionary<string, Action> _wordActions = new Dictionary<string, Action>();
 
         private bool _isCheckingWord = false;
 
-        private void Start() {
+        private void Start()
+        {
             _wordActions.Add("OUVRE", OnOpenDrawer);
-            _wordActions.Add("PORTE", OnOpenTrap);
+            _wordActions.Add("PORTE", OnOpenDoor);
             _wordActions.Add("OURS", OnOpenTeddy);
             _wordActions.Add("VALISE", OnOpenSuitCase);
             _wordActions.Add("SOUVENIR", OnUnlockFinalChest);
@@ -36,6 +44,7 @@ namespace Salle1 {
                 if (emp != null)
                     transforms.Add(emp.transform);
             }
+
             return transforms;
         }
 
@@ -44,7 +53,7 @@ namespace Salle1 {
             if (_isCheckingWord)
                 return; // Prevent recursive calls
 
-            _isCheckingWord = true;  // Set the flag to prevent re-entry
+            _isCheckingWord = true; // Set the flag to prevent re-entry
 
             string currentWord = "";
 
@@ -68,14 +77,19 @@ namespace Salle1 {
 
             _isCheckingWord = false;
         }
-        
-        private void OnOpenDrawer() {
+
+        private void OnOpenDrawer()
+        {
             Debug.Log("Le tiroir s'ouvre !");
-            UnlockPortal();
         }
 
-        private void OnOpenTrap() => Debug.Log("La trappe magique apparaît !");
-        private void OnOpenTeddy() => Debug.Log("Le nounours s'ouvre !");
+        private void OnOpenDoor() => Debug.Log("La trappe magique apparaît !");
+        private void OnOpenTeddy()
+        {
+            _closedTeddyBear.SetActive(false);
+            _closedTeddyBear.SetActive(true);
+            Debug.Log("Le nounours s'ouvre !");
+        }
         
         private void OnOpenSuitCase() {}
         private void OnUnlockFinalChest() => Debug.Log("Le coffre final est déverrouillé !");
