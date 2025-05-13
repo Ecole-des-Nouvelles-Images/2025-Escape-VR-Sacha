@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Puzzles;
 using UnityEngine;
@@ -19,7 +20,8 @@ namespace Salle1 {
         [SerializeField] private GameObject _closedTeddyBear;
         [SerializeField] private GameObject _openTeddyBear;
         [SerializeField] private GameObject _suitcase;
-        [SerializeField] private GameObject _chest;
+        [SerializeField] private GameObject _chestTop;
+        [SerializeField] private GameObject _drawer;
 
         private Dictionary<string, Action> _wordActions = new Dictionary<string, Action>();
 
@@ -27,6 +29,8 @@ namespace Salle1 {
 
         private void Start()
         {
+            _closedTeddyBear.SetActive(false);
+            
             _wordActions.Add("OUVRE", OnOpenDrawer);
             _wordActions.Add("PORTE", OnOpenDoor);
             _wordActions.Add("OURS", OnOpenTeddy);
@@ -51,9 +55,9 @@ namespace Salle1 {
         public void CheckCurrentWord()
         {
             if (_isCheckingWord)
-                return; // Prevent recursive calls
+                return;
 
-            _isCheckingWord = true; // Set the flag to prevent re-entry
+            _isCheckingWord = true;
 
             string currentWord = "";
 
@@ -81,17 +85,54 @@ namespace Salle1 {
         private void OnOpenDrawer()
         {
             Debug.Log("Le tiroir s'ouvre !");
+            StartCoroutine(MoveOverTime(
+                _drawer.transform,
+                _drawer.transform.position,
+                _drawer.transform.position + Vector3.right * 0.5f,
+                1f
+            ));
         }
 
-        private void OnOpenDoor() => Debug.Log("La trappe magique apparaît !");
+        private void OnOpenDoor()
+        {
+            UnlockPortal();
+            Debug.Log("La porte s'ouvre !");
+        }
         private void OnOpenTeddy()
         {
-            _closedTeddyBear.SetActive(false);
+            _openTeddyBear.SetActive(false);
             _closedTeddyBear.SetActive(true);
             Debug.Log("Le nounours s'ouvre !");
         }
+
+        private void OnOpenSuitCase()
+        {
+            StartCoroutine(MoveOverTime(
+                _suitcase.transform,
+                _suitcase.transform.position,
+                _suitcase.transform.position + Vector3.right * 0.5f,
+                1f
+            ));
+        }
+        private void OnUnlockFinalChest()
+        {
+            StartCoroutine(MoveOverTime(
+                _chestTop.transform,
+                _chestTop.transform.position,
+                _chestTop.transform.position + Vector3.right * 0.5f,
+                1f
+            ));
+        }
         
-        private void OnOpenSuitCase() {}
-        private void OnUnlockFinalChest() => Debug.Log("Le coffre final est déverrouillé !");
+        private IEnumerator MoveOverTime(Transform obj, Vector3 from, Vector3 to, float duration) {
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                obj.position = Vector3.Lerp(from, to, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            obj.position = to;
+        }
     }
 }
