@@ -2,11 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
 public class SceneFader : MonoBehaviour
 {
-   public Action<FadeType> OnFadeIn;
-   public Action<FadeType> OnFadeOut;
    
    public enum FadeType
    {
@@ -17,6 +16,8 @@ public class SceneFader : MonoBehaviour
    
    public float FadeDuration = 1f;
    public FadeType CurrentFadeType;
+   
+   [SerializeField] private string _mySceneFadeID;
    
    private int _fadeAmount = Shader.PropertyToID("_FadeAmount");
    
@@ -31,14 +32,12 @@ public class SceneFader : MonoBehaviour
 
    private void OnEnable()
    {
-      OnFadeIn += FadeIn;
-      OnFadeOut += FadeOut;
+      GameEvents.OnFadeScreen += FadeScreen;
    }
 
    private void OnDisable()
    {
-      OnFadeIn -= FadeIn;
-      OnFadeOut -= FadeOut;
+      GameEvents.OnFadeScreen -= FadeScreen;
    }
 
    private void Awake()
@@ -49,6 +48,19 @@ public class SceneFader : MonoBehaviour
       _material = _image.material;
 
       _lastEffect = _useShutters;
+   }
+
+   private void FadeScreen(string sceneFadeID, bool isFadeIn)
+   {
+      if(sceneFadeID == _mySceneFadeID)
+      {
+         if (isFadeIn)
+         {
+            FadeIn(CurrentFadeType);
+            return;
+         }
+         FadeOut(CurrentFadeType);
+      }
    }
 
    public void FadeOut(FadeType fadeType)

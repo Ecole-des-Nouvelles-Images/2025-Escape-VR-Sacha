@@ -17,7 +17,7 @@ namespace Props.Portal
         
         private Animator _animatorFront;
         private Animator _animatorBack;
-        private float _timerBeforDissolve = 1.5f;
+        private float _timerBeforeDissolve = .05f;
         private bool _isTimerOn;
         private bool _isAfterTp;
         
@@ -39,24 +39,25 @@ namespace Props.Portal
         // Update is called once per frame
         void Update()
         {
-            
+            //gameObject.SetActive(false);
             if (_isAfterTp == false && _mainCamDetector.ObjectDetected)
             {
                 _isAfterTp = true;
             }
             if (_mainCamDetector.ObjectDetected == false && _isAfterTp)
             {
-                if(_openFront.activeSelf)
+                /*if(_openFront.activeSelf)
                     _animatorFront.SetBool(IsFrontOpenExit, false);
                 if(_openBack.activeSelf)
-                    _animatorBack.SetBool(IsBackOpenExit, false);
+                    _animatorBack.SetBool(IsBackOpenExit, false);*/
                 _isTimerOn = true;
             }
             if (_isTimerOn)
             {
-                _timerBeforDissolve -= Time.deltaTime;
+                Debug.Log(_timerBeforeDissolve);
+                _timerBeforeDissolve -= Time.deltaTime;
             }
-            if (_timerBeforDissolve <= 0 && _isAfterTp )
+            if (_timerBeforeDissolve <= 0 && _isAfterTp )
             {
                 gameObject.SetActive(false); //will be replaced by dissolve fx
             }

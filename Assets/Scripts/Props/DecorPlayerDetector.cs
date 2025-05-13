@@ -8,7 +8,7 @@ namespace Props
     public class DecorPlayerDetector : MonoBehaviour
     {
         [SerializeField] private bool _isTriggerByEnter;
-        private SceneFader _sceneFader;
+        [SerializeField] private string _sceneFaderID;
         private bool _isEnable;
         private float _currentFadeDisableTime;
 
@@ -20,10 +20,6 @@ namespace Props
         private void OnDisable()
         {
             GameEvents.OnTeleport -= DisableFadeSystem;
-        }
-        private void Awake()
-        {
-            _sceneFader = FindFirstObjectByType<SceneFader>();
         }
 
         private void Update()
@@ -44,11 +40,11 @@ namespace Props
             {
                 if (_isTriggerByEnter)
                 {
-                    _sceneFader.OnFadeOut.Invoke(_sceneFader.CurrentFadeType);
+                    GameEvents.OnFadeScreen(_sceneFaderID, false);
                 }
                 else
                 {
-                    _sceneFader.OnFadeIn.Invoke(_sceneFader.CurrentFadeType);
+                    GameEvents.OnFadeScreen(_sceneFaderID, true);
                 }
             }
         }
@@ -59,11 +55,11 @@ namespace Props
             {
                 if (_isTriggerByEnter)
                 {
-                    _sceneFader.OnFadeIn.Invoke(_sceneFader.CurrentFadeType);
+                    GameEvents.OnFadeScreen(_sceneFaderID, true);
                 }
                 else
                 {
-                    _sceneFader.OnFadeOut.Invoke(_sceneFader.CurrentFadeType);
+                    GameEvents.OnFadeScreen(_sceneFaderID, false);
                 }
             }
         }

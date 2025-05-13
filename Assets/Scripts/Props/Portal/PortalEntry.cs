@@ -25,18 +25,18 @@ namespace Props.Portal
         {
             if(_backDetector.ObjectDetected)
             {
-                _animator.SetBool(IsFrontOpen, true);
+                _animator.SetBool(IsBackOpen, true);
                 _portalExit.OpenFront();
             }
             else 
-                _animator.SetBool(IsFrontOpen, false);
+                _animator.SetBool(IsBackOpen, false);
             if(_frontDetector.ObjectDetected)
             {
-                _animator.SetBool(IsBackOpen, true);
+                _animator.SetBool(IsFrontOpen, true);
                 _portalExit.OpenBack();
             }
             else 
-                _animator.SetBool(IsBackOpen, false);
+                _animator.SetBool(IsFrontOpen, false);
         }
     }
 }
