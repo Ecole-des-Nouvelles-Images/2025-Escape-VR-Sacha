@@ -17,11 +17,16 @@ namespace Salle1 {
 
         [SerializeField] private List<EmplacementComponent> _emplacements;
 
+        [SerializeField] private GameObject _drawer;
         [SerializeField] private GameObject _closedTeddyBear;
         [SerializeField] private GameObject _openTeddyBear;
         [SerializeField] private GameObject _suitcase;
         [SerializeField] private GameObject _chestTop;
-        [SerializeField] private GameObject _drawer;
+        
+        
+        //[SerializeField] private List<GameObject> _teddyObjects;
+        [SerializeField] private List<GameObject> _drawerObjects;
+        [SerializeField] private List<GameObject> _suitcaseObjects;
 
         private Dictionary<string, Action> _wordActions = new Dictionary<string, Action>();
 
@@ -30,6 +35,9 @@ namespace Salle1 {
         private void Start()
         {
             _closedTeddyBear.SetActive(false);
+            
+            _drawerObjects.ForEach(obj => obj.SetActive(false));
+            _suitcaseObjects.ForEach(obj => obj.SetActive(false));
             
             _wordActions.Add("OUVRE", OnOpenDrawer);
             _wordActions.Add("PORTE", OnOpenDoor);
@@ -91,6 +99,7 @@ namespace Salle1 {
                 _drawer.transform.position + Vector3.right * 0.5f,
                 1f
             ));
+            _drawerObjects.ForEach(obj => obj.SetActive(true));
         }
 
         private void OnOpenDoor()
@@ -113,6 +122,7 @@ namespace Salle1 {
                 _suitcase.transform.position + Vector3.right * 0.5f,
                 1f
             ));
+            _suitcaseObjects.ForEach(obj => obj.SetActive(true));
         }
         private void OnUnlockFinalChest()
         {
