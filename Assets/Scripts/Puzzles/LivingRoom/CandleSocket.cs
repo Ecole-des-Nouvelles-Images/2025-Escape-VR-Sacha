@@ -11,10 +11,20 @@ namespace Puzzles.LivingRoom
         [SerializeField] private int _myIndexInCode;
 
         private GameObject _myCandle;
+        private bool _isCandleOn;
 
         private void Awake()
         {
             _myCandle = null;
+        }
+
+        private void FixedUpdate()
+        {
+            if (_isCandleOn == false && _myCandle &&_myCandle.transform.parent == transform)
+            {
+                _myCandle.transform.SetParent(_myPuzzle.transform);
+                _myCandle = null;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -23,6 +33,7 @@ namespace Puzzles.LivingRoom
             {
                 _myCandle = other.gameObject;
                 _myCandle.transform.parent = transform;
+                _isCandleOn = true;
                 RefreshCandle();
                 _myPuzzle.AddValueInCode(_myCandle.GetComponent<Candle>().MyValue,_myIndexInCode);
             }
@@ -33,7 +44,7 @@ namespace Puzzles.LivingRoom
             {
                 _myPuzzle.RemoveValueInCode(_myIndexInCode);
                 _myCandle.GetComponent<Candle>().FXDisable();
-                _myCandle.transform.parent = _myPuzzle.transform;
+                _isCandleOn = false;
                 _myCandle = null;
             }
         }

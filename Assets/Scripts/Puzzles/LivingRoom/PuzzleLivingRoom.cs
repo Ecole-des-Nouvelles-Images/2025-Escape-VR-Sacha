@@ -100,7 +100,7 @@ namespace Puzzles.LivingRoom
                 case 4:
                     if (!Helper.IntArrayEquals(_currentCode,_bonusCode))
                         return;
-                    //increase alternative score
+                    GameEvents.OnIncreaseScore.Invoke();
                     break;
             }
         }
