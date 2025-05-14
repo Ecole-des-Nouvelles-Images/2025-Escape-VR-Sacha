@@ -163,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 1165425552647516465}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.005, z: 0}
   m_LocalScale: {x: 0.019999994, y: 0.01, z: 0.019999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -232,7 +232,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6309898091937786811}
   - component: {fileID: 6229962343289713403}
-  - component: {fileID: 6997442742469179248}
   m_Layer: 7
   m_Name: cake
   m_TagString: Untagged
@@ -282,33 +281,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!54 &6997442742469179248
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862160540213774006}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &2015102620677998565
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +364,7 @@ Transform:
   m_GameObject: {fileID: 2659612564067556977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.09500003, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -419,7 +391,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.015, y: 0.01, z: 0.015}
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3855845429215351443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +542,7 @@ Transform:
   m_GameObject: {fileID: 3408545992550300233}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.005, z: 0}
   m_LocalScale: {x: 0.019999994, y: 0.01, z: 0.019999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -904,7 +876,7 @@ Transform:
   m_GameObject: {fileID: 5675269201103661451}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.034999788, y: 0.09500003, z: 0}
+  m_LocalPosition: {x: -0.034999788, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -931,7 +903,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.015, y: 0.01, z: 0.015}
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8374807009701492135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,7 +1776,7 @@ Transform:
   m_GameObject: {fileID: 8142691179696527427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.005, z: 0}
   m_LocalScale: {x: 0.019999996, y: 0.01, z: 0.019999996}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1890,7 +1862,7 @@ Transform:
   m_GameObject: {fileID: 8615618070796913287}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.035000145, y: 0.09500003, z: 0}
+  m_LocalPosition: {x: 0.035000145, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1917,7 +1889,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.015, y: 0.01, z: 0.015}
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &709839045079222928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2456,6 +2428,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: 05cf4d6000a619d4eabf4fef7d064a67, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 05cf4d6000a619d4eabf4fef7d064a67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6293003
@@ -2496,6 +2472,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: 05cf4d6000a619d4eabf4fef7d064a67, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 05cf4d6000a619d4eabf4fef7d064a67, type: 3}
       propertyPath: m_Name
       value: 'Candle[2]'
@@ -2523,6 +2503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: a6f4a44598529bb4e84bc0e7293667e4, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: a6f4a44598529bb4e84bc0e7293667e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7270002
@@ -2563,6 +2547,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: a6f4a44598529bb4e84bc0e7293667e4, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: a6f4a44598529bb4e84bc0e7293667e4, type: 3}
       propertyPath: m_Name
       value: 'Candle[6]'
@@ -2590,6 +2578,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: 4818162d3191f9b4bae583937ca731f1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 4818162d3191f9b4bae583937ca731f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6220003
@@ -2630,6 +2622,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: 4818162d3191f9b4bae583937ca731f1, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 4818162d3191f9b4bae583937ca731f1, type: 3}
       propertyPath: m_Name
       value: 'Candle[9]'
@@ -2657,6 +2653,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: 9890333b38a0bdb4ea0dd3037332547e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 9890333b38a0bdb4ea0dd3037332547e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.721
@@ -2697,6 +2697,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: 9890333b38a0bdb4ea0dd3037332547e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 9890333b38a0bdb4ea0dd3037332547e, type: 3}
       propertyPath: m_Name
       value: 'Candle[5]'
@@ -2724,6 +2728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: 0e991539a72d69348a4bf0a96ea3fd8e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 0e991539a72d69348a4bf0a96ea3fd8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6531003
@@ -2764,6 +2772,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: 0e991539a72d69348a4bf0a96ea3fd8e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 0e991539a72d69348a4bf0a96ea3fd8e, type: 3}
       propertyPath: m_Name
       value: 'Candle[4]'
@@ -2791,6 +2803,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: 8776bb9927c835b4fabfad79eff976cc, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 8776bb9927c835b4fabfad79eff976cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6450003
@@ -2831,6 +2847,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: 8776bb9927c835b4fabfad79eff976cc, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 8776bb9927c835b4fabfad79eff976cc, type: 3}
       propertyPath: m_Name
       value: 'Candle[8]'
@@ -2858,6 +2878,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: 9f7d4b437ec8bec4b9c9b860c49ba977, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 9f7d4b437ec8bec4b9c9b860c49ba977, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6190004
@@ -2898,6 +2922,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: 9f7d4b437ec8bec4b9c9b860c49ba977, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 9f7d4b437ec8bec4b9c9b860c49ba977, type: 3}
       propertyPath: m_Name
       value: 'Candle[3]'
@@ -2925,6 +2953,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.65400034
@@ -2964,6 +2996,10 @@ PrefabInstance:
     - target: {fileID: 1977936238899174659, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
       propertyPath: m_Name
@@ -3115,6 +3151,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: fce5943382f7fa64b83614cba158d15d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: fce5943382f7fa64b83614cba158d15d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.59450036
@@ -3155,6 +3195,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: fce5943382f7fa64b83614cba158d15d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: fce5943382f7fa64b83614cba158d15d, type: 3}
       propertyPath: m_Name
       value: 'Candle[1]'
@@ -3182,6 +3226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
+    - target: {fileID: 923574134831445321, guid: 8a7a79be25c3f69408381aee555e9e3d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 8a7a79be25c3f69408381aee555e9e3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7600003
@@ -3221,6 +3269,10 @@ PrefabInstance:
     - target: {fileID: 1977936238899174659, guid: 8a7a79be25c3f69408381aee555e9e3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790633212511681254, guid: 8a7a79be25c3f69408381aee555e9e3d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 8a7a79be25c3f69408381aee555e9e3d, type: 3}
       propertyPath: m_Name

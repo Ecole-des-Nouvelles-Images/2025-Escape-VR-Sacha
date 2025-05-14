@@ -18,10 +18,7 @@ public class PauseMenu : MonoBehaviour
     }
     private void Start()
     {
-        if (_pauseMenu.activeSelf)
-        {
-            _pauseMenu.SetActive(false);
-        }
+        _pauseMenu.SetActive(false);
     }
     private void Update()
     {
