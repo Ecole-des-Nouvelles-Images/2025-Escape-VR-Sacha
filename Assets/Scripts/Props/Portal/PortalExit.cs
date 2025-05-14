@@ -54,7 +54,7 @@ namespace Props.Portal
             }
             if (_isTimerOn)
             {
-                Debug.Log(_timerBeforeDissolve);
+                //Debug.Log(_timerBeforeDissolve);
                 _timerBeforeDissolve -= Time.deltaTime;
             }
             if (_timerBeforeDissolve <= 0 && _isAfterTp )
