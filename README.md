@@ -1,16 +1,16 @@
 
-# [Project Name]
+# Fever
 
-[A brief and engaging tagline or description of the game]
+Partez à la découverte de votre ancienne vie dans un escape game narratif en réalité virtuelle, où chaque énigme déverrouille un souvenir.
 
-[![Unity Version](https://img.shields.io/badge/Unity-2022.3.47-blue?style=flat&logo=unity)](https://unity.com/)
+[![Unity Version](https://img.shields.io/badge/Unity-6000.0.34-blue?style=flat&logo=unity)](https://unity.com/)
 [![GitHub Release](https://img.shields.io/github/v/release/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/releases)
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/Unity-Template?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template)
 
 ![Main Banner](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/main-banner.png)
 
-## Table of Contents
+## Table des Matières
 1. [Introduction](#introduction)
 2. [Team](#team)
 3. [Gameplay](#gameplay)
@@ -23,25 +23,31 @@
 ---
 
 ## Introduction
-**[Project Name]** is a [genre of the game] developed by **[Team/Organization Name]** during **[timeframe]**.  
-This project was created as part of **[context, e.g., a school project, game jam, or indie initiative]**.  
-The development process included **[key phases, such as preproduction, production, etc.]**.
+
+**Fever** est un escape game en réalité virtuelle développé à l’École des Nouvelles Images d’Avignon en 2025.
+
+Plongé dans un univers clinique et troublant, le joueur incarne un sujet sans mémoire, soumis à une série de tests énigmatiques. Chaque salle résolue dévoile un fragment du passé oublié.
+
+Le développement du jeu s’est étalé sur 9 semaines, incluant la pré-production, la production et la post-production. Le projet a été pensé pour mettre en valeur l'interaction intuitive, l’immersion sonore, et une narration environnementale progressive.
+
 
 ---
 
-## Team
-This game was brought to life by **[Team Name or "a group of X developers/artists"]**:
-- **[Name 1]**: [Role and contributions]
-- **[Name 2]**: [Role and contributions]
-- **[Name 3]**: [Role and contributions]
-- **[Name 4]**: [Role and contributions]
+## L'Equipe
+Ce jeu a été conçu par une équipe de 4 étudiants passionnés :
+- **Sacha Nino**: Game Owner, Artiste
+- **Marine Amrouche**: Lead Artiste
+- **Elias Prévost**: Scrum Master, Programmeur
+- **Christopher Barrera**: Lead Programmeur
 
 ![Team](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/team-photo.png)
 
 ---
 
 ## Gameplay
-[Describe the core gameplay loop, mechanics, and objectives of the game. Include details like number of players, perspective, and unique gameplay features.]
+Fever est une expérience solo en VR mêlant exploration narrative, manipulation d’objets et résolution d’énigmes sur la base de l'observation.
+
+Le joueur interagit directement avec l’environnement pour former des mots qui influence la salle dans laquelle il se trouve, déclencher des mécanismes, ou débloquer des souvenirs enfouis.
 
 ### Phase 1: [Phase Name]
 [Describe the first phase of gameplay, objectives, and player actions.]
@@ -53,33 +59,53 @@ This game was brought to life by **[Team Name or "a group of X developers/artist
 
 ---
 
-## Universe
-[Provide a brief story or lore for the game world, highlighting key characters, locations, or events. Explain how the story ties into the gameplay.]
+## Univers
+L’univers de Fever oscille entre centre de réhabilitation dystopique et laboratoire d’observation mentale.
 
+Le joueur entend des pensées d’un narrateur distant, jamais directement adressées à lui sauf ay début et à la fin de l'histoire. À mesure qu’il progresse, il retrouve des morceaux de photo, indices visuels de son ancienne vie.
+
+Chaque salle est construite autour de symboles de mémoire, d’identité, et de regrès.
 ---
 
 ## Release
-[Provide details about the platform, availability, and installation instructions. Mention if the game is available on PC, console, or mobile, and provide links to download or install.]
+Fever est développé pour les plateformes VR compatibles avec Unity 6000.0.34.
+Configuration minimale recommandée :
 
-This game supports **[platform requirements, e.g., Android 5.1+]**.
+Casque VR (Oculus, HTC Vive ou équivalent).
 
----
+Manettes VR pour l’interaction manuelle.
 
-## Development
-This project is currently **[status: finished, in development, etc.]**. Future updates might include **[examples of planned features or fixes]**.  
-
-If you encounter any bugs or have suggestions, please open an **[issue ticket](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/issues/new)**.
+PC avec support VR.
 
 ---
 
-## Special Thanks
-We would like to thank:
-- **[Name 1]**: [Contribution, e.g., mentorship, inspiration]
-- **[Name 2]**: [Contribution]
-- **[Name 3]**: [Contribution]
+## Developpement
+Le projet est en cours.
+
+Cette rubrique sera mit à jour lorsque le projet aura une alpha jouable.
+
+Pour toute contribution ou retour, n'hésitez pas à ouvrir un ticket sur le dépôt GitHub.
+
+
+
+---
+
+## Rmerciements
+Nous remercions chaleureusement :
+
+L’équipe pédagogique de l’École des Nouvelles Images pour son accompagnement.
+
+Frederic Bast, Jérome Cross, Yvan Bladet ainsi que Tommy Ha Phuoc pour les conseils techniques et artistiques.
+
+Nos camarades de promotion pour les retours et les tests.
 
 ---
 
 ## Recommendations
-For the best experience, we recommend playing with **[optimal player setup, equipment, or difficulty settings]**.  
-[Additional recommendations, such as tutorials or preparation tips.]
+Pour une immersion optimale :
+
+Jouez debout dans un espace dégagé 4x3m.
+
+Utilisez des manettes avec votre casque.
+
+Positionnez vous au centre de la pièce et regardez devant vous, tournez la pièce au besoin pour l'adapter à la taille de la salle.
