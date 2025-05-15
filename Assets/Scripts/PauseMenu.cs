@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         _menuButton = InputSystem.actions.FindAction("XRI Left/MenuButton", true);
+        _pauseMenu.SetActive(false);
     }
     private void Start()
     {

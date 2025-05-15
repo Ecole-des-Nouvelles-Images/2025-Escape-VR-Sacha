@@ -53,7 +53,7 @@ namespace SalleIntro.Endgame
 
         private void Activation(string roomID)
         {
-            if (_myRoomID == roomID)
+            if (roomID == _myRoomID)
             {
                 _endGameObject.SetActive(true);
             }
@@ -69,11 +69,11 @@ namespace SalleIntro.Endgame
             _isGoodEnd = isWin;
             if (isWin)
             {
-                GameEvents.OnFadeScreen(_goodEndFaderID, true);
+                GameEvents.OnFadeScreen(_goodEndFaderID, false);
             }
             else
             {
-                GameEvents.OnFadeScreen(_badEndFaderID, true);
+                GameEvents.OnFadeScreen(_badEndFaderID, false);
             }
             _isTimerOn = true;
         }

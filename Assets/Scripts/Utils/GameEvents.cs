@@ -8,6 +8,7 @@
         public static Action OnTeleport;
         public static Action OnIncreaseScore;
         public static Action OnEndGame;
+        public static Action OnTriggerEndGame;
         
         public static Action<bool> OnEnd;
         public static Action<bool> OnDoorOpened;
