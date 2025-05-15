@@ -12,12 +12,12 @@ Partez à la découverte de votre ancienne vie dans un escape game narratif en r
 
 ## Table des Matières
 1. [Introduction](#introduction)
-2. [Team](#team)
+2. [L'Equipe](#team)
 3. [Gameplay](#gameplay)
-4. [Universe](#universe)
+4. [Univers](#universe)
 5. [Release](#release)
-6. [Development](#development)
-7. [Special Thanks](#special-thanks)
+6. [Développement](#development)
+7. [Remerciements](#special-thanks)
 8. [Recommendations](#recommendations)
 
 ---
