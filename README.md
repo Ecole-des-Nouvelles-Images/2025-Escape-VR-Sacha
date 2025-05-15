@@ -50,10 +50,10 @@ Fever est une expérience solo en VR mêlant exploration narrative, manipulation
 Le joueur interagit directement avec l’environnement pour former des mots qui influence la salle dans laquelle il se trouve, déclencher des mécanismes, ou débloquer des souvenirs enfouis.
 
 ### Phase 1: [Phase Name]
-[Describe the first phase of gameplay, objectives, and player actions.]
+TBD
 
 ### Phase 2: [Phase Name]
-[Describe the second phase, any escalating challenges, and goals.]
+TBD
 
 ![Gameplay Screenshot](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/gameplay-screenshot.png)
 
@@ -79,7 +79,7 @@ PC avec support VR.
 
 ---
 
-## Developpement
+## Développement
 Le projet est en cours.
 
 Cette rubrique sera mit à jour lorsque le projet aura une alpha jouable.
@@ -90,7 +90,7 @@ Pour toute contribution ou retour, n'hésitez pas à ouvrir un ticket sur le dé
 
 ---
 
-## Rmerciements
+## Remerciements
 Nous remercions chaleureusement :
 
 L’équipe pédagogique de l’École des Nouvelles Images pour son accompagnement.
