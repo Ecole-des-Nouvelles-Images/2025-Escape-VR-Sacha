@@ -33,7 +33,7 @@ Le développement du jeu s’est étalé sur 9 semaines, incluant la pré-produc
 
 ---
 
-## L'Equipe
+## Equipe
 Ce jeu a été conçu par une équipe de 4 étudiants passionnés :
 - **Sacha Nino**: Game Owner, Artiste
 - **Marine Amrouche**: Lead Artiste
