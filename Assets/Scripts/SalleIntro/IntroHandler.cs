@@ -44,10 +44,10 @@ namespace SalleIntro
             if (Physics.Raycast(ray, out RaycastHit hitInfo, _rayDistance, _lookLayerMask))
             {
                 ScreenComponent target = hitInfo.collider.GetComponent<ScreenComponent>();
-                if (target != null && !_hasLookedAtTarget[target.TargetIndex])
+                if (target && !_hasLookedAtTarget[target.TargetIndex])
                 {
                     _hasLookedAtTarget[target.TargetIndex] = true;
-                    Debug.Log($"Regardé l'objet {target.TargetIndex} !");
+                    //Debug.Log($"Regardé l'objet {target.TargetIndex} !");
                 }
             }
 
