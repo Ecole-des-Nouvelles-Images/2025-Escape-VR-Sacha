@@ -11,7 +11,7 @@ namespace SalleIntro
         {
             if (other.CompareTag("Player"))
             {
-                _introHandler.PlayerMovedToTarget();
+                //_introHandler.PlayerMovedToTarget();
             }
         }
     }
