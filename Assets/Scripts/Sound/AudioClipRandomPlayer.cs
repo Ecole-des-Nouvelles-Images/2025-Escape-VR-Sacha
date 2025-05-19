@@ -11,11 +11,13 @@ namespace Sound
         [SerializeField] private List<AudioClip> _myClipList;
         [SerializeField] private bool _isLooping = true;
         [SerializeField] private bool _isRandomDelay = true;
+        [SerializeField] private bool _dontPlaySameSound;
         [SerializeField] private float _delayTime;
         [SerializeField] private float _minDelayTime;
         [SerializeField] private float _maxDelayTime;
 
         private float _currentDelayTime;
+        private int _lastSoundIndex;
 
         private void Awake()
         {
@@ -44,7 +46,20 @@ namespace Sound
 
         private void SelectRandomClip()
         {
-            _myAudioSource.clip = _myClipList[Random.Range(0, _myClipList.Count - 1)];
+            int newIndex = Random.Range(0, _myClipList.Count-1);
+            if (newIndex == _lastSoundIndex && _dontPlaySameSound)
+            {
+                if (newIndex < _myClipList.Count-1)
+                {
+                    newIndex += 1;
+                }
+                else
+                {
+                    newIndex = 0;
+                }
+            }
+            _lastSoundIndex = newIndex;
+            _myAudioSource.clip = _myClipList[newIndex];
         }
 
         private void ResetDelay()
