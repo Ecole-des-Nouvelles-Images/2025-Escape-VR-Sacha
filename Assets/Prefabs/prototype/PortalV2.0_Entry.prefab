@@ -161,8 +161,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: -0.5}
+  m_Size: {x: 1.6, y: 2, z: 1.3}
+  m_Center: {x: 0, y: 1, z: -0.7}
 --- !u!114 &4760465378390272220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,7 +1007,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.35, y: 0.975, z: -0.05}
-  m_LocalScale: {x: -0.06, y: 1.85, z: 0.04}
+  m_LocalScale: {x: 0.06, y: 1.85, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8845962723630125228}
@@ -1115,7 +1115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.35, y: 0.975, z: -0.05}
-  m_LocalScale: {x: -0.06, y: 1.85, z: 0.04}
+  m_LocalScale: {x: 0.06, y: 1.85, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8845962723630125228}
@@ -1357,8 +1357,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0.5}
+  m_Size: {x: 1.6, y: 2, z: 1.3}
+  m_Center: {x: 0, y: 1, z: 0.7}
 --- !u!114 &1948013004915076270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1507,9 +1507,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6074e2778d2dc2b4095f644c8ad8d98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _portalID: A
+  _portalID: PIntro
   _frontDetector: {fileID: 1948013004915076270}
   _backDetector: {fileID: 4760465378390272220}
+  _portalExit: {fileID: 0}
 --- !u!1 &9087373197112006083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,8 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destinationPortal: {fileID: 0}
-  _isOneUse: 0
-  _destinationRoomID: 
+  _destinationRoomID: C1
 --- !u!54 &2025245547468993086
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,8 +5,7 @@ namespace Props.Portal
 {
     public class TeleportationByContact : MonoBehaviour
     {
-        [SerializeField] private GameObject _destinationPortal;
-        [SerializeField] private bool _isOneUse;
+        [SerializeField] private PortalExit _destinationPortal;
         [SerializeField] private string _destinationRoomID;
         private void OnTriggerEnter(Collider other)
         {
@@ -19,15 +18,12 @@ namespace Props.Portal
         private void Teleport(Transform player)
         {
             GameEvents.OnRoomChanged.Invoke(_destinationRoomID);
+            GameEvents.OnTeleport.Invoke();
             Vector3 offset = player.position - transform.position;
-            offset += _destinationPortal.transform.position;
+            offset += _destinationPortal.TpTarget.position;
             offset.y = player.position.y;
             player.position = offset;
-            if (_isOneUse)
-            {
-                _destinationPortal.SetActive(false);
-                gameObject.SetActive(false);
-            }
+            transform.parent.gameObject.SetActive(false);
         }
     }
 }
