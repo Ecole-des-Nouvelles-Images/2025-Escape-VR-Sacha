@@ -1,79 +1,74 @@
+using System.Collections.Generic;
 using Puzzles;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Utils;
 
 namespace SalleIntro
 {
     public class IntroHandler : Puzzle
     {
-        [FormerlySerializedAs("playerCamera")] [SerializeField] private Transform _playerCamera;
-        private bool _hasMovedToTarget = false;
+        [SerializeField] private string _unlockID;
+        [SerializeField] private List<PedestalComponent> _portalPedestals;
+        [SerializeField] private List<PedestalComponent> _cubePedestals;
 
-        [FormerlySerializedAs("rayDistance")] [SerializeField] private float _rayDistance = 10f;
-        [FormerlySerializedAs("lookLayerMask")] [SerializeField] private LayerMask _lookLayerMask;
-        private bool[] _hasLookedAtTarget;
-        private bool _hasLookedAtAllTargets;
-        private int _totalLookTargets;
+        [SerializeField] private GameObject _numberCube;
+        [SerializeField] private GameObject _finalDoor;
 
-        [FormerlySerializedAs("puzzleTable")] [SerializeField] private GameObject _puzzleTable;
-        private bool _puzzleActivated = false;
+        private bool _portalTriggered;
+        private bool _cubeTriggered;
+        
+        private void OnEnable()
+        {
+            GameEvents.OnKeyboardUnlock += Unlock;
+        }
 
+        private void OnDisable()
+        {
+            GameEvents.OnKeyboardUnlock -= Unlock;
+        }
+        
         private void Start()
         {
-            _totalLookTargets = LayerMask.LayerToName(_lookLayerMask.value) == "" ? 3 : _lookLayerMask.value;
-            _hasLookedAtTarget = new bool[_totalLookTargets];
-            _puzzleTable.SetActive(false);
+            LockPortal();
+            _finalDoor.SetActive(false);
         }
 
-        private void Update()
+        public void CheckPedestalGroups()
         {
-            if (_hasMovedToTarget && !_puzzleActivated && !_hasLookedAtAllTargets)
+            if (!_portalTriggered && AreAllCorrectlyOccupied(_portalPedestals))
             {
-                CheckLookAround();
+                Debug.Log("Portal triggered");
+                UnlockPortal();
+                _portalTriggered = true;
+            }
+
+            if (!_cubeTriggered && AreAllCorrectlyOccupied(_cubePedestals))
+            {
+                Debug.Log("Cube triggered");
+                _numberCube.SetActive(true);
+                _cubeTriggered = true;
             }
         }
 
-        public void PlayerMovedToTarget()
+        private bool AreAllCorrectlyOccupied(List<PedestalComponent> pedestals)
         {
-            _hasMovedToTarget = true;
-        }
-
-        private void CheckLookAround()
-        {
-            Ray ray = new Ray(_playerCamera.position, _playerCamera.forward);
-            if (Physics.Raycast(ray, out RaycastHit hitInfo, _rayDistance, _lookLayerMask))
+            foreach (var pedestal in pedestals)
             {
-                ScreenComponent target = hitInfo.collider.GetComponent<ScreenComponent>();
-                if (target && !_hasLookedAtTarget[target.TargetIndex])
-                {
-                    _hasLookedAtTarget[target.TargetIndex] = true;
-                    //Debug.Log($"Regardé l'objet {target.TargetIndex} !");
-                }
-            }
-
-            if (AllLookTargetsCompleted())
-            {
-                _hasLookedAtAllTargets = true;
-                ActivatePuzzle();
-            }
-        }
-
-        private bool AllLookTargetsCompleted()
-        {
-            foreach (bool looked in _hasLookedAtTarget)
-            {
-                if (!looked) return false;
+                if (!pedestal.IsCorrectlyOccupied)
+                    return false;
             }
             return true;
         }
-
-        private void ActivatePuzzle()
+        
+        private void Unlock(string keyboardUnlockID)
         {
-            _puzzleActivated = true;
-            _puzzleTable.SetActive(true);
-            Debug.Log("Puzzle activé !");
-            
-            //a faire : logique du puzzle, semblable au rail salle 1.
+            if(keyboardUnlockID == _unlockID)
+                Ending();
+        }
+
+        private void Ending()
+        {
+            GameEvents.OnEndGame.Invoke();
         }
     }
 }

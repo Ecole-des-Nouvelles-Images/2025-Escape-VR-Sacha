@@ -10,6 +10,11 @@
         public static Action OnEndGame;
         public static Action OnTriggerEndGame;
         
+        public static Action OnOpenDrawer;
+        public static Action OnOpenTrap;
+        public static Action OnOpenTeddy;
+        public static Action OnUnlockFinalChest;
+        
         public static Action<bool> OnEnd;
         public static Action<bool> OnDoorOpened;
         
