@@ -7,6 +7,7 @@ namespace Puzzles.Corridors
     public class ThirdPuzzle : Puzzle
     {
         [SerializeField] private string _unlockID;
+        [SerializeField] private AudioSource _successAudioSource;
 
         private void OnEnable()
         {
@@ -21,7 +22,10 @@ namespace Puzzles.Corridors
         private void Unlock(string keyboardUnlockID)
         {
             if(keyboardUnlockID == _unlockID)
+            {
+                _successAudioSource.Play();
                 UnlockPortal();
+            }
         }
     }
 }
