@@ -1,50 +1,79 @@
-using System.Collections.Generic;
 using Puzzles;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SalleIntro
 {
     public class IntroHandler : Puzzle
     {
-        [SerializeField] private List<PedestalComponent> _portalPedestals;
-        [SerializeField] private List<PedestalComponent> _cubePedestals;
+        [FormerlySerializedAs("playerCamera")] [SerializeField] private Transform _playerCamera;
+        private bool _hasMovedToTarget = false;
 
-        //[SerializeField] private GameObject _numberCube;
-        //[SerializeField] private GameObject _finalDoor;
+        [FormerlySerializedAs("rayDistance")] [SerializeField] private float _rayDistance = 10f;
+        [FormerlySerializedAs("lookLayerMask")] [SerializeField] private LayerMask _lookLayerMask;
+        private bool[] _hasLookedAtTarget;
+        private bool _hasLookedAtAllTargets;
+        private int _totalLookTargets;
 
-        private bool _portalTriggered;
-        private bool _cubeTriggered;
+        [FormerlySerializedAs("puzzleTable")] [SerializeField] private GameObject _puzzleTable;
+        private bool _puzzleActivated = false;
 
         private void Start()
         {
-            //LockPortal();
+            _totalLookTargets = LayerMask.LayerToName(_lookLayerMask.value) == "" ? 3 : _lookLayerMask.value;
+            _hasLookedAtTarget = new bool[_totalLookTargets];
+            _puzzleTable.SetActive(false);
         }
 
-        public void CheckPedestalGroups()
+        private void Update()
         {
-            if (!_portalTriggered && AreAllCorrectlyOccupied(_portalPedestals))
+            if (_hasMovedToTarget && !_puzzleActivated && !_hasLookedAtAllTargets)
             {
-                //UnlockPortal();
-                Debug.Log("Portal triggered");
-                _portalTriggered = true;
-            }
-
-            if (!_cubeTriggered && AreAllCorrectlyOccupied(_cubePedestals))
-            {
-                //_numberCube.SetActive(true);
-                Debug.Log("Cube triggered");
-                _cubeTriggered = true;
+                CheckLookAround();
             }
         }
 
-        private bool AreAllCorrectlyOccupied(List<PedestalComponent> pedestals)
+        public void PlayerMovedToTarget()
         {
-            foreach (var pedestal in pedestals)
+            _hasMovedToTarget = true;
+        }
+
+        private void CheckLookAround()
+        {
+            Ray ray = new Ray(_playerCamera.position, _playerCamera.forward);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, _rayDistance, _lookLayerMask))
             {
-                if (!pedestal.IsCorrectlyOccupied)
-                    return false;
+                ScreenComponent target = hitInfo.collider.GetComponent<ScreenComponent>();
+                if (target && !_hasLookedAtTarget[target.TargetIndex])
+                {
+                    _hasLookedAtTarget[target.TargetIndex] = true;
+                    //Debug.Log($"Regardé l'objet {target.TargetIndex} !");
+                }
+            }
+
+            if (AllLookTargetsCompleted())
+            {
+                _hasLookedAtAllTargets = true;
+                ActivatePuzzle();
+            }
+        }
+
+        private bool AllLookTargetsCompleted()
+        {
+            foreach (bool looked in _hasLookedAtTarget)
+            {
+                if (!looked) return false;
             }
             return true;
+        }
+
+        private void ActivatePuzzle()
+        {
+            _puzzleActivated = true;
+            _puzzleTable.SetActive(true);
+            Debug.Log("Puzzle activé !");
+            
+            //a faire : logique du puzzle, semblable au rail salle 1.
         }
     }
 }
