@@ -15,6 +15,9 @@ namespace KeyboardAndScreen
         [SerializeField] private Image _displayBackground;
         [SerializeField] private string _keyboardUnlockID;
         [SerializeField] private string _keyInputs;
+        [SerializeField] private AudioSource _successAudioSource;
+        [SerializeField] private AudioClip _successSound;
+        [SerializeField] private AudioClip _failSound;
         
         private string _listInput = "" ;
         private List<int> _values = new List<int>();
@@ -39,11 +42,15 @@ namespace KeyboardAndScreen
             {
                 GameEvents.OnKeyboardUnlock.Invoke(_keyboardUnlockID);
                 _displayBackground.color = Color.green;
+                _successAudioSource.clip = _successSound;
+                _successAudioSource.Play();
             }
             else
             {
                 _listInput = "";
                 Display();
+                _successAudioSource.clip = _failSound;
+                _successAudioSource.Play();
                 _isTimer = true;
             }
         }
