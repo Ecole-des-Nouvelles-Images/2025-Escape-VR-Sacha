@@ -11,6 +11,8 @@ namespace Puzzles.Corridors
         [SerializeField] private GameObject[] _allPuzzleObjects;
         [SerializeField] private GameObject[] _allPuzzleObjectsCopy;
         [SerializeField] private GameObject[] _allKeyObjects;
+        [SerializeField] private AudioSource _myAudioSource;
+        [SerializeField] private AudioSource _successAudioSource;
         [SerializeField] private Material _ghostMat;
         
         private Material _mainMat;
@@ -39,6 +41,8 @@ namespace Puzzles.Corridors
         {
             if (other.CompareTag("KeyObject"))
             {
+                _successAudioSource.Play();
+                _myAudioSource.Play();
                 other.gameObject.SetActive(false);
                 _allKeyObjects[_keyIndex].GetComponent<MeshRenderer>().material = _mainMat;
                 for (int i = 0; i < _allPuzzleObjects.Length; i++)

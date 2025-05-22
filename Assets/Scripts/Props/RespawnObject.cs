@@ -6,6 +6,7 @@ namespace Props
     public class RespawnObject : MonoBehaviour
     {
         [SerializeField] private float _timeBeforeRespawn;
+        [SerializeField] private AudioSource _myAudioSource;
         
         private Vector3 _beginPos;
         private Quaternion _beginRot;
@@ -55,6 +56,7 @@ namespace Props
             transform.position = _beginPos;
             transform.rotation = _beginRot;
             _rigidbody.linearVelocity = Vector3.zero;
+            _myAudioSource.Play();
         }
     }
 }
