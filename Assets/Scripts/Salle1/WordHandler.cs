@@ -48,7 +48,9 @@ namespace Salle1 {
             _openTeddyBear.SetActive(false);
             
             _drawerObjects.ForEach(obj => obj.SetActive(false));
+            _teddyObjects.ForEach(obj => obj.SetActive(false));
             _suitcaseObjects.ForEach(obj => obj.SetActive(false));
+            _chestObjects.ForEach(obj => obj.SetActive(false));
             
             _wordActions.Add("E", OnOpenDrawer);
             _wordActions.Add("PORTE", UnlockPortal);
@@ -139,7 +141,7 @@ namespace Salle1 {
                 StartCoroutine(MoveOverTime(
                     _drawer.transform,
                     _drawer.transform.position,
-                    _drawer.transform.position + Vector3.right * 0.5f,
+                    _drawer.transform.position + Vector3.back * 0.3f,
                     1f
                 ));
                 _drawerObjects.ForEach(obj => obj.SetActive(true));
@@ -164,27 +166,44 @@ namespace Salle1 {
         {
             if (_suitcaseCheck != true)
             {
-                StartCoroutine(MoveOverTime(
+                Quaternion startRotation = _suitcase.transform.rotation;
+                Quaternion endRotation = startRotation * Quaternion.Euler(0f, 30f, 0f);
+
+                StartCoroutine(RotateOverTime(
                     _suitcase.transform,
-                    _suitcase.transform.position,
-                    _suitcase.transform.position + Vector3.right * 0.5f,
+                    startRotation,
+                    endRotation,
                     1f
                 ));
+
                 _suitcaseObjects.ForEach(obj => obj.SetActive(true));
                 _suitcaseCheck = true;
             }
-            
         }
+
         private void OnUnlockFinalChest()
         {
             if (_chestTopCheck != true)
             {
+                Quaternion startRotation = _chestTop.transform.rotation;
+                Quaternion endRotation = startRotation * Quaternion.Euler(70f, 0, 0f);
+
+                StartCoroutine(RotateOverTime(
+                    _chestTop.transform,
+                    startRotation,
+                    endRotation,
+                    1f
+                ));
+                
+                Vector3 moveTarget = _chestTop.transform.position + Vector3.up * 0.1f + Vector3.right * 0.15f;
+                
                 StartCoroutine(MoveOverTime(
                     _chestTop.transform,
                     _chestTop.transform.position,
-                    _chestTop.transform.position + Vector3.right * 0.5f,
+                    _chestTop.transform.position + Vector3.up * 0.1f + Vector3.right * 0.15f + Vector3.forward * 0.01f,
                     1f
                 ));
+                
                 _chestObjects.ForEach(obj => obj.SetActive(true));
                 _chestTopCheck = true;
             }
@@ -200,6 +219,18 @@ namespace Salle1 {
                 yield return null;
             }
             obj.position = to;
+        }
+        
+        private IEnumerator RotateOverTime(Transform target, Quaternion start, Quaternion end, float duration)
+        {
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                target.rotation = Quaternion.Slerp(start, end, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            target.rotation = end;
         }
     }
 }
