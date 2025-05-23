@@ -154,9 +154,9 @@ namespace Salle1 {
             if (_teddyBearCheck != true)
             {
                 Debug.Log("Le nounours s'ouvre !");
-                _openTeddyBear.SetActive(true);
                 _closedTeddyBear.SetActive(false);
-                _drawerObjects.ForEach(obj => obj.SetActive(true));
+                _openTeddyBear.SetActive(true);
+                _teddyObjects.ForEach(obj => obj.SetActive(true));
                 _teddyBearCheck = true;
             }
             
