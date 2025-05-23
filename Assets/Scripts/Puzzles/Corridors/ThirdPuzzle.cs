@@ -21,7 +21,9 @@ namespace Puzzles.Corridors
         private void Unlock(string keyboardUnlockID)
         {
             if(keyboardUnlockID == _unlockID)
+            {
                 UnlockPortal();
+            }
         }
     }
 }
