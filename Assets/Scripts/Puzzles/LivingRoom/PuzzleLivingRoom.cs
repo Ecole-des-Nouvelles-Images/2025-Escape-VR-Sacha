@@ -10,11 +10,13 @@ namespace Puzzles.LivingRoom
     public class PuzzleLivingRoom : Puzzle
     {
         public static readonly int IsCakeOpen = Animator.StringToHash("isCakeOpen");
+        public static readonly int NextOpen = Animator.StringToHash("NextOpen");
         
         [SerializeField] private GameObject[] _candles;
         [SerializeField] private GameObject _lettre;
         [SerializeField] private GameObject[] _candlesSockets;
         [SerializeField] private Animator _cakeAnimator;
+        [SerializeField] private Animator _commodeAnimator;
         [SerializeField] private AudioSource _successAudioSource;
         [SerializeField] private int[] _firstCode;
         [SerializeField] private int[] _secondCode;
@@ -77,6 +79,7 @@ namespace Puzzles.LivingRoom
                     _candles[2].SetActive(true);
                     _candles[4].SetActive(true);
                     _candles[6].SetActive(true);
+                    _commodeAnimator.SetTrigger(NextOpen);
                     GameEvents.OnActualizeClue.Invoke("LivingRoom",1);
                     Debug.Log("passage à l'étape : " + _puzzleStates);
                     break;
@@ -89,6 +92,7 @@ namespace Puzzles.LivingRoom
                     _candles[5].SetActive(true);
                     _candles[7].SetActive(true);
                     _candles[9].SetActive(true);
+                    _commodeAnimator.SetTrigger(NextOpen);
                     GameEvents.OnActualizeClue.Invoke("LivingRoom",2);
                     break;
                 case 3:
@@ -99,6 +103,7 @@ namespace Puzzles.LivingRoom
                     _lettre.SetActive(true);
                     _cakeAnimator.SetBool(IsCakeOpen, true);
                     GameEvents.OnActualizeClue.Invoke("LivingRoom",3);
+                    _commodeAnimator.SetTrigger(NextOpen);
                     UnlockPortal();
                     break;
                 case 4:
