@@ -15,6 +15,7 @@ namespace Puzzles.LivingRoom
         [SerializeField] private GameObject _lettre;
         [SerializeField] private GameObject[] _candlesSockets;
         [SerializeField] private Animator _cakeAnimator;
+        [SerializeField] private AudioSource _successAudioSource;
         [SerializeField] private int[] _firstCode;
         [SerializeField] private int[] _secondCode;
         [SerializeField] private int[] _thirdCode;
@@ -69,6 +70,7 @@ namespace Puzzles.LivingRoom
                 case 1:
                     if (!Helper.IntArrayEquals(_currentCode,_firstCode))
                         return;
+                    _successAudioSource.Play();
                     _puzzleStates = 2;
                     _candlesSockets[1].SetActive(true);
                     _candles[0].SetActive(true);
@@ -81,6 +83,7 @@ namespace Puzzles.LivingRoom
                 case 2:
                     if (!Helper.IntArrayEquals(_currentCode,_secondCode))
                         return;
+                    _successAudioSource.Play();
                     _puzzleStates = 3;
                     _candles[3].SetActive(true);
                     _candles[5].SetActive(true);
@@ -91,6 +94,7 @@ namespace Puzzles.LivingRoom
                 case 3:
                     if (!Helper.IntArrayEquals(_currentCode,_thirdCode))
                         return;
+                    _successAudioSource.Play();
                     _puzzleStates = 4;
                     _lettre.SetActive(true);
                     _cakeAnimator.SetBool(IsCakeOpen, true);
@@ -100,6 +104,7 @@ namespace Puzzles.LivingRoom
                 case 4:
                     if (!Helper.IntArrayEquals(_currentCode,_bonusCode))
                         return;
+                    _successAudioSource.Play();
                     GameEvents.OnIncreaseScore.Invoke();
                     break;
             }
