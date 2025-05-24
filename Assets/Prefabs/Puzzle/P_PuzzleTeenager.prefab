@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 691038845173144997}
   - component: {fileID: 8421425310531787443}
   - component: {fileID: 7931124455137096171}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_CakePlate_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6333220060614382589}
   - component: {fileID: 4517492134105949365}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Decal Projector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 3856016041108892894}
   - component: {fileID: 2710312901844168165}
   - component: {fileID: 6857121640069890794}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NST_CandleHolder_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,6 +505,135 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5588911694889974739, guid: f86eadaa027a6694bbafa99754e50dc5, type: 3}
+--- !u!1 &2985735497281990346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4944120176674757244}
+  - component: {fileID: 6558118806564018650}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4944120176674757244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985735497281990346}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5266374811044333167}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &6558118806564018650
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985735497281990346}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -650453408446036336, guid: d2ea5db0eb65a9c4197e7edd88a8624c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 1d4fc5285ab28834697d9747799b7a4c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1d4fc5285ab28834697d9747799b7a4c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3040690352867882589
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,7 +887,7 @@ GameObject:
   - component: {fileID: 8787883570525724390}
   - component: {fileID: 9009296640601207932}
   - component: {fileID: 3073255690671218372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NST_CakeTop_low (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1175,7 @@ GameObject:
   - component: {fileID: 2143203876861134788}
   - component: {fileID: 3058938682099596828}
   - component: {fileID: 8362511026494029691}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_CakeGlaze_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1971,7 +2100,7 @@ GameObject:
   - component: {fileID: 6078140865154596426}
   - component: {fileID: 3811377233669391961}
   - component: {fileID: 2163351389070624836}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_CakeDeco_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2167,7 +2296,7 @@ GameObject:
   - component: {fileID: 6956199111130093079}
   - component: {fileID: 2600579859038991045}
   - component: {fileID: 6899205641983705012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NST_CandleHolder_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2253,7 +2382,7 @@ GameObject:
   - component: {fileID: 9042465780843753733}
   - component: {fileID: 9132653819871784087}
   - component: {fileID: 3579713063848633401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NST_CandleHolder_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2375,6 +2504,7 @@ Transform:
   - {fileID: 6202722704050845615}
   - {fileID: 5340376635913971300}
   - {fileID: 6333220060614382589}
+  - {fileID: 4944120176674757244}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8080093140813013009
@@ -2407,8 +2537,8 @@ MonoBehaviour:
   - {fileID: 5829235356289809936}
   - {fileID: 6019430090495686644}
   _cakeAnimator: {fileID: 2107637074189705107}
-  _commodeAnimator: {fileID: 0}
-  _successAudioSource: {fileID: 0}
+  _commodeAnimator: {fileID: 4320890547017700073}
+  _successAudioSource: {fileID: 6558118806564018650}
   _firstCode: 020000000000000009000000
   _secondCode: 070000000200000003000000
   _thirdCode: 060000000400000001000000
@@ -2432,8 +2562,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2, y: 0.1, z: 0.2}
-  m_Center: {x: 0.95, y: 0.8, z: -1.4}
+  m_Size: {x: 0.15, y: 0.1, z: 0.15}
+  m_Center: {x: 0.95, y: 0.8, z: -1.44}
 --- !u!1001 &238956737972762922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2509,14 +2639,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 536699924048809002, guid: 5e5dfc4cc4306da40a50760020150757, type: 3}
-      propertyPath: _clues.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305544200734930007, guid: 5e5dfc4cc4306da40a50760020150757, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5784994167241136849, guid: 5e5dfc4cc4306da40a50760020150757, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.0649986
@@ -2560,10 +2682,6 @@ PrefabInstance:
     - target: {fileID: 8431019987264878276, guid: 5e5dfc4cc4306da40a50760020150757, type: 3}
       propertyPath: m_Name
       value: SmartphonePink Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8586309790589302552, guid: 5e5dfc4cc4306da40a50760020150757, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2626,18 +2744,6 @@ PrefabInstance:
     - target: {fileID: 2886431210467794546, guid: 921f3e5fa5a34264a85a3ba5e4f0ef49, type: 3}
       propertyPath: m_Name
       value: SmartphoneBlue Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356987003838346660, guid: 921f3e5fa5a34264a85a3ba5e4f0ef49, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6520390212554859676, guid: 921f3e5fa5a34264a85a3ba5e4f0ef49, type: 3}
-      propertyPath: _clues.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6590903742567469830, guid: 921f3e5fa5a34264a85a3ba5e4f0ef49, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2732,10 +2838,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 923574134831445321, guid: a6f4a44598529bb4e84bc0e7293667e4, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: a6f4a44598529bb4e84bc0e7293667e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9429
@@ -2776,10 +2878,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3790633212511681254, guid: a6f4a44598529bb4e84bc0e7293667e4, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: a6f4a44598529bb4e84bc0e7293667e4, type: 3}
       propertyPath: m_Name
       value: 'Candle[6]'
@@ -2807,14 +2905,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 2106260517535055268, guid: ba4e6cfc6bac05340b1333665ecf0973, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2541136054851255975, guid: ba4e6cfc6bac05340b1333665ecf0973, type: 3}
-      propertyPath: _clues.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5850264399991014473, guid: ba4e6cfc6bac05340b1333665ecf0973, type: 3}
       propertyPath: m_Name
       value: SmartphoneBlack Variant
@@ -2877,10 +2967,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 923574134831445321, guid: 4818162d3191f9b4bae583937ca731f1, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 4818162d3191f9b4bae583937ca731f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2515
@@ -2921,10 +3007,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3790633212511681254, guid: 4818162d3191f9b4bae583937ca731f1, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 4818162d3191f9b4bae583937ca731f1, type: 3}
       propertyPath: m_Name
       value: 'Candle[9]'
@@ -2952,10 +3034,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 923574134831445321, guid: 9890333b38a0bdb4ea0dd3037332547e, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 9890333b38a0bdb4ea0dd3037332547e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2713
@@ -2996,10 +3074,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3790633212511681254, guid: 9890333b38a0bdb4ea0dd3037332547e, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 9890333b38a0bdb4ea0dd3037332547e, type: 3}
       propertyPath: m_Name
       value: 'Candle[5]'
@@ -3027,10 +3101,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 923574134831445321, guid: 0e991539a72d69348a4bf0a96ea3fd8e, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 0e991539a72d69348a4bf0a96ea3fd8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.8623
@@ -3071,10 +3141,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3790633212511681254, guid: 0e991539a72d69348a4bf0a96ea3fd8e, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 0e991539a72d69348a4bf0a96ea3fd8e, type: 3}
       propertyPath: m_Name
       value: 'Candle[4]'
@@ -3102,10 +3168,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 923574134831445321, guid: 8776bb9927c835b4fabfad79eff976cc, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 8776bb9927c835b4fabfad79eff976cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6450003
@@ -3146,10 +3208,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3790633212511681254, guid: 8776bb9927c835b4fabfad79eff976cc, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 8776bb9927c835b4fabfad79eff976cc, type: 3}
       propertyPath: m_Name
       value: 'Candle[8]'
@@ -3177,10 +3235,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 923574134831445321, guid: 9f7d4b437ec8bec4b9c9b860c49ba977, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: 9f7d4b437ec8bec4b9c9b860c49ba977, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1427
@@ -3221,10 +3275,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3790633212511681254, guid: 9f7d4b437ec8bec4b9c9b860c49ba977, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: 9f7d4b437ec8bec4b9c9b860c49ba977, type: 3}
       propertyPath: m_Name
       value: 'Candle[3]'
@@ -3252,10 +3302,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266374811044333167}
     m_Modifications:
-    - target: {fileID: 923574134831445321, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
     - target: {fileID: 1977936238899174659, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1773
@@ -3295,10 +3341,6 @@ PrefabInstance:
     - target: {fileID: 1977936238899174659, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790633212511681254, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4577675128678860566, guid: c3bb89824e665b943b991f42af315ce3, type: 3}
       propertyPath: m_Name
