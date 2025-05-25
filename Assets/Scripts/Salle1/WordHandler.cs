@@ -52,11 +52,11 @@ namespace Salle1 {
             _suitcaseObjects.ForEach(obj => obj.SetActive(false));
             _chestObjects.ForEach(obj => obj.SetActive(false));
             
-            _wordActions.Add("E", OnOpenDrawer);
+            _wordActions.Add("TIROIR", OnOpenDrawer);
             _wordActions.Add("PORTE", UnlockPortal);
-            _wordActions.Add("EE", OnOpenTeddy);
-            _wordActions.Add("EEE", OnOpenSuitCase);
-            _wordActions.Add("EEEE", OnUnlockFinalChest);
+            _wordActions.Add("OURS", OnOpenTeddy);
+            _wordActions.Add("VALISE", OnOpenSuitCase);
+            _wordActions.Add("BOITE", OnUnlockFinalChest);
 
             LockPortal();
         }
