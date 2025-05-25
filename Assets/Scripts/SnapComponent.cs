@@ -14,9 +14,6 @@ public class SnapComponent : MonoBehaviour
     private Rigidbody _rb;
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable _grabInteractable;
 
-    public UnityEvent OnSnapped;
-    public Action<SnapComponent> SnappedCallback;
-
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -70,8 +67,6 @@ public class SnapComponent : MonoBehaviour
         _rb.useGravity = false;
 
         _alreadySnapped = true;
-        OnSnapped?.Invoke();
-        SnappedCallback?.Invoke(this);
 
         if (target.TryGetComponent(out Salle1.EmplacementComponent emplacement))
         {

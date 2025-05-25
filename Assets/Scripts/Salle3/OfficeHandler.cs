@@ -44,7 +44,6 @@ namespace Salle3 {
             }
 
             if (!_puzzleCompleted && snappedCount == _officeObjects.Length) {
-                RoomFinished();
                 UnlockPortal();
                 _puzzleCompleted = true;
                 enabled = false;
@@ -97,12 +96,6 @@ namespace Salle3 {
                 yield return null;
             }
             obj.position = to;
-        }
-
-
-        private void RoomFinished() {
-            UnlockPortal();
-            Debug.Log("La pièce est finie !");
         }
     }
 }
