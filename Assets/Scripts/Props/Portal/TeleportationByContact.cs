@@ -11,7 +11,7 @@ namespace Props.Portal
         {
             if (other.CompareTag("MainCamera"))
             {
-                Debug.Log("TP " + transform.parent.gameObject.name);
+                //Debug.Log("TP " + transform.parent.gameObject.name);
                 Teleport(other.transform.parent.transform);
             }
         }
