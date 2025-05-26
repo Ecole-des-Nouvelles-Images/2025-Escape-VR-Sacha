@@ -45,6 +45,7 @@ namespace Salle3 {
 
             if (!_puzzleCompleted && snappedCount == _officeObjects.Length) {
                 UnlockPortal();
+                Debug.Log("Puzzle is complete");
                 _puzzleCompleted = true;
                 enabled = false;
             }
