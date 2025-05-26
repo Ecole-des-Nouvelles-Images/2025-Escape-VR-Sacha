@@ -79,7 +79,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -180,8 +180,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 61e7463c1014b4c47b303b058fcdb1cc, type: 3}
   _isLooping: 1
   _isRandomDelay: 1
+  _dontPlaySameSound: 0
   _delayTime: 0
-  _minDelayTime: 5
+  _minDelayTime: 10
   _maxDelayTime: 30
 --- !u!164 &5172570762849532150
 AudioReverbFilter:
@@ -352,7 +353,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -457,8 +458,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f7a90e751559af441965573c26f67c09, type: 3}
   _isLooping: 1
   _isRandomDelay: 1
+  _dontPlaySameSound: 0
   _delayTime: 0
-  _minDelayTime: 1
+  _minDelayTime: 5
   _maxDelayTime: 20
 --- !u!164 &7819449879159678355
 AudioReverbFilter:
@@ -529,7 +531,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 242f52eefcb09614688244948f653451, type: 3}
   m_Resource: {fileID: 8300000, guid: 242f52eefcb09614688244948f653451, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -715,7 +717,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -817,8 +819,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 29de10eddc043dc4e89e661e9759bc68, type: 3}
   _isLooping: 1
   _isRandomDelay: 1
+  _dontPlaySameSound: 0
   _delayTime: 0
-  _minDelayTime: 10
+  _minDelayTime: 20
   _maxDelayTime: 60
 --- !u!164 &7287996151460905102
 AudioReverbFilter:
