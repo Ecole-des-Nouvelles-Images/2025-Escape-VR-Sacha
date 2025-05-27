@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Utils;
+using Object = UnityEngine.Object;
 
 namespace Manager
 {
@@ -9,6 +10,7 @@ namespace Manager
         public bool IsGameEnding;
 
         [SerializeField] private int _endScore;
+        
         private int _score;
 
         private void OnEnable()
@@ -18,6 +20,12 @@ namespace Manager
         }
 
         private void OnDisable()
+        {
+            GameEvents.OnIncreaseScore -= IncreaseScore;
+            GameEvents.OnEndGame -= EndgameTriggered;
+        }
+
+        private void OnDestroy()
         {
             GameEvents.OnIncreaseScore -= IncreaseScore;
             GameEvents.OnEndGame -= EndgameTriggered;

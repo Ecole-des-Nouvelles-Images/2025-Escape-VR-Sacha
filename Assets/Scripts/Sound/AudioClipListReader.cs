@@ -1,5 +1,7 @@
 using System;
+using Props;
 using UnityEngine;
+using Utils;
 
 namespace Sound
 {
@@ -8,7 +10,23 @@ namespace Sound
         [SerializeField] private AudioSource _myAudioSource;
         [SerializeField] private AudioClip[] _audioClips;
         [SerializeField] private bool _isLooping;
-        
+        [SerializeField] private string _myBoomboxID;
+
+        private void OnEnable()
+        {
+            GameEvents.OnBoomboxInput += BoomboxEvent;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.OnBoomboxInput -= BoomboxEvent;
+        }
+
+        private void OnDestroy()
+        {
+            GameEvents.OnBoomboxInput -= BoomboxEvent;
+        }
+
         private bool _isPlayingList;
         private int _index;
 
@@ -41,15 +59,47 @@ namespace Sound
             _isPlayingList = true;
             _myAudioSource.clip = _audioClips[_index];
             _myAudioSource.Play();
-            if(_index < _audioClips.Length)
+            if (_index < _audioClips.Length)
                 _index += 1;
-            else if(_isLooping == false)
+            else if (_isLooping == false)
             {
                 _isPlayingList = false;
             }
             else
             {
                 _index = 0;
+            }
+        }
+
+        private void BoomboxEvent(string boomboxID, int commandID)
+        {
+            if (boomboxID == _myBoomboxID)
+            {
+                switch (commandID)
+                {
+                    case 1:
+                        if(_myAudioSource.isPlaying)
+                            _myAudioSource.Pause();
+                        else if(!_myAudioSource.isPlaying && !_isPlayingList)
+                        {
+                            _myAudioSource.Play();
+                        }
+                        else
+                        {
+                            _myAudioSource.UnPause();
+                        }
+                        break;
+                    case 3:
+                        PlayIndexedClip();
+                        break;
+                    case 4:
+                        if (_index == 1)
+                            _index = _audioClips.Length - 1;
+                        if (_index == 0)
+                            _index = _audioClips.Length - 2;
+                        PlayIndexedClip();
+                        break;
+                }
             }
         }
     }
