@@ -59,7 +59,7 @@ namespace Sound
             _isPlayingList = true;
             _myAudioSource.clip = _audioClips[_index];
             _myAudioSource.Play();
-            if (_index < _audioClips.Length)
+            if (_index < _audioClips.Length-1)
                 _index += 1;
             else if (_isLooping == false)
             {
@@ -78,25 +78,35 @@ namespace Sound
                 switch (commandID)
                 {
                     case 1:
+                        Debug.Log("play/pause \n is playing?"+ _myAudioSource.isPlaying  );
                         if(_myAudioSource.isPlaying)
-                            _myAudioSource.Pause();
-                        else if(!_myAudioSource.isPlaying && !_isPlayingList)
                         {
-                            _myAudioSource.Play();
+                            Debug.Log("pause");
+                            _isPlayingList = false;
+                            _myAudioSource.Stop();
                         }
                         else
                         {
-                            _myAudioSource.UnPause();
+                            Debug.Log("play");
+                            _isPlayingList = true;
+                            _myAudioSource.Play();
                         }
                         break;
                     case 3:
+                        Debug.Log("next");
                         PlayIndexedClip();
                         break;
                     case 4:
+                        Debug.Log("previous");
                         if (_index == 1)
                             _index = _audioClips.Length - 1;
-                        if (_index == 0)
+                        else if (_index == 0)
                             _index = _audioClips.Length - 2;
+                        else
+                        {
+                            _index -= 2;
+                        }
+                        Debug.Log("index: "+_index);
                         PlayIndexedClip();
                         break;
                 }

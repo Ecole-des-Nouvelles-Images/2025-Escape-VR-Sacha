@@ -585,7 +585,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3041399797600434410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -662,7 +662,6 @@ GameObject:
   - component: {fileID: 6947260952805916598}
   - component: {fileID: 5075823550671658152}
   - component: {fileID: 5554178853969978278}
-  - component: {fileID: 5258486721126895012}
   m_Layer: 5
   m_Name: "B\u2192Text Poke Button (2)"
   m_TagString: Untagged
@@ -721,7 +720,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
-    m_HighlightedColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
+    m_HighlightedColor: {r: 0.09066844, g: 1, b: 0, a: 1}
     m_PressedColor: {r: 0.38431373, g: 0.38431373, b: 0.38431373, a: 1}
     m_SelectedColor: {r: 0.1254902, g: 0.5882353, b: 0.9529412, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -940,20 +939,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &5258486721126895012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3299935385571730262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e069742158811c344864e85e5749977c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _myVirtualKeyboardSystem: {fileID: 0}
-  _myValue: 7
 --- !u!1 &3370764892301003350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1437,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6194306129209370048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1529,7 +1514,6 @@ GameObject:
   - component: {fileID: 6224548316322110949}
   - component: {fileID: 7834258527830193763}
   - component: {fileID: 5984495351844159713}
-  - component: {fileID: 2103870085534161113}
   m_Layer: 5
   m_Name: BPLAY|PAUSEText Poke Button (1)
   m_TagString: Untagged
@@ -1588,7 +1572,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
-    m_HighlightedColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
+    m_HighlightedColor: {r: 0.091415524, g: 1, b: 0, a: 1}
     m_PressedColor: {r: 0.38431373, g: 0.38431373, b: 0.38431373, a: 1}
     m_SelectedColor: {r: 0.1254902, g: 0.5882353, b: 0.9529412, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1807,20 +1791,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &2103870085534161113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7059518711119424733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e069742158811c344864e85e5749977c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _myVirtualKeyboardSystem: {fileID: 0}
-  _myValue: 7
 --- !u!1 &7237630363163138038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,7 +1905,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7939109025444800971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1943,7 +1913,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3930141859190877785
@@ -2299,7 +2269,6 @@ GameObject:
   - component: {fileID: 7816991941922949739}
   - component: {fileID: 7548040605406760092}
   - component: {fileID: 5436758110621064805}
-  - component: {fileID: 2438037544252790000}
   m_Layer: 5
   m_Name: "B\u2190Text Poke Button"
   m_TagString: Untagged
@@ -2358,7 +2327,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
-    m_HighlightedColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
+    m_HighlightedColor: {r: 0.006182432, g: 1, b: 0, a: 1}
     m_PressedColor: {r: 0.38431373, g: 0.38431373, b: 0.38431373, a: 1}
     m_SelectedColor: {r: 0.1254902, g: 0.5882353, b: 0.9529412, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2577,20 +2546,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &2438037544252790000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8797066245097072736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e069742158811c344864e85e5749977c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _myVirtualKeyboardSystem: {fileID: 0}
-  _myValue: 7
 --- !u!1 &8941027502738024757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,6 +2633,7 @@ GameObject:
   - component: {fileID: 8995714455124058690}
   - component: {fileID: 2233467872382894622}
   - component: {fileID: 839405980006977102}
+  - component: {fileID: 2099797569615381387}
   m_Layer: 7
   m_Name: CanvasScreen (4)
   m_TagString: Untagged
@@ -2703,7 +2659,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.004, y: 0.0023}
-  m_SizeDelta: {x: 2.8, y: 0.6}
+  m_SizeDelta: {x: 2.7, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8995714455124058690
 Canvas:
@@ -2768,3 +2724,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2099797569615381387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146483902119573100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
