@@ -22,6 +22,11 @@ namespace Props
             GameEvents.OnTeleport -= DisableFadeSystem;
         }
 
+        private void OnDestroy()
+        {
+            GameEvents.OnTeleport -= DisableFadeSystem;
+        }
+
         private void Update()
         {
             if (_currentFadeDisableTime > 0 && _isEnable == false)

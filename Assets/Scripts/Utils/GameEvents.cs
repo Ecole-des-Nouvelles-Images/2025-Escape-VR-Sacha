@@ -27,6 +27,7 @@
         public static Action<string,bool>  OnFadeScreen;
         
         public static Action<string, int> OnActualizeClue;
+        public static Action<string, int> OnBoomboxInput;
         
         public static Action<string, float> OnSliderModified;
         
