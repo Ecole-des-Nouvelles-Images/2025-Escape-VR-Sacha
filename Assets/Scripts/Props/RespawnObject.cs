@@ -7,16 +7,19 @@ namespace Props
     {
         [SerializeField] private float _timeBeforeRespawn;
         [SerializeField] private AudioSource _myAudioSource;
+        [SerializeField] private ObjectDetectorByTag _myDetector;
         
         private Vector3 _beginPos;
         private Quaternion _beginRot;
         private float _currentTime;
         private bool _isGrabbed;
         private Rigidbody _rigidbody;
+        
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
+            
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,8 +42,9 @@ namespace Props
                 _isGrabbed = false;
             }
 
-            if (transform.position != _beginPos && !_isGrabbed)
+            if (!_myDetector.ObjectDetected && !_isGrabbed)
             {
+                Debug.Log("Respawn" + gameObject.name);
                 _currentTime += Time.deltaTime;
             }
 
