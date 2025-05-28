@@ -7,8 +7,8 @@ namespace Salle3
         [Tooltip("The real object to mirror.")]
         public Transform originalObject;
 
-        [Tooltip("Offset on the X axis between real and mirrored objects.")]
-        public float mirrorOffsetX = 3f;
+        [Tooltip("The mirror plane position on the X axis.")]
+        private float mirrorPlaneX = 1.5f;
 
         private Vector3 lastPosition;
         private Quaternion lastRotation;
@@ -29,9 +29,9 @@ namespace Salle3
 
         private void MirrorTransform()
         {
-            // Mirror position by applying fixed X offset
+            // Calculate the mirrored position
             Vector3 mirroredPos = originalObject.position;
-            mirroredPos.x += mirrorOffsetX;
+            mirroredPos.x = mirrorPlaneX - (originalObject.position.x - mirrorPlaneX);
             transform.position = mirroredPos;
 
             // Mirror rotation (Y and Z flipped due to -1 scale on X)
@@ -42,4 +42,3 @@ namespace Salle3
         }
     }
 }
-
