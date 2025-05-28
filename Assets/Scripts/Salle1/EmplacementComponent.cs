@@ -4,6 +4,9 @@ namespace Salle1 {
     public class EmplacementComponent : MonoBehaviour
     {
         [SerializeField] private WordHandler _wordHandler;
+        
+        public bool IsOccupied => _currentOccupant != null;
+
 
         public LetterComponent CurrentLetter { get; private set; }
         private SnapComponent _currentOccupant;

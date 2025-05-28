@@ -43,20 +43,35 @@ public class SnapComponent : MonoBehaviour
 
     private void OnReleased(SelectExitEventArgs args)
     {
-        if (_snapTargets == null || _snapTargets.Count == 0) return;
+        Transform bestTarget = null;
+        float bestDistance = float.MaxValue;
 
         foreach (var target in _snapTargets)
         {
             float distance = Vector3.Distance(transform.position, target.position);
             if (distance <= _positionTolerance)
             {
-                Snap(target);
-                return;
+                if (target.TryGetComponent(out Salle1.EmplacementComponent emplacement) && emplacement.IsOccupied)
+                    continue;
+
+                if (distance < bestDistance)
+                {
+                    bestDistance = distance;
+                    bestTarget = target;
+                }
             }
         }
 
-        _rb.useGravity = true;
+        if (bestTarget != null)
+        {
+            Snap(bestTarget);
+        }
+        else
+        {
+            _rb.useGravity = true;
+        }
     }
+
 
     private void Snap(Transform target)
     {
