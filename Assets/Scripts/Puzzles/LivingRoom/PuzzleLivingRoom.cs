@@ -75,10 +75,11 @@ namespace Puzzles.LivingRoom
                     _successAudioSource.Play();
                     _puzzleStates = 2;
                     _candlesSockets[1].SetActive(true);
-                    _candles[0].SetActive(true);
-                    _candles[2].SetActive(true);
-                    _candles[4].SetActive(true);
-                    _candles[6].SetActive(true);
+                    for (int i = 0; i < _candles.Length; i++)
+                    {
+                        if(!_candles[i].activeSelf)
+                            _candles[i].SetActive(true);
+                    }
                     _commodeAnimator.SetTrigger(NextOpen);
                     GameEvents.OnActualizeClue.Invoke("LivingRoom",1);
                     Debug.Log("passage à l'étape : " + _puzzleStates);
@@ -88,11 +89,6 @@ namespace Puzzles.LivingRoom
                         return;
                     _successAudioSource.Play();
                     _puzzleStates = 3;
-                    _candles[3].SetActive(true);
-                    _candles[5].SetActive(true);
-                    _candles[7].SetActive(true);
-                    _candles[9].SetActive(true);
-                    _commodeAnimator.SetTrigger(NextOpen);
                     GameEvents.OnActualizeClue.Invoke("LivingRoom",2);
                     break;
                 case 3:

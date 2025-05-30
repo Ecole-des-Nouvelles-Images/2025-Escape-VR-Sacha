@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3158735409469029820}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4960,7 +4960,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1977936238899174659}
-  - component: {fileID: 923574134831445321}
   - component: {fileID: 3790633212511681254}
   - component: {fileID: 5181364906816419174}
   - component: {fileID: 2405593193786924239}
@@ -4968,6 +4967,7 @@ GameObject:
   - component: {fileID: 5616271851276008436}
   - component: {fileID: 741737112114909569}
   - component: {fileID: 8748908048968815110}
+  - component: {fileID: 5679425637710080809}
   m_Layer: 0
   m_Name: 'Candle[0]'
   m_TagString: Candle
@@ -4983,7 +4983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4577675128678860566}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4991,28 +4991,7 @@ Transform:
   - {fileID: 2322577678697948707}
   - {fileID: 736365598275240807}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &923574134831445321
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4577675128678860566}
-  m_Material: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.02, y: 0.05, z: 0.01}
-  m_Center: {x: 0, y: 0.025, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!54 &3790633212511681254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5021,7 +5000,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4577675128678860566}
   serializedVersion: 4
-  m_Mass: 0.5
+  m_Mass: 0.04
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5333,3 +5312,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &5679425637710080809
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577675128678860566}
+  m_Material: {fileID: 13400000, guid: 590dbebc6f287b940ac52b3dfea3bfc1, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3425401988298614757, guid: a676929a5e8d84f4b8ae55c0c11f8b31, type: 3}
