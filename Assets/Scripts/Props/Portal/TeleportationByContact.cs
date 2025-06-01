@@ -7,6 +7,7 @@ namespace Props.Portal
     {
         [SerializeField] private PortalExit _destinationPortal;
         [SerializeField] private string _destinationRoomID;
+        [SerializeField] private string _openingDialogID;
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("MainCamera"))
@@ -17,6 +18,10 @@ namespace Props.Portal
         }
         private void Teleport(Transform player)
         {
+            if (_openingDialogID != null)
+            {
+                FindAnyObjectByType<DialogManager>().PlayDialogue(_openingDialogID,3f);
+            }
             GameEvents.OnRoomChanged.Invoke(_destinationRoomID);
             GameEvents.OnTeleport.Invoke();
             Vector3 offset = player.position - transform.position;
