@@ -12,6 +12,9 @@ namespace Manager
 
         [SerializeField]private DialogManager _dialogManager;
         
+        [SerializeField]private AudioSource _ambianceAudioSource;
+        [SerializeField] private AudioClip[] _ambiances; 
+        
         
         
         private void OnEnable()
@@ -27,18 +30,9 @@ namespace Manager
         private void Start()
         {
             SwitchActivation("R1");
-            StartCoroutine(PlaySequence());
         }
 
-        private IEnumerator PlaySequence()
-        {
-            _dialogManager.PlayDialogue("1",5f);
-            yield return new WaitWhile(() => _dialogManager.IsDialoguePlaying());
-
-            yield return new WaitForSeconds(1f);
-
-            _dialogManager.PlayDialogue("2");
-        }
+        
         
         private void SwitchActivation(string roomToActivateID)
         {

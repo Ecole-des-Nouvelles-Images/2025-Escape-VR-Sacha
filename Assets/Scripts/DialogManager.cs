@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,22 @@ public class DialogManager : MonoBehaviour
                 Debug.LogWarning($"Dialogue ID '{entry.id}' is duplicated.");
             }
         }
+    }
+
+    private void Start()
+    {
+       
+        StartCoroutine(PlaySequence());
+    }
+    
+    private IEnumerator PlaySequence()
+    {
+        PlayDialogue("1",5f);
+        yield return new WaitWhile(IsDialoguePlaying);
+
+        yield return new WaitForSeconds(1f);
+
+        PlayDialogue("2");
     }
 
     public void PlayDialogue(string id, float delay = 0f)
