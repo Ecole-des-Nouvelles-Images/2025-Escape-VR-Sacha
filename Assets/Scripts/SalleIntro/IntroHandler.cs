@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Puzzles;
 using UnityEngine;
@@ -26,6 +27,8 @@ namespace SalleIntro
         private bool _lookDone;
         private HashSet<ScreenComponent> _screensLookedAt = new HashSet<ScreenComponent>();
 
+        [SerializeField] private DialogManager _dialogManager;
+
         private void OnEnable()
         {
             GameEvents.OnKeyboardUnlock += Unlock;
@@ -53,6 +56,8 @@ namespace SalleIntro
             _movementDone = true;
             HighlightTile(false);
             CheckTutorialProgress();
+            
+            _dialogManager.PlayDialogue("3",1f);
         }
 
         public void RegisterScreenLook(ScreenComponent screen)
@@ -74,7 +79,19 @@ namespace SalleIntro
             {
                 Debug.Log("Tutorial complete, enabling pedestals.");
                 _pedestalObjectsGroup.SetActive(true);
+                
+                StartCoroutine(PlaySequence());
             }
+        }
+        
+        private IEnumerator PlaySequence()
+        {
+            _dialogManager.PlayDialogue("4",1f);
+            yield return new WaitWhile(() => _dialogManager.IsDialoguePlaying());
+
+            yield return new WaitForSeconds(1f);
+
+            _dialogManager.PlayDialogue("5", 60f);
         }
 
         private void HighlightTile(bool highlight)
@@ -91,6 +108,8 @@ namespace SalleIntro
                 Debug.Log("Portal triggered");
                 UnlockPortal();
                 _portalTriggered = true;
+                
+                _dialogManager.PlayDialogue("6",1f);
             }
 
             if (!_cubeTriggered && AreAllCorrectlyOccupied(_cubePedestals))
@@ -98,6 +117,7 @@ namespace SalleIntro
                 Debug.Log("Cube triggered");
                 _numberCube.SetActive(true);
                 _cubeTriggered = true;
+                _dialogManager.PlayDialogue("13");
             }
         }
 
@@ -119,6 +139,7 @@ namespace SalleIntro
 
         private void Ending()
         {
+            _dialogManager.PlayDialogue("14");
             GameEvents.OnEndGame.Invoke();
         }
     }

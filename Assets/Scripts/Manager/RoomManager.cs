@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Utils;
 
@@ -8,8 +9,10 @@ namespace Manager
     {
         [SerializeField] private GameObject[] _rooms;
         [SerializeField] private GameObject[] _corridors;
-        [SerializeField] private AudioClip[] _ambiances;
-        [SerializeField] private AudioSource _ambianceAudioSource;
+
+        [SerializeField]private DialogManager _dialogManager;
+        
+        
         
         private void OnEnable()
         {
@@ -24,8 +27,19 @@ namespace Manager
         private void Start()
         {
             SwitchActivation("R1");
+            StartCoroutine(PlaySequence());
         }
 
+        private IEnumerator PlaySequence()
+        {
+            _dialogManager.PlayDialogue("1",5f);
+            yield return new WaitWhile(() => _dialogManager.IsDialoguePlaying());
+
+            yield return new WaitForSeconds(1f);
+
+            _dialogManager.PlayDialogue("2");
+        }
+        
         private void SwitchActivation(string roomToActivateID)
         {
             switch (roomToActivateID)

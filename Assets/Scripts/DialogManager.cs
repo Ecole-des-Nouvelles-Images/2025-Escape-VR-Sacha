@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class DialogManager : MonoBehaviour
     private Dictionary<string, DialogueEntry> _dialogueMap;
 
     private AudioSource _audioSource;
+    private Coroutine _pendingDialogue;
 
     private void Awake()
     {
@@ -35,25 +37,29 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void PlayDialogue(string id)
+    public void PlayDialogue(string id, float delay = 0f)
     {
-        if (_dialogueMap.ContainsKey(id))
+        if (_dialogueMap.TryGetValue(id, out DialogueEntry dialogue) && dialogue.clip != null)
         {
-            var dialogue = _dialogueMap[id];
-            if (dialogue.clip != null)
-            {
-                _audioSource.clip = dialogue.clip;
-                _audioSource.Play();
-            }
-            else
-            {
-                Debug.LogWarning($"AudioClip missing for dialogue '{id}'.");
-            }
+            if (_pendingDialogue != null)
+                StopCoroutine(_pendingDialogue);
+
+            _pendingDialogue = StartCoroutine(PlayWithDelay(dialogue.clip, delay));
         }
         else
         {
-            Debug.LogWarning($"Dialogue ID '{id}' not found.");
+            Debug.LogWarning($"Dialogue ID '{id}' not found or missing AudioClip.");
         }
+    }
+
+    private IEnumerator PlayWithDelay(AudioClip clip, float delay)
+    {
+        if (delay > 0f)
+            yield return new WaitForSeconds(delay);
+
+        _audioSource.clip = clip;
+        _audioSource.Play();
+        _pendingDialogue = null;
     }
 
     public bool IsDialoguePlaying()

@@ -119,6 +119,191 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &944032643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944032644}
+  - component: {fileID: 944032646}
+  - component: {fileID: 944032645}
+  m_Layer: 0
+  m_Name: DialogHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &944032644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944032643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 534343756802943290}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &944032645
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944032643}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2207173888504735313, guid: d2ea5db0eb65a9c4197e7edd88a8624c, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &944032646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944032643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b2e6a3970fc30408b01dbfe6690316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues:
+  - id: 1
+    clip: {fileID: 8300000, guid: dd54aea415cdffe4f858e1f7dcd090af, type: 3}
+    transcript: 
+  - id: 2
+    clip: {fileID: 8300000, guid: de284b2168264f641b1c5d96a39dea43, type: 3}
+    transcript: 
+  - id: 3
+    clip: {fileID: 8300000, guid: 30518bc3985a555469c9c4c53da7d3f8, type: 3}
+    transcript: 
+  - id: 4
+    clip: {fileID: 8300000, guid: e29648adcd479c1428ccc209cc71a081, type: 3}
+    transcript: 
+  - id: 5
+    clip: {fileID: 8300000, guid: 7860781356c73064085738f1cd6a0d34, type: 3}
+    transcript: 
+  - id: 6
+    clip: {fileID: 8300000, guid: 16daeca261af21247bee2d5b19a13896, type: 3}
+    transcript: 
+  - id: 7
+    clip: {fileID: 8300000, guid: 1dd1039c599718f4f8e70318de68ebb8, type: 3}
+    transcript: 
+  - id: 8
+    clip: {fileID: 8300000, guid: ca55f53b57671f647b44a4d7aa384509, type: 3}
+    transcript: 
+  - id: 9
+    clip: {fileID: 8300000, guid: 216145a822bd9aa43a1b9e6413548c84, type: 3}
+    transcript: 
+  - id: 10
+    clip: {fileID: 8300000, guid: 06ef4250f4899fd40bfbbdb2cd2d4cda, type: 3}
+    transcript: 
+  - id: 11
+    clip: {fileID: 8300000, guid: 0107c139e5b7b2f44b9bebf7f63c99d2, type: 3}
+    transcript: 
+  - id: 12
+    clip: {fileID: 8300000, guid: 9f7dfaf0d19399a44b27c504bcc07664, type: 3}
+    transcript: 
+  - id: 13
+    clip: {fileID: 8300000, guid: 4e8e0f4baf5956846a7300b2051e83ec, type: 3}
+    transcript: 
+  - id: 14
+    clip: {fileID: 8300000, guid: 7d8e3962515201e419c12adb2f6096cb, type: 3}
+    transcript: 
 --- !u!1 &1477831105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,7 +3868,8 @@ Transform:
   m_LocalPosition: {x: -0.19378006, y: 0, z: -9.388239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 944032644}
   m_Father: {fileID: 434701443637358200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &536036942321314287
@@ -48137,6 +48323,7 @@ MonoBehaviour:
   - {fileID: 7637915513195143440}
   - {fileID: 7637915513195143440}
   _pedestalObjectsGroup: {fileID: 1477831105}
+  _dialogManager: {fileID: 0}
 --- !u!4 &7010685975544762453
 Transform:
   m_ObjectHideFlags: 0
@@ -53873,6 +54060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rooms: []
   _corridors: []
+  _dialogManager: {fileID: 0}
 --- !u!54 &7875965794747407226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -63047,7 +63235,7 @@ MonoBehaviour:
     m_VignetteColorBlend: {r: 0, g: 0, b: 0, a: 1}
     m_ApertureVerticalPosition: 0
   m_LocomotionVignetteProviders:
-  - m_LocomotionProvider: {fileID: 5726065502377185249}
+  - m_LocomotionProvider: {fileID: 0}
     m_Enabled: 1
     m_OverrideDefaultParameters: 0
     m_OverrideParameters:
