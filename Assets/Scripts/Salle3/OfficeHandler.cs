@@ -15,7 +15,9 @@ namespace Salle3 {
         [SerializeField] private XRGrabInteractable _closetObjectGrab;
         
         [SerializeField] private GameObject _drawer;
+        [SerializeField] private GameObject _drawerMirror;
         [SerializeField] private GameObject _closetDoor1, _closetDoor2;
+        [SerializeField] private GameObject _closetDoorMirror1, _closetDoorMirror2;
 
         private void Start() {
             if (_officeObjects == null || _officeObjects.Length == 0) {
@@ -34,7 +36,7 @@ namespace Salle3 {
                 _lastStepReached = snappedCount;
 
                 switch (_lastStepReached) {
-                    case 1:
+                    case 2:
                         OpenDrawer();
                         break;
                     case 3:
@@ -44,8 +46,8 @@ namespace Salle3 {
             }
 
             if (!_puzzleCompleted && snappedCount == _officeObjects.Length) {
-                RoomFinished();
                 UnlockPortal();
+                Debug.Log("Puzzle is complete");
                 _puzzleCompleted = true;
                 enabled = false;
             }
@@ -66,6 +68,11 @@ namespace Salle3 {
             StartCoroutine(MoveOverTime(_drawer.transform, startPos, targetPos, 1f));
             Debug.Log("Le tiroir s'ouvre !");
             _drawerMirrorObject.SetActive(true);
+            
+            Vector3 mirrorStart = _drawerMirror.transform.position;
+            Vector3 mirrorTarget = mirrorStart + Vector3.left * 0.5f;
+
+            StartCoroutine(MoveOverTime(_drawerMirror.transform, mirrorStart, mirrorTarget, 1f));
         }
 
 
@@ -83,6 +90,20 @@ namespace Salle3 {
                 _closetDoor2.transform.position + Vector3.left * 0.5f,
                 1f
             ));
+            
+            StartCoroutine(MoveOverTime(
+                _closetDoorMirror1.transform,
+                _closetDoorMirror1.transform.position,
+                _closetDoorMirror1.transform.position + Vector3.left * 0.5f,
+                1f
+            ));
+
+            StartCoroutine(MoveOverTime(
+                _closetDoorMirror2.transform,
+                _closetDoorMirror2.transform.position,
+                _closetDoorMirror2.transform.position + Vector3.right * 0.5f,
+                1f
+            ));
 
             Debug.Log("L'armoire est ouverte !");
             _closetObjectGrab.enabled = true;
@@ -97,12 +118,6 @@ namespace Salle3 {
                 yield return null;
             }
             obj.position = to;
-        }
-
-
-        private void RoomFinished() {
-            UnlockPortal();
-            Debug.Log("La pièce est finie !");
         }
     }
 }

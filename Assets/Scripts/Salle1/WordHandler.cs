@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Puzzles;
 using UnityEngine;
+using Utils;
 
 namespace Salle1 {
     public class WordHandler : Puzzle
@@ -15,6 +16,10 @@ namespace Salle1 {
             public Action OnWordCorrect;
         }
 
+        [SerializeField] private SnapComponent[] _pictureObjects;
+        private bool _puzzleCompleted = false;
+        private int _lastStepReached = 0;
+        
         [SerializeField] private List<EmplacementComponent> _emplacements;
 
         [SerializeField] private GameObject _drawer;
@@ -23,10 +28,15 @@ namespace Salle1 {
         [SerializeField] private GameObject _suitcase;
         [SerializeField] private GameObject _chestTop;
         
+        private bool _drawerCheck;
+        private bool _teddyBearCheck;
+        private bool _suitcaseCheck;
+        private bool _chestTopCheck;
         
-        //[SerializeField] private List<GameObject> _teddyObjects;
         [SerializeField] private List<GameObject> _drawerObjects;
+        [SerializeField] private List<GameObject> _teddyObjects;
         [SerializeField] private List<GameObject> _suitcaseObjects;
+        [SerializeField] private List<GameObject> _chestObjects;
 
         private Dictionary<string, Action> _wordActions = new Dictionary<string, Action>();
 
@@ -34,18 +44,51 @@ namespace Salle1 {
 
         private void Start()
         {
-            _closedTeddyBear.SetActive(false);
+            _closedTeddyBear.SetActive(true);
+            _openTeddyBear.SetActive(false);
             
             _drawerObjects.ForEach(obj => obj.SetActive(false));
+            _teddyObjects.ForEach(obj => obj.SetActive(false));
             _suitcaseObjects.ForEach(obj => obj.SetActive(false));
+            _chestObjects.ForEach(obj => obj.SetActive(false));
             
-            _wordActions.Add("OUVRE", OnOpenDrawer);
-            _wordActions.Add("PORTE", OnOpenDoor);
+            _wordActions.Add("TIROIR", OnOpenDrawer);
+            _wordActions.Add("PORTE", UnlockPortal);
             _wordActions.Add("OURS", OnOpenTeddy);
             _wordActions.Add("VALISE", OnOpenSuitCase);
-            _wordActions.Add("SOUVENIR", OnUnlockFinalChest);
+            _wordActions.Add("BOITE", OnUnlockFinalChest);
 
             LockPortal();
+        }
+        
+        private void Update() {
+            int snappedCount = CountSnappedObjects();
+
+            if (snappedCount > _lastStepReached) {
+                _lastStepReached = snappedCount;
+
+                switch (_lastStepReached) {
+                    case 3:
+                        Debug.Log("aaaa");
+                        GameEvents.OnIncreaseScore.Invoke();
+                        break;
+                }
+            }
+
+            if (!_puzzleCompleted && snappedCount == _pictureObjects.Length) {
+                UnlockPortal();
+                _puzzleCompleted = true;
+                enabled = false;
+            }
+        }
+
+        private int CountSnappedObjects() {
+            int count = 0;
+            foreach (var obj in _pictureObjects) {
+                if (obj.IsSnapped)
+                    count++;
+            }
+            return count;
         }
 
         public List<Transform> GetEmplacements()
@@ -92,46 +135,79 @@ namespace Salle1 {
 
         private void OnOpenDrawer()
         {
-            Debug.Log("Le tiroir s'ouvre !");
-            StartCoroutine(MoveOverTime(
-                _drawer.transform,
-                _drawer.transform.position,
-                _drawer.transform.position + Vector3.right * 0.5f,
-                1f
-            ));
-            _drawerObjects.ForEach(obj => obj.SetActive(true));
+            if (_drawerCheck != true)
+            {
+                Debug.Log("Le tiroir s'ouvre !");
+                StartCoroutine(MoveOverTime(
+                    _drawer.transform,
+                    _drawer.transform.position,
+                    _drawer.transform.position + Vector3.back * 0.3f,
+                    1f
+                ));
+                _drawerObjects.ForEach(obj => obj.SetActive(true));
+                _drawerCheck = true;
+            }
         }
-
-        private void OnOpenDoor()
-        {
-            UnlockPortal();
-            Debug.Log("La porte s'ouvre !");
-        }
+        
         private void OnOpenTeddy()
         {
-            _openTeddyBear.SetActive(false);
-            _closedTeddyBear.SetActive(true);
-            Debug.Log("Le nounours s'ouvre !");
+            if (_teddyBearCheck != true)
+            {
+                Debug.Log("Le nounours s'ouvre !");
+                _closedTeddyBear.SetActive(false);
+                _openTeddyBear.SetActive(true);
+                _teddyObjects.ForEach(obj => obj.SetActive(true));
+                _teddyBearCheck = true;
+            }
+            
         }
 
         private void OnOpenSuitCase()
         {
-            StartCoroutine(MoveOverTime(
-                _suitcase.transform,
-                _suitcase.transform.position,
-                _suitcase.transform.position + Vector3.right * 0.5f,
-                1f
-            ));
-            _suitcaseObjects.ForEach(obj => obj.SetActive(true));
+            if (_suitcaseCheck != true)
+            {
+                Quaternion startRotation = _suitcase.transform.rotation;
+                Quaternion endRotation = startRotation * Quaternion.Euler(0f, 30f, 0f);
+
+                StartCoroutine(RotateOverTime(
+                    _suitcase.transform,
+                    startRotation,
+                    endRotation,
+                    1f
+                ));
+
+                _suitcaseObjects.ForEach(obj => obj.SetActive(true));
+                _suitcaseCheck = true;
+            }
         }
+
         private void OnUnlockFinalChest()
         {
-            StartCoroutine(MoveOverTime(
-                _chestTop.transform,
-                _chestTop.transform.position,
-                _chestTop.transform.position + Vector3.right * 0.5f,
-                1f
-            ));
+            if (_chestTopCheck != true)
+            {
+                Quaternion startRotation = _chestTop.transform.rotation;
+                Quaternion endRotation = startRotation * Quaternion.Euler(70f, 0, 0f);
+
+                StartCoroutine(RotateOverTime(
+                    _chestTop.transform,
+                    startRotation,
+                    endRotation,
+                    1f
+                ));
+                
+                Vector3 moveTarget = _chestTop.transform.position + Vector3.up * 0.1f + Vector3.right * 0.15f;
+                
+                StartCoroutine(MoveOverTime(
+                    _chestTop.transform,
+                    _chestTop.transform.position,
+                    _chestTop.transform.position + Vector3.up * 0.1f + Vector3.right * 0.15f + Vector3.forward * 0.01f,
+                    1f
+                ));
+                
+                _chestObjects.ForEach(obj => obj.SetActive(true));
+                _chestTopCheck = true;
+            }
+            
         }
         
         private IEnumerator MoveOverTime(Transform obj, Vector3 from, Vector3 to, float duration) {
@@ -143,6 +219,18 @@ namespace Salle1 {
                 yield return null;
             }
             obj.position = to;
+        }
+        
+        private IEnumerator RotateOverTime(Transform target, Quaternion start, Quaternion end, float duration)
+        {
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                target.rotation = Quaternion.Slerp(start, end, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            target.rotation = end;
         }
     }
 }

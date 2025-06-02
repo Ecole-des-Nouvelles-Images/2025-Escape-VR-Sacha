@@ -21,7 +21,11 @@ namespace Utils
             {
                 for (int i = 0; i < arrayObjects.Length; i++)
                 {
-                    if (i != objectNumber - 1)
+                    if (objectNumber == arrayObjects.Length && i != objectNumber - 1 && i != 0)
+                    {
+                        arrayObjects[i].SetActive(false);
+                    }
+                    else if (i != objectNumber - 1 && i != objectNumber)
                         arrayObjects[i].SetActive(false);
                     else
                         arrayObjects[i].SetActive(true);
