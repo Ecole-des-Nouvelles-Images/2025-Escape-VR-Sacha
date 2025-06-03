@@ -8,7 +8,7 @@ namespace SalleIntro
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("MainCamera"))
             {
                 _introHandler.OnPlayerStepOnTile();
             }

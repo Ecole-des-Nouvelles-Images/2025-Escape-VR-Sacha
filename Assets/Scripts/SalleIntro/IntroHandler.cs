@@ -14,19 +14,18 @@ namespace SalleIntro
         [SerializeField] private List<PedestalComponent> _portalPedestals;
         [SerializeField] private List<PedestalComponent> _cubePedestals;
         [SerializeField] private GameObject _numberCube;
-        [SerializeField] private GameObject _finalDoor;
 
         [Header("Tutorial Objects")]
         [SerializeField] private GameObject _tileTutorialObject;
-        [SerializeField] private List<ScreenComponent> _lookScreens;
+        //[SerializeField] private List<ScreenComponent> _lookScreens;
         [SerializeField] private GameObject _pedestalObjectsGroup;
 
         private bool _portalTriggered;
         private bool _cubeTriggered;
 
         private bool _movementDone;
-        private bool _lookDone;
-        private HashSet<ScreenComponent> _screensLookedAt = new HashSet<ScreenComponent>();
+        //private bool _lookDone;
+        //private HashSet<ScreenComponent> _screensLookedAt = new HashSet<ScreenComponent>();
 
         [SerializeField] private DialogManager _dialogManager;
 
@@ -43,7 +42,6 @@ namespace SalleIntro
         private void Start()
         {
             LockPortal();
-            _finalDoor.SetActive(false);
             _numberCube.SetActive(false);
             _pedestalObjectsGroup.SetActive(false); // hidden until tutorial complete
 
@@ -57,11 +55,9 @@ namespace SalleIntro
             _movementDone = true;
             HighlightTile(false);
             CheckTutorialProgress();
-            
-            _dialogManager.PlayDialogue("3",1f);
         }
 
-        public void RegisterScreenLook(ScreenComponent screen)
+        /*public void RegisterScreenLook(ScreenComponent screen)
         {
             if (!_screensLookedAt.Contains(screen))
             {
@@ -72,11 +68,11 @@ namespace SalleIntro
                     CheckTutorialProgress();
                 }
             }
-        }
+        }*/
 
         private void CheckTutorialProgress()
         {
-            if (_movementDone && _lookDone)
+            if (_movementDone /*&& _lookDone*/)
             {
                 Debug.Log("Tutorial complete, enabling pedestals.");
                 _pedestalObjectsGroup.SetActive(true);

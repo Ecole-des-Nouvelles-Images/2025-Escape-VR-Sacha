@@ -4,7 +4,7 @@ namespace SalleIntro
 {
     public class LookTutorial : MonoBehaviour
     {
-        [SerializeField] private Camera _playerCamera;
+        /*[SerializeField] private Camera _playerCamera;
         [SerializeField] private float _lookDistance = 30f;
         [SerializeField] private LayerMask _screenLayer;
         [SerializeField] private IntroHandler _introHandler;
@@ -20,6 +20,6 @@ namespace SalleIntro
                     _introHandler.RegisterScreenLook(screen);
                 }
             }
-        }
+        }*/
     }
 }
