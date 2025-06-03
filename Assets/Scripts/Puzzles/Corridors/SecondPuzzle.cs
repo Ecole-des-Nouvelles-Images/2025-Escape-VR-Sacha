@@ -22,7 +22,7 @@ namespace Puzzles.Corridors
         {
             for (int i = 0; i < _allPuzzleObjectsCopy.Length; i++)
             {
-                if(_allPuzzleObjectsCopy[i].activeSelf)
+                if(_allPuzzleObjectsCopy[i]&&_allPuzzleObjectsCopy[i].activeSelf)
                     _allPuzzleObjectsCopy[i].SetActive(false);
             }
         }
