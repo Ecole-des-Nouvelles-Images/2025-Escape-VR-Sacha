@@ -17,15 +17,11 @@ namespace SalleIntro
 
         [Header("Tutorial Objects")]
         [SerializeField] private GameObject _tileTutorialObject;
-        //[SerializeField] private List<ScreenComponent> _lookScreens;
         [SerializeField] private GameObject _pedestalObjectsGroup;
 
         private bool _portalTriggered;
         private bool _cubeTriggered;
-
         private bool _movementDone;
-        //private bool _lookDone;
-        //private HashSet<ScreenComponent> _screensLookedAt = new HashSet<ScreenComponent>();
 
         [SerializeField] private DialogManager _dialogManager;
 
@@ -57,19 +53,6 @@ namespace SalleIntro
             CheckTutorialProgress();
         }
 
-        /*public void RegisterScreenLook(ScreenComponent screen)
-        {
-            if (!_screensLookedAt.Contains(screen))
-            {
-                _screensLookedAt.Add(screen);
-                if (_screensLookedAt.Count >= _lookScreens.Count)
-                {
-                    _lookDone = true;
-                    CheckTutorialProgress();
-                }
-            }
-        }*/
-
         private void CheckTutorialProgress()
         {
             if (_movementDone /*&& _lookDone*/)
@@ -77,18 +60,8 @@ namespace SalleIntro
                 Debug.Log("Tutorial complete, enabling pedestals.");
                 _pedestalObjectsGroup.SetActive(true);
                 
-                StartCoroutine(PlaySequence());
+                _dialogManager.PlayDialogue("4",1f);
             }
-        }
-        
-        private IEnumerator PlaySequence()
-        {
-            _dialogManager.PlayDialogue("4",1f);
-            yield return new WaitWhile(() => _dialogManager.IsDialoguePlaying());
-
-            yield return new WaitForSeconds(1f);
-
-            _dialogManager.PlayDialogue("5", 60f);
         }
 
         private void HighlightTile(bool highlight)

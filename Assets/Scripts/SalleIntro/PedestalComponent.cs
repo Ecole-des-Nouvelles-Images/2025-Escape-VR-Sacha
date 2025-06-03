@@ -4,34 +4,20 @@ namespace SalleIntro
 {
     public class PedestalComponent : MonoBehaviour
     {
-        public bool IsCorrectlyOccupied => _activeObject == _targetObject;
-
         [SerializeField] private GameObject _targetObject;
         [SerializeField] private IntroHandler _introHandler;
 
-        private GameObject _activeObject;
+        private SnapComponent _currentSnap;
 
-        private void OnTriggerEnter(Collider other)
+        private void Awake()
         {
-            if (_activeObject == null && IsValidObject(other))
-            {
-                _activeObject = other.gameObject;
-                _introHandler.CheckPedestalGroups();
-            }
+            if (_targetObject != null)
+                _currentSnap = _targetObject.GetComponent<SnapComponent>();
         }
 
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.gameObject == _activeObject)
-            {
-                _activeObject = null;
-                _introHandler.CheckPedestalGroups();
-            }
-        }
-
-        private bool IsValidObject(Collider other)
-        {
-            return other.CompareTag("SnapObject");
-        }
+        public bool IsCorrectlyOccupied => 
+            _currentSnap != null &&
+            _currentSnap.IsSnapped &&
+            Vector3.Distance(_currentSnap.transform.position, transform.position) < 0.01f;
     }
 }

@@ -9265,6 +9265,191 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805029210}
   m_Mesh: {fileID: 2951476004903988076, guid: f86eadaa027a6694bbafa99754e50dc5, type: 3}
+--- !u!1 &1806697816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806697817}
+  - component: {fileID: 1806697819}
+  - component: {fileID: 1806697818}
+  m_Layer: 0
+  m_Name: DialogHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806697817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806697816}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8120537117276794565}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1806697818
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806697816}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2207173888504735313, guid: d2ea5db0eb65a9c4197e7edd88a8624c, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1806697819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806697816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b2e6a3970fc30408b01dbfe6690316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues:
+  - id: 1
+    clip: {fileID: 8300000, guid: dd54aea415cdffe4f858e1f7dcd090af, type: 3}
+    transcript: 
+  - id: 2
+    clip: {fileID: 8300000, guid: de284b2168264f641b1c5d96a39dea43, type: 3}
+    transcript: 
+  - id: 3
+    clip: {fileID: 8300000, guid: 30518bc3985a555469c9c4c53da7d3f8, type: 3}
+    transcript: 
+  - id: 4
+    clip: {fileID: 8300000, guid: e29648adcd479c1428ccc209cc71a081, type: 3}
+    transcript: 
+  - id: 5
+    clip: {fileID: 8300000, guid: 7860781356c73064085738f1cd6a0d34, type: 3}
+    transcript: 
+  - id: 6
+    clip: {fileID: 8300000, guid: 16daeca261af21247bee2d5b19a13896, type: 3}
+    transcript: 
+  - id: 7
+    clip: {fileID: 8300000, guid: 1dd1039c599718f4f8e70318de68ebb8, type: 3}
+    transcript: 
+  - id: 8
+    clip: {fileID: 8300000, guid: ca55f53b57671f647b44a4d7aa384509, type: 3}
+    transcript: 
+  - id: 9
+    clip: {fileID: 8300000, guid: 216145a822bd9aa43a1b9e6413548c84, type: 3}
+    transcript: 
+  - id: 10
+    clip: {fileID: 8300000, guid: 06ef4250f4899fd40bfbbdb2cd2d4cda, type: 3}
+    transcript: 
+  - id: 11
+    clip: {fileID: 8300000, guid: 0107c139e5b7b2f44b9bebf7f63c99d2, type: 3}
+    transcript: 
+  - id: 12
+    clip: {fileID: 8300000, guid: 9f7dfaf0d19399a44b27c504bcc07664, type: 3}
+    transcript: 
+  - id: 13
+    clip: {fileID: 8300000, guid: 4e8e0f4baf5956846a7300b2051e83ec, type: 3}
+    transcript: 
+  - id: 14
+    clip: {fileID: 8300000, guid: 7d8e3962515201e419c12adb2f6096cb, type: 3}
+    transcript: 
 --- !u!1 &1839525101
 GameObject:
   m_ObjectHideFlags: 0
@@ -18852,7 +19037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _openingDialogID
-      value: 1
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _destinationPortal
@@ -59734,7 +59919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _openingDialogID
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _destinationPortal
@@ -63536,7 +63721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _openingDialogID
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _destinationPortal
@@ -84619,7 +84804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _openingDialogID
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _destinationPortal
@@ -100457,7 +100642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _openingDialogID
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _destinationPortal
@@ -107258,6 +107443,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 461275116}
+  - {fileID: 1806697817}
   m_Father: {fileID: 845309397784982568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8121504684120528030
@@ -114451,7 +114637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _openingDialogID
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _destinationPortal
@@ -118966,7 +119152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _openingDialogID
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9210645142077631480, guid: c22cd1ef011a7c445a4db7b5e5ee4747, type: 3}
       propertyPath: _destinationPortal
