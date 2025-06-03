@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _loadingScreen;
-    [SerializeField] private Image _loadingBarFill;
+    [SerializeField] private Slider _loadingBarFill;
 
     private void Awake()
     {
@@ -30,9 +30,11 @@ public class MainMenu : MonoBehaviour
         _loadingScreen.SetActive(true);
         while (asyncLoad != null && !asyncLoad.isDone)
         {
+            Debug.Log(asyncLoad.progress);
             float progress = Mathf.Clamp01(asyncLoad.progress / .9f);
-            _loadingBarFill.fillAmount = progress;
-            yield return null;
+            _loadingBarFill.value = progress;
+            yield return new WaitForEndOfFrame();
         }
+        yield return new WaitForEndOfFrame();
     }
 }
