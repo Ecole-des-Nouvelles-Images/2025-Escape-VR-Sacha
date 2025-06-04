@@ -10,6 +10,12 @@ namespace Manager
     {
         [SerializeField] private GameObject[] _rooms;
         [SerializeField] private GameObject[] _corridors;
+        [SerializeField] private AudioSource _musicAudioSource;
+        [SerializeField] private AudioClip[] _roomClip;
+        [SerializeField] private AudioClip _coridorClip;
+
+        private int _roomIndex;
+        private int _coridorIndex;
         
         private void OnEnable()
         {
@@ -23,14 +29,35 @@ namespace Manager
 
         private void Start()
         {
-            SwitchActivation("R1");
+            //SwitchActivation("R1");
+            SwitchActivation(true);
         }
 
         
         
-        private void SwitchActivation(string roomToActivateID)
+        private void SwitchActivation(bool isRoom)
         {
-            switch (roomToActivateID)
+            if (isRoom)
+            {
+                _musicAudioSource.Stop();
+                _roomIndex += 1;
+                if(_roomIndex == 3)
+                    return;
+                Helper.EnableGameObjectInArray(_roomIndex, _rooms);
+                Helper.EnableGameObjectInArray(0, _corridors);
+                _musicAudioSource.clip = _roomClip[_roomIndex-1];
+                _musicAudioSource.Play();
+            }
+            else
+            {
+                _musicAudioSource.Stop();
+                _coridorIndex += 1;
+                Helper.EnableGameObjectInArray(_coridorIndex, _corridors);
+                Helper.EnableGameObjectInArray(0, _rooms);
+                _musicAudioSource.clip = _coridorClip;
+                _musicAudioSource.Play();
+            }
+            /*switch (roomToActivateID)
             {
                 case "R1":
                     Helper.EnableGameObjectInArray(1,_rooms);
@@ -65,7 +92,7 @@ namespace Manager
                     Helper.EnableGameObjectInArray(0,_corridors);
                     break;
               
-            }
+            }*/
         }
     }
 }
