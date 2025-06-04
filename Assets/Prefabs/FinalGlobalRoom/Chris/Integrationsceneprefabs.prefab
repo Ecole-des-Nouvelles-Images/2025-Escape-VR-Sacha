@@ -2316,7 +2316,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 160678605835695636}
-  - component: {fileID: 6801605906768101529}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -2340,18 +2339,6 @@ Transform:
   - {fileID: 1404056012569642}
   m_Father: {fileID: 561155063145071041}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &6801605906768101529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328106252344382078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3fdcfff9a55d524f807bd31a8d20aea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &335441989434732607
 GameObject:
   m_ObjectHideFlags: 0
@@ -39350,12 +39337,9 @@ MonoBehaviour:
   - {fileID: 5136751538152619994}
   - {fileID: 7553474632483231024}
   - {fileID: 6014215632325831719}
-  _ambianceAudioSource: {fileID: 9040458154576183860}
-  _ambiances:
-  - {fileID: 8300000, guid: a7dbf8ce328499e4680ca359552e08bd, type: 3}
-  - {fileID: 8300000, guid: 499171f2aa1bd7346a2969b35efc8555, type: 3}
-  - {fileID: 8300000, guid: 44e4eadbc3920df43ae574a2630dd1d2, type: 3}
-  - {fileID: 8300000, guid: 259ccba1b6450b845a6ebb0856f57560, type: 3}
+  _musicAudioSource: {fileID: 0}
+  _roomClip: []
+  _coridorClip: {fileID: 0}
 --- !u!114 &125517354522595731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61543,7 +61527,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6801605906768101529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TestEndgame, Assembly-CSharp
         m_MethodName: ActiveEndgame
         m_Mode: 1
