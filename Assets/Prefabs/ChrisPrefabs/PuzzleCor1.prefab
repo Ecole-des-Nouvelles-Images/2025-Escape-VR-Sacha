@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6472092099785731801}
   - component: {fileID: 174572338546983733}
   - component: {fileID: 8481298970730174635}
+  - component: {fileID: 1271916850777056300}
   m_Layer: 0
   m_Name: NST_Crab_Container (1)
   m_TagString: Respawn
@@ -366,6 +367,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5e82d59369c4645b421168dff5b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1271916850777056300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127933927238719153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBeforeRespawn: 5
+  _myAudioSource: {fileID: 6472092099785731801}
+  _myDetector: {fileID: 693917276619585094}
 --- !u!1 &483855998800090502
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,10 +413,10 @@ Transform:
   m_Children:
   - {fileID: 5676923660817484920}
   - {fileID: 8319358788563631962}
-  - {fileID: 1942188100842702855}
-  - {fileID: 8297143175556210659}
-  - {fileID: 8951971087027805739}
   - {fileID: 4397599908087873482}
+  - {fileID: 8297143175556210659}
+  - {fileID: 1942188100842702855}
+  - {fileID: 8951971087027805739}
   - {fileID: 4085095762626182393}
   - {fileID: 6764439256258497929}
   - {fileID: 4034330339546949513}
@@ -541,7 +557,7 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 13d6696b2708b624da97a3339ade2ac7, type: 2}
@@ -724,10 +740,10 @@ GameObject:
   - component: {fileID: 5297932218849285990}
   - component: {fileID: 5893978302499164988}
   - component: {fileID: 2587051319753039498}
-  - component: {fileID: 8945043206142597804}
   - component: {fileID: 895203628133455596}
   - component: {fileID: 9206220147263418429}
   - component: {fileID: 8657412458554714789}
+  - component: {fileID: 8159481146925208663}
   m_Layer: 0
   m_Name: NST_Mug_low_Container (1)
   m_TagString: Untagged
@@ -945,21 +961,6 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
---- !u!114 &8945043206142597804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024392348078999313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74c04783d80aab4ea45eb72833ac424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _snapTargets:
-  - {fileID: 0}
-  _positionTolerance: 0.15
 --- !u!82 &895203628133455596
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1094,6 +1095,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5e82d59369c4645b421168dff5b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8159481146925208663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024392348078999313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBeforeRespawn: 5
+  _myAudioSource: {fileID: 895203628133455596}
+  _myDetector: {fileID: 5487986126140041326}
 --- !u!1 &1027098315228773791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,9 +1730,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4098862241458358328}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7158755, z: -0, w: 0.69822794}
+  m_LocalRotation: {x: -0, y: -0.7158755, z: -0, w: 0.698228}
   m_LocalPosition: {x: -1.4790001, y: 0.475, z: 1.014}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.14999998, y: 0.15, z: 0.14999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5727990953884873401}
@@ -1820,7 +1836,7 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 13d6696b2708b624da97a3339ade2ac7, type: 2}
@@ -2017,8 +2033,8 @@ Transform:
   m_GameObject: {fileID: 4129202398462828121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1955, y: 0.458, z: -1.8933}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -1.1955004, y: 0.458, z: -1.8933}
+  m_LocalScale: {x: 0.10000001, y: 0.1, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5727990953884873401}
@@ -2944,6 +2960,7 @@ GameObject:
   - component: {fileID: 8747794612290040009}
   - component: {fileID: 9065683990052673897}
   - component: {fileID: 114645026027277913}
+  - component: {fileID: 6267992842493377456}
   m_Layer: 0
   m_Name: NST_Portrait2_low_Container (1)
   m_TagString: Untagged
@@ -3295,6 +3312,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5e82d59369c4645b421168dff5b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6267992842493377456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814243739883374175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBeforeRespawn: 5
+  _myAudioSource: {fileID: 8747794612290040009}
+  _myDetector: {fileID: 106808667422006952}
 --- !u!1 &7306146631339720911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,6 +3345,7 @@ GameObject:
   - component: {fileID: 2008100569255484467}
   - component: {fileID: 8064421484350605346}
   - component: {fileID: 1093803881934399239}
+  - component: {fileID: 727484457315999235}
   m_Layer: 0
   m_Name: NST_PartyHat_low (1)
   m_TagString: Respawn
@@ -3717,6 +3750,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &727484457315999235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306146631339720911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBeforeRespawn: 5
+  _myAudioSource: {fileID: 1093803881934399239}
+  _myDetector: {fileID: 7561495680238768424}
 --- !u!1 &7444879523917753515
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,6 +4144,7 @@ GameObject:
   - component: {fileID: 8403866864797557966}
   - component: {fileID: 6287615755069280500}
   - component: {fileID: 3987742480241709781}
+  - component: {fileID: 1821298882439376486}
   m_Layer: 0
   m_Name: NST_Mouse_low_Container (1)
   m_TagString: Respawn
@@ -4446,6 +4495,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5e82d59369c4645b421168dff5b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1821298882439376486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932488869263007566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBeforeRespawn: 5
+  _myAudioSource: {fileID: 8403866864797557966}
+  _myDetector: {fileID: 1422295506713087544}
 --- !u!1 &7946469250693778835
 GameObject:
   m_ObjectHideFlags: 0
@@ -4464,6 +4528,7 @@ GameObject:
   - component: {fileID: 7453652522759831}
   - component: {fileID: 5071627807949056214}
   - component: {fileID: 1702014612149547289}
+  - component: {fileID: 9007058734197718933}
   m_Layer: 0
   m_Name: NST_LightHouse_Container
   m_TagString: Respawn
@@ -4868,6 +4933,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5e82d59369c4645b421168dff5b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9007058734197718933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946469250693778835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBeforeRespawn: 5
+  _myAudioSource: {fileID: 7453652522759831}
+  _myDetector: {fileID: 6251393614242219378}
 --- !u!1 &7965543363384696926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,7 +5338,7 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 13d6696b2708b624da97a3339ade2ac7, type: 2}
@@ -5664,7 +5744,7 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 13d6696b2708b624da97a3339ade2ac7, type: 2}
