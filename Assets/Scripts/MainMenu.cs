@@ -35,6 +35,5 @@ public class MainMenu : MonoBehaviour
             _loadingBarFill.value = progress;
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForEndOfFrame();
     }
 }
