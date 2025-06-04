@@ -7,7 +7,7 @@ namespace Utils
         /*
          * object number 0 = disable all
          */
-        public static void EnableGameObjectInArray(int objectNumber, GameObject[] arrayObjects, bool haveException, int exceptionIndex)
+        public static void EnableGameObjectInArray(int objectNumber, GameObject[] arrayObjects)
         {
             if (objectNumber == 0)
             {
@@ -21,20 +21,14 @@ namespace Utils
             {
                 for (int i = 0; i < arrayObjects.Length; i++)
                 {
-                    /*if (objectNumber == arrayObjects.Length && i != objectNumber - 1 && i != 0)
-                    {
-                        arrayObjects[i].SetActive(false);
-                    }*/
                     if (i != objectNumber - 1 )
                         arrayObjects[i].SetActive(false);
                     else
                     {
-                        Debug.Log("active room : " + arrayObjects[i].name);
+                        //Debug.Log("active room : " + arrayObjects[i].name);
                         arrayObjects[i].SetActive(true);
                     }
                 }
-                if(haveException)
-                    arrayObjects[exceptionIndex].SetActive(true);
             }
         }
 
