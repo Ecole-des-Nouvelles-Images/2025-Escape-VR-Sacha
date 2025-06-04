@@ -19,13 +19,11 @@ namespace SalleIntro.Endgame
 
         private void OnEnable()
         {
-            GameEvents.OnRoomChanged += Activation;
             GameEvents.OnDoorOpened += EndPlayer;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnRoomChanged -= Activation;
             GameEvents.OnDoorOpened -= EndPlayer;
         }
 
@@ -48,14 +46,6 @@ namespace SalleIntro.Endgame
             else if (_timer <= 0 && _isGoodEnd == false)
             {
                 SceneManager.LoadScene("CreditsBadEnd");
-            }
-        }
-
-        private void Activation(string roomID)
-        {
-            if (roomID == _myRoomID)
-            {
-                _endGameObject.SetActive(true);
             }
         }
 

@@ -11,11 +11,6 @@ namespace Manager
         [SerializeField] private GameObject[] _rooms;
         [SerializeField] private GameObject[] _corridors;
         
-        [SerializeField]private AudioSource _ambianceAudioSource;
-        [SerializeField] private AudioClip[] _ambiances; 
-        
-        
-        
         private void OnEnable()
         {
             GameEvents.OnRoomChanged += SwitchActivation;
