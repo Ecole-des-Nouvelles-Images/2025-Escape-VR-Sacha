@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
+using SalleIntro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(Rigidbody), typeof(UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable))]
 public class SnapComponent : MonoBehaviour
 {
     [SerializeField] private List<Transform> _snapTargets;
@@ -14,10 +12,14 @@ public class SnapComponent : MonoBehaviour
     private Rigidbody _rb;
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable _grabInteractable;
 
+    private IntroHandler _introHandler;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+
+        _introHandler = FindFirstObjectByType<IntroHandler>();
 
         if (_snapTargets == null || _snapTargets.Count == 0)
         {
@@ -72,7 +74,6 @@ public class SnapComponent : MonoBehaviour
         }
     }
 
-
     private void Snap(Transform target)
     {
         transform.position = target.position;
@@ -90,6 +91,8 @@ public class SnapComponent : MonoBehaviour
                 emplacement.SetLetter(letter, this);
             }
         }
+
+        _introHandler?.CheckPedestalGroups(); // 👈 Ajout important
     }
 
     private void Unsnap()
@@ -105,6 +108,8 @@ public class SnapComponent : MonoBehaviour
                 emplacement.ClearIfOccupant(this);
             }
         }
+
+        _introHandler?.CheckPedestalGroups(); // 👈 Ajout important
     }
 
     public bool IsSnapped => _alreadySnapped;
