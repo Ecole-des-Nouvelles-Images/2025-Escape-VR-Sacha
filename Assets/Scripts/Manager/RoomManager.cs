@@ -10,8 +10,6 @@ namespace Manager
     {
         [SerializeField] private GameObject[] _rooms;
         [SerializeField] private GameObject[] _corridors;
-
-        [SerializeField]private DialogManager _dialogManager;
         
         [SerializeField]private AudioSource _ambianceAudioSource;
         [SerializeField] private AudioClip[] _ambiances; 
