@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &1104383504 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6935220627887102667, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+  m_PrefabInstance: {fileID: 554930390786678139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &554930390786678139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +132,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1925908124079951406, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1104383504}
+    - target: {fileID: 1925908124079951406, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925908124079951406, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2009139968364103425, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -235,6 +252,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2481839988794259165, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+      propertyPath: m_RayInteractor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3323537768052773097, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -258,6 +279,10 @@ PrefabInstance:
     - target: {fileID: 3323537768052773097, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361069748720204534, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+      propertyPath: m_RayInteractor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4448014574702871609, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,6 +323,14 @@ PrefabInstance:
     - target: {fileID: 4448014574702871609, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535121183605337846, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1104383504}
+    - target: {fileID: 4535121183605337846, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6873710895751537330, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
       propertyPath: m_Name
@@ -441,6 +474,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8010032636708467329, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719774110210456610, guid: d70849bd04010f34f9c8164d68d5e792, type: 3}
+      propertyPath: m_PixelPerfect
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
