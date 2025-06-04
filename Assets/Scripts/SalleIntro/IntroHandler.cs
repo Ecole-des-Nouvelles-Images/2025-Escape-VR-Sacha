@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Puzzles;
 using Sound;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utils;
 
 namespace SalleIntro
@@ -109,8 +110,9 @@ namespace SalleIntro
 
         private void Ending()
         {
-            _dialogManager.PlayDialogue("14");
-            GameEvents.OnEndGame.Invoke();
+            //_dialogManager.PlayDialogue("14");
+            SceneManager.LoadScene("CreditsBadEnd");
+            //GameEvents.OnEndGame.Invoke();
         }
     }
 }
