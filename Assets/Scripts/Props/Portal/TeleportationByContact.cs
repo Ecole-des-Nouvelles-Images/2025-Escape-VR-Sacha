@@ -7,7 +7,7 @@ namespace Props.Portal
     public class TeleportationByContact : MonoBehaviour
     {
         [SerializeField] private PortalExit _destinationPortal;
-        [SerializeField] private bool _isEnteringInRoom;
+        [SerializeField] private string _destinationPortalID;
         [SerializeField] private string _openingDialogID;
         private void OnTriggerEnter(Collider other)
         {
@@ -23,7 +23,7 @@ namespace Props.Portal
             {
                 FindAnyObjectByType<DialogManager>().PlayDialogue(_openingDialogID,3f);
             }
-            GameEvents.OnRoomChanged.Invoke(_isEnteringInRoom);
+            GameEvents.OnRoomChanged.Invoke(_destinationPortalID);
             GameEvents.OnTeleport.Invoke();
             Vector3 offset = player.position - transform.position;
             offset += _destinationPortal.TpTarget.position;
