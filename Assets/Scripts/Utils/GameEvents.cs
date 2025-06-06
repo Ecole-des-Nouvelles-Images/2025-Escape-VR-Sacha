@@ -17,8 +17,8 @@
         
         public static Action<bool> OnEnd;
         public static Action<bool> OnDoorOpened;
-        
         public static Action<string> OnRoomChanged;
+        
         public static Action<string> OnKeyboardUnlock;
         public static Action<string> OnSetupPuzzle;
         public static Action<string> OnPuzzleCompleted;
