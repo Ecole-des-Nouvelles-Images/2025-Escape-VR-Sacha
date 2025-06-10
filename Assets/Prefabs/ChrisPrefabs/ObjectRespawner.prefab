@@ -52,7 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFilteredByTag: 0
-  _objectsTagToSpawn: []
+  _objectsTagToSpawn:
+  - Respawn
+  - KeyObject
   _spawnAnchor: {fileID: 7469771090590477908}
 --- !u!65 &4408294169667887568
 BoxCollider:
@@ -73,8 +75,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 5}
-  m_Center: {x: 3, y: 1.25, z: 0}
+  m_Size: {x: 4, y: 1, z: 5}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!65 &3322891671054088647
 BoxCollider:
   m_ObjectHideFlags: 0

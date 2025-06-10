@@ -21,8 +21,11 @@ namespace Utils
                     }
                 }
             }
-            other.transform.position = _spawnAnchor.transform.position;
-            other.transform.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            else
+            {
+                other.transform.position = _spawnAnchor.transform.position;
+                other.transform.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            }
         }
     }
 }
