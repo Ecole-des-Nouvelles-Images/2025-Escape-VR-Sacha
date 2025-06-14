@@ -24,9 +24,13 @@ namespace Manager
             GameEvents.OnRoomChanged -= SwitchActivation;
         }
 
+        private void OnDestroy()
+        {
+            GameEvents.OnRoomChanged -= SwitchActivation;
+        }
+
         private void Start()
         {
-            //SwitchActivation("R1");
             SwitchActivation("R1");
         }
 
@@ -34,26 +38,6 @@ namespace Manager
         
         private void SwitchActivation(string roomToActivateID)
         {
-            /*if (isRoom)
-            {
-                _musicAudioSource.Stop();
-                _roomIndex += 1;
-                if(_roomIndex == 3)
-                    return;
-                Helper.EnableGameObjectInArray(_roomIndex, _rooms);
-                Helper.EnableGameObjectInArray(0, _corridors);
-                _musicAudioSource.clip = _roomClip[_roomIndex-1];
-                _musicAudioSource.Play();
-            }
-            else
-            {
-                _musicAudioSource.Stop();
-                _coridorIndex += 1;
-                Helper.EnableGameObjectInArray(_coridorIndex, _corridors);
-                Helper.EnableGameObjectInArray(0, _rooms);
-                _musicAudioSource.clip = _coridorClip;
-                _musicAudioSource.Play();
-            }*/
             switch (roomToActivateID)
             {
                 case "R1":
@@ -77,7 +61,6 @@ namespace Manager
                 case "R3":
                     Helper.EnableGameObjectInArray(3,_rooms);
                     Helper.EnableGameObjectInArray(0,_corridors);
-                    //_ambianceAudioSource.Stop();
                     break;
                 case "C3":
                     Helper.EnableGameObjectInArray(4,_rooms);

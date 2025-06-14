@@ -1,8 +1,10 @@
 using System;
+using Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using Utils;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,6 +16,21 @@ public class PauseMenu : MonoBehaviour
     
     private InputAction _menuButton;
     private InputAction _menuButtonInteraction;
+
+    private void OnEnable()
+    {
+        SceneLoader.OnLoad += DisablePause;
+    }
+
+    private void OnDisable()
+    {
+        SceneLoader.OnLoad -= DisablePause;
+    }
+
+    private void OnDestroy()
+    {
+        SceneLoader.OnLoad -= DisablePause;
+    }
 
     private void Awake()
     {
@@ -28,12 +45,17 @@ public class PauseMenu : MonoBehaviour
     }
     private void Update()
     {
-        if (_menuButton.triggered)
+        if (SceneManager.GetActiveScene().name != "MainMenu" && _menuButton.triggered)
         {
             SwitchMenuActivation();
             _leftControllerNearFarInteractor.enableFarCasting = !_leftControllerNearFarInteractor.enableFarCasting;
             _rightControllerNearFarInteractor.enableFarCasting = !_rightControllerNearFarInteractor.enableFarCasting;
         }
+    }
+
+    private void DisablePause(string bait)
+    {
+        _pauseMenu.SetActive(false);
     }
     public void SwitchMenuActivation()
     {

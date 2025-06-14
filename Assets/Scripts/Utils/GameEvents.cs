@@ -9,7 +9,8 @@
         public static Action OnIncreaseScore;
         public static Action OnEndGame;
         public static Action OnTriggerEndGame;
-        
+        public static Action OnEnableFarInteractor;
+        public static Action OnDisableFarInteractor;
         public static Action OnOpenDrawer;
         public static Action OnOpenTrap;
         public static Action OnOpenTeddy;
