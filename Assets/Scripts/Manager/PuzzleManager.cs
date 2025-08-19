@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Utils;
 
@@ -14,6 +15,14 @@ namespace Manager
         }
 
         private void OnDisable()
+        {
+            GameEvents.OnOpenDrawer -= HandleDrawer;
+            GameEvents.OnOpenTrap -= HandleTrap;
+            GameEvents.OnOpenTeddy -= HandleTeddy;
+            GameEvents.OnUnlockFinalChest -= HandleFinalChest;
+        }
+
+        private void OnDestroy()
         {
             GameEvents.OnOpenDrawer -= HandleDrawer;
             GameEvents.OnOpenTrap -= HandleTrap;

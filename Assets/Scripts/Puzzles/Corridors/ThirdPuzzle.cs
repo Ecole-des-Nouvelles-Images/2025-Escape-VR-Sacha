@@ -1,3 +1,4 @@
+using System;
 using Manager;
 using UnityEngine;
 using Utils;
@@ -14,6 +15,11 @@ namespace Puzzles.Corridors
         }
 
         private void OnDisable()
+        {
+            GameEvents.OnKeyboardUnlock -= Unlock;
+        }
+
+        private void OnDestroy()
         {
             GameEvents.OnKeyboardUnlock -= Unlock;
         }

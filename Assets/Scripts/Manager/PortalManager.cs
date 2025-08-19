@@ -23,6 +23,12 @@ namespace Manager
             GameEvents.OnSetupPuzzle -= PortalDisabled;
         }
 
+        private void OnDestroy()
+        {
+            GameEvents.OnPuzzleCompleted -= PortalEnabled;
+            GameEvents.OnSetupPuzzle -= PortalDisabled;
+        }
+
         private void PortalEnabled(string portalID)
         {
             foreach (PortalEntry portalScript in _portalsEntry)

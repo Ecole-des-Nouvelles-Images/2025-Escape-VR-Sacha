@@ -5,7 +5,9 @@
 {
     public static class GameEvents
     {
+#pragma warning disable UDR0001
         public static Action OnTeleport;
+
         public static Action OnIncreaseScore;
         public static Action OnEndGame;
         public static Action OnTriggerEndGame;
@@ -15,6 +17,7 @@
         public static Action OnOpenTrap;
         public static Action OnOpenTeddy;
         public static Action OnUnlockFinalChest;
+        public static Action OnNextRoom;
         
         public static Action<bool> OnEnd;
         public static Action<bool> OnDoorOpened;
@@ -33,5 +36,6 @@
         public static Action<string, float> OnSliderModified;
         
         public static Action<string, bool, int, AudioSource> OnPlaySound;
+#pragma warning restore UDR0001
     }
 }

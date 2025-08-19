@@ -23,7 +23,7 @@ namespace Props.Portal
             {
                 FindAnyObjectByType<DialogManager>().PlayDialogue(_openingDialogID,3f);
             }
-            GameEvents.OnRoomChanged.Invoke(_destinationPortalID);
+            GameEvents.OnNextRoom.Invoke();
             GameEvents.OnTeleport.Invoke();
             Vector3 offset = player.position - transform.position;
             offset += _destinationPortal.TpTarget.position;

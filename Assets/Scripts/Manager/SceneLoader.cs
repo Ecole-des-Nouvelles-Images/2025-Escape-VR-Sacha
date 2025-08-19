@@ -13,6 +13,7 @@ namespace Manager
         
         [SerializeField] private GameObject _loadingScreen;
         [SerializeField] private Slider _loadingSlider;
+        [SerializeField] private string _firstSceneName;
 
         private void OnEnable()
         {
@@ -32,7 +33,7 @@ namespace Manager
         private void Start()
         {
             _loadingScreen.SetActive(false);
-            OnLoad.Invoke("MainMenu");
+            OnLoad.Invoke(_firstSceneName);
         }
 
         private void LoadScene(string sceneName)

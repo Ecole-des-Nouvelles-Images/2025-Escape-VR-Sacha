@@ -8,70 +8,53 @@ namespace Manager
 {
     public class RoomManager : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _rooms;
-        [SerializeField] private GameObject[] _corridors;
+        [SerializeField] private GameObject[] _allRooms;
 
         private int _roomIndex;
-        private int _coridorIndex;
         
         private void OnEnable()
         {
-            GameEvents.OnRoomChanged += SwitchActivation;
+            GameEvents.OnNextRoom += NextRoomActivation;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnRoomChanged -= SwitchActivation;
+            GameEvents.OnNextRoom -= NextRoomActivation;
         }
 
         private void OnDestroy()
         {
-            GameEvents.OnRoomChanged -= SwitchActivation;
+            GameEvents.OnNextRoom -= NextRoomActivation;
+        }
+
+        private void Awake()
+        {
+            _roomIndex = 0;
         }
 
         private void Start()
         {
-            SwitchActivation("R1");
+            for (int i = 0; i < _allRooms.Length; i++)
+            {
+                _allRooms[i].SetActive(false);
+            }
+            //SwitchActivation("R1");
+            _allRooms[_roomIndex].SetActive(true);
         }
 
-        
-        
-        private void SwitchActivation(string roomToActivateID)
+        private void NextRoomActivation()
         {
-            switch (roomToActivateID)
+            if(_roomIndex < _allRooms.Length-1)
             {
-                case "R1":
-                    Helper.EnableGameObjectInArray(1,_rooms);
-                    Helper.EnableGameObjectInArray(0,_corridors);
-                    break;
-                case "C1":
-                    Helper.EnableGameObjectInArray(0,_rooms);
-                    Helper.EnableGameObjectInArray(1,_corridors);
-                    break;
-                
-                case "R2":
-                    Helper.EnableGameObjectInArray(2,_rooms);
-                    Helper.EnableGameObjectInArray(0,_corridors);
-                    break;
-                case "C2":
-                    Helper.EnableGameObjectInArray(0,_rooms);
-                    Helper.EnableGameObjectInArray(2,_corridors);
-                    break;
-                
-                case "R3":
-                    Helper.EnableGameObjectInArray(3,_rooms);
-                    Helper.EnableGameObjectInArray(0,_corridors);
-                    break;
-                case "C3":
-                    Helper.EnableGameObjectInArray(4,_rooms);
-                    Helper.EnableGameObjectInArray(3,_corridors);
-                    break;
-               
-                case "R4":
-                    Helper.EnableGameObjectInArray(4,_rooms);
-                    Helper.EnableGameObjectInArray(0,_corridors);
-                    break;
-              
+                _allRooms[_roomIndex].SetActive(false);
+                _roomIndex += 1;
+                _allRooms[_roomIndex].SetActive(true);
+            }
+            else
+            {
+                _allRooms[_roomIndex].SetActive(false);
+                _roomIndex = 0;
+                _allRooms[_roomIndex].SetActive(true);
             }
         }
     }
