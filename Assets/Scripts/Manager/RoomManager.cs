@@ -40,6 +40,7 @@ namespace Manager
             }
             //SwitchActivation("R1");
             _allRooms[_roomIndex].SetActive(true);
+            GameEvents.OnPlayBGM.Invoke("intro");
         }
 
         private void NextRoomActivation()
@@ -55,6 +56,31 @@ namespace Manager
                 _allRooms[_roomIndex].SetActive(false);
                 _roomIndex = 0;
                 _allRooms[_roomIndex].SetActive(true);
+            }
+
+            switch (_roomIndex)
+            {
+                case 0:
+                    GameEvents.OnPlayBGM.Invoke("intro");
+                    break;
+                case 1:
+                    GameEvents.OnPlayBGM.Invoke("corridor");
+                    break;
+                case 2:
+                    GameEvents.OnPlayBGM.Invoke("kid");
+                    break;
+                case 3:
+                    GameEvents.OnPlayBGM.Invoke("corridor");
+                    break;
+                case 4:
+                    GameEvents.OnStopBGM.Invoke();
+                    break;
+                case 5:
+                    GameEvents.OnPlayBGM.Invoke("corridor");
+                    break;
+                case 6:
+                    GameEvents.OnPlayBGM.Invoke("office");
+                    break;
             }
         }
     }
