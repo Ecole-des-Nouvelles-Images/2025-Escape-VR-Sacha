@@ -36,6 +36,14 @@ namespace KeyboardAndScreen
                 Timer();
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("KeyObject"))
+            {
+                other.GetComponent<VNumpadInput>().EnterInput();
+            }
+        }
+
         public void Validation()
         {
             if (_listInput == _keyInputs)
@@ -52,6 +60,7 @@ namespace KeyboardAndScreen
                 _successAudioSource.clip = _failSound;
                 _successAudioSource.Play();
                 _isTimer = true;
+                _timerError = 0.5f;
             }
         }
 
@@ -61,12 +70,11 @@ namespace KeyboardAndScreen
             if (_timerError <= 0)
             {
                 _displayBackground.color = Color.white;
+                _isTimer = false;
             }
             else
             {
                 _displayBackground.color = Color.red;
-                _isTimer = false;
-                _timerError = 0.5f;
             }
         }
 

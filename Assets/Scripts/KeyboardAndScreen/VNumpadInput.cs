@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -8,6 +9,15 @@ namespace KeyboardAndScreen
     {
         [SerializeField] private VirtualKeyboard _myVirtualKeyboardSystem;
         [SerializeField] private int _myValue;
+        
+        private AudioSource _audioSource;
+
+        private void Awake()
+        {
+            if (TryGetComponent(out _audioSource))
+                _audioSource = GetComponent<AudioSource>();
+            _audioSource.playOnAwake = false;
+        }
 
         public void EnterInput()
         {
@@ -17,6 +27,10 @@ namespace KeyboardAndScreen
                 _myVirtualKeyboardSystem.Validation();
             else
                 _myVirtualKeyboardSystem.AddInputs(_myValue);
+            if (_audioSource)
+            {
+                _audioSource.Play();
+            }
         }
     }
 }
