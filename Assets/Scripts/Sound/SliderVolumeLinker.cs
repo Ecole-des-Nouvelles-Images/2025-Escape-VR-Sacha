@@ -22,7 +22,7 @@ namespace Sound
             GameEvents.OnSliderModified -= UpdateSlidersSynchronisation;
         }
 
-        private void Start()
+        private void Awake()
         {
             _mySlider.minValue = -80;
             _mySlider.maxValue = 20;

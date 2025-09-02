@@ -18,7 +18,12 @@ namespace Sound
         {
             GameEvents.OnSliderModified -= UpdateMixerVolume;
         }
-        
+
+        private void OnDestroy()
+        {
+            GameEvents.OnSliderModified -= UpdateMixerVolume;
+        }
+
         private void UpdateMixerVolume(string mixerID, float value)
         {
             _mixer.SetFloat(mixerID, value);
