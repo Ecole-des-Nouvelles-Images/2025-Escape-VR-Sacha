@@ -28,13 +28,11 @@ namespace SolidSlider
             {
                 if (_handleTransform.localPosition.x < _minimumLimitCursorPosition)
                 {
-                    Debug.Log("handle position: "+_handleTransform.position.x + "limit min = "+ _minimumLimitCursorPosition);
                     Vector3 posLimit = new Vector3(_minimumLimitCursorPosition, _handleTransform.localPosition.y, _handleTransform.localPosition.z);
                     _handleTransform.localPosition = posLimit;
                 }
                 if (_handleTransform.localPosition.x > _maximumLimitCursorPosition)
                 {
-                    Debug.Log("handle position: "+_handleTransform.position.x + "limit max = "+ _maximumLimitCursorPosition);
                     Vector3 posLimit = new Vector3(_maximumLimitCursorPosition, _handleTransform.localPosition.y, _handleTransform.localPosition.z);
                     _handleTransform.localPosition = posLimit;
                 }
@@ -52,12 +50,9 @@ namespace SolidSlider
                     _handleTransform.localPosition = posLimit;
                 }
             }
-            
-            Debug.Log("handle position: "+_handleTransform.transform.localPosition.x);
 
             if (_handleTransform.transform.localPosition != _lastCursorPosition)
             {
-                Debug.Log("handle position: "+_handleTransform.transform.position.x);
                 _lastCursorPosition = _handleTransform.transform.localPosition;
                 PercentConversionValueToSliderUI();
             }
@@ -90,7 +85,6 @@ namespace SolidSlider
                 Vector3 pos = new Vector3( _handleTransform.transform.localPosition.x, value, _handleTransform.transform.position.z);
                 _handleTransform.transform.position = pos;
             }
-            Debug.Log("handle position: "+_handleTransform.transform.localPosition.x + "value= "+value);
         }
     }
 }
