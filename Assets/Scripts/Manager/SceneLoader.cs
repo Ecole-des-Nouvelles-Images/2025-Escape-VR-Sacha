@@ -38,7 +38,7 @@ namespace Manager
 
         private void LoadScene(string sceneName)
         {
-            //GameEvents.OnDisableFarInteractor.Invoke();
+            GameEvents.OnDisableFarInteractor.Invoke();
             StartCoroutine(LoadSceneAsync(sceneName));
         }
 
