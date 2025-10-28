@@ -38,8 +38,12 @@ namespace KeyboardAndScreen
 
         private void OnTriggerEnter(Collider other)
         {
+            
+            Debug.Log("Collision détecté!");
             if (other.CompareTag("KeyObject"))
             {
+                
+                Debug.Log("touche entré");
                 other.GetComponent<VNumpadInput>().EnterInput();
             }
         }
