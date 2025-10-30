@@ -38,12 +38,7 @@ namespace Manager
 
         private void LoadScene(string sceneName)
         {
-            if(sceneName == "MainMenu")
-                GameEvents.OnEnableFarInteractor.Invoke();
-            else
-            {
-                GameEvents.OnDisableFarInteractor.Invoke();
-            }
+            //GameEvents.OnDisableFarInteractor.Invoke();
             StartCoroutine(LoadSceneAsync(sceneName));
         }
 
