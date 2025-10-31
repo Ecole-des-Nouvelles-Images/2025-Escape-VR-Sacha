@@ -7,7 +7,7 @@ namespace Salle2
     public class LivingroomHandler : Puzzle
     {
         [SerializeField] private GameObject[] _balloons;
-        private string _code = "12345";
+        private string _code = "123456";
         private List<string> _currentInput = new List<string>();
 
         public void BallonTouched(string ballonCode)
