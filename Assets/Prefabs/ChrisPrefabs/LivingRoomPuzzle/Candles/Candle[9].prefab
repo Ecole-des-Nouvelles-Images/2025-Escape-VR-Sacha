@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 1904414223400627865}
   - component: {fileID: 5640632757929299677}
   - component: {fileID: 5792469282125597356}
-  - component: {fileID: 683992713438652404}
+  - component: {fileID: 3078654749374669874}
   m_Layer: 0
   m_Name: 'Candle[9]'
   m_TagString: Candle
@@ -5194,14 +5194,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5e82d59369c4645b421168dff5b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &683992713438652404
-MeshCollider:
+--- !u!65 &3078654749374669874
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4577675128678860566}
-  m_Material: {fileID: 13400000, guid: 590dbebc6f287b940ac52b3dfea3bfc1, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5212,10 +5212,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4979887418140830733, guid: a676929a5e8d84f4b8ae55c0c11f8b31, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.033409476, y: 0.0566471, z: 0.0061511644}
+  m_Center: {x: -0.00066789985, y: 0.02827702, z: -0.0000044025946}
 --- !u!1 &5117076872702910096
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,7 +5258,6 @@ GameObject:
   - component: {fileID: 1978874668715019261}
   - component: {fileID: 6990413737847412243}
   - component: {fileID: 839843803164530560}
-  - component: {fileID: 6011906797044025986}
   m_Layer: 7
   m_Name: NST_Candle9_low
   m_TagString: Untagged
@@ -5335,25 +5333,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6011906797044025986
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6695670618481726267}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4979887418140830733, guid: a676929a5e8d84f4b8ae55c0c11f8b31, type: 3}

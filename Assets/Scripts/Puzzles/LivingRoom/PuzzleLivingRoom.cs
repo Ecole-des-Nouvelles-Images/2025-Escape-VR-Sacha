@@ -74,7 +74,7 @@ namespace Puzzles.LivingRoom
                         return;
                     _successAudioSource.Play();
                     _puzzleStates = 2;
-                    _candlesSockets[1].SetActive(true);
+                    //_candlesSockets[1].SetActive(true);
                     for (int i = 0; i < _candles.Length; i++)
                     {
                         if(!_candles[i].activeSelf)

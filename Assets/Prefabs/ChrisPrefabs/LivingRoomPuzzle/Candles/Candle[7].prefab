@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 5580298920716526988}
   - component: {fileID: 4517749104649295193}
   - component: {fileID: 2477620358028539603}
-  - component: {fileID: 8841299504575962130}
+  - component: {fileID: 8556724017254883272}
   m_Layer: 0
   m_Name: 'Candle[7]'
   m_TagString: Candle
@@ -5194,14 +5194,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5e82d59369c4645b421168dff5b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &8841299504575962130
-MeshCollider:
+--- !u!65 &8556724017254883272
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4577675128678860566}
-  m_Material: {fileID: 13400000, guid: 590dbebc6f287b940ac52b3dfea3bfc1, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5212,10 +5212,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3694883062603088459, guid: a676929a5e8d84f4b8ae55c0c11f8b31, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.03561783, y: 0.0568173, z: 0.0061706635}
+  m_Center: {x: -0.0022433698, y: 0.028363224, z: 0.0000000037252903}
 --- !u!1 &6600322563486884071
 GameObject:
   m_ObjectHideFlags: 0

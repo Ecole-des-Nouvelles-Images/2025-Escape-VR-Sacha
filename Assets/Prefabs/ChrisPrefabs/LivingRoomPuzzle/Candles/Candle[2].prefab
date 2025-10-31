@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3450178334152572614}
   - component: {fileID: 2194327081211975093}
   - component: {fileID: 1160516811193215151}
-  - component: {fileID: 3922918926292699236}
+  - component: {fileID: 4564416713949423910}
   m_Layer: 0
   m_Name: 'Candle[2]'
   m_TagString: Candle
@@ -393,14 +393,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!64 &3922918926292699236
-MeshCollider:
+--- !u!65 &4564416713949423910
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4577675128678860566}
-  m_Material: {fileID: 13400000, guid: 590dbebc6f287b940ac52b3dfea3bfc1, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -411,10 +411,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2594347777897834371, guid: a676929a5e8d84f4b8ae55c0c11f8b31, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.027415067, y: 0.057243012, z: 0.006207887}
+  m_Center: {x: 0.00046400726, y: 0.02858295, z: -2.3283064e-10}
 --- !u!1 &4700582632588673112
 GameObject:
   m_ObjectHideFlags: 0
