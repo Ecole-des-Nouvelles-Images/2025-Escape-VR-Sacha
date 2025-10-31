@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4928858377804644341}
+  - component: {fileID: 2052244077987942312}
   - component: {fileID: 2353800633251681998}
   - component: {fileID: 832841616365662426}
   - component: {fileID: 7706574973212611245}
-  - component: {fileID: 2052244077987942312}
   - component: {fileID: 6472092099785731801}
   - component: {fileID: 174572338546983733}
   - component: {fileID: 8481298970730174635}
@@ -40,6 +40,27 @@ Transform:
   - {fileID: 5733099559825521273}
   m_Father: {fileID: 5727990953884873401}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &2052244077987942312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127933927238719153}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.40975463, y: 0.1, z: 0.21}
+  m_Center: {x: 0, y: 0.04, z: -0.053142395}
 --- !u!54 &2353800633251681998
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -212,27 +233,6 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
---- !u!65 &2052244077987942312
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127933927238719153}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.40975463, y: 0.1, z: 0.21}
-  m_Center: {x: 0, y: 0.04, z: -0.053142395}
 --- !u!82 &6472092099785731801
 AudioSource:
   m_ObjectHideFlags: 0
@@ -505,7 +505,6 @@ GameObject:
   - component: {fileID: 5739678352027597683}
   - component: {fileID: 3555201470315604690}
   - component: {fileID: 6030432305027554845}
-  - component: {fileID: 1297320031276131353}
   - component: {fileID: 6303843498128391090}
   m_Layer: 7
   m_Name: Shelf (4)
@@ -603,33 +602,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1297320031276131353
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012943515964022324}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!82 &6303843498128391090
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1784,7 +1756,6 @@ GameObject:
   - component: {fileID: 4906411719396794259}
   - component: {fileID: 7674533904027913168}
   - component: {fileID: 7077045957279036703}
-  - component: {fileID: 505788747694407444}
   - component: {fileID: 6668337244336781263}
   m_Layer: 7
   m_Name: Shelf (3)
@@ -1882,33 +1853,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &505788747694407444
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100323613110788717}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!82 &6668337244336781263
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5286,7 +5230,6 @@ GameObject:
   - component: {fileID: 7635463644318747451}
   - component: {fileID: 243925234977292705}
   - component: {fileID: 3158458772529533270}
-  - component: {fileID: 7054422730947728333}
   - component: {fileID: 2713992222676583217}
   m_Layer: 7
   m_Name: Shelf (2)
@@ -5384,33 +5327,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7054422730947728333
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8525366449552452747}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!82 &2713992222676583217
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5692,7 +5608,6 @@ GameObject:
   - component: {fileID: 5217330696198883079}
   - component: {fileID: 5144745866831885696}
   - component: {fileID: 7623426535689583882}
-  - component: {fileID: 5684796053570428877}
   - component: {fileID: 4198410600145434723}
   m_Layer: 7
   m_Name: Shelf (5)
@@ -5790,33 +5705,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5684796053570428877
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8856818709122346047}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!82 &4198410600145434723
 AudioSource:
   m_ObjectHideFlags: 0
