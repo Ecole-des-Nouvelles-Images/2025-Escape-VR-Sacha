@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loadingScreen: {fileID: 8305099477131177425}
   _loadingSlider: {fileID: 3175733843496029340}
+  _firstSceneName: MainMenu
 --- !u!114 &255982792976055180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,8 +84,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5388350729248628914}
     m_Modifications:
+    - target: {fileID: 470280665840880593, guid: bc6a30cee66d7e6469273d91a5d23ea0, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470280665840880593, guid: bc6a30cee66d7e6469273d91a5d23ea0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1878200590826985515, guid: bc6a30cee66d7e6469273d91a5d23ea0, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323955461110261783, guid: bc6a30cee66d7e6469273d91a5d23ea0, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5650552425020785578, guid: bc6a30cee66d7e6469273d91a5d23ea0, type: 3}

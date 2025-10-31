@@ -23,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4928858377804644341
 Transform:
   m_ObjectHideFlags: 0
@@ -505,7 +505,6 @@ GameObject:
   - component: {fileID: 5739678352027597683}
   - component: {fileID: 3555201470315604690}
   - component: {fileID: 6030432305027554845}
-  - component: {fileID: 1297320031276131353}
   - component: {fileID: 6303843498128391090}
   m_Layer: 7
   m_Name: Shelf (4)
@@ -603,33 +602,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1297320031276131353
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012943515964022324}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!82 &6303843498128391090
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1127,7 +1099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4726086435170729658
 Transform:
   m_ObjectHideFlags: 0
@@ -1784,7 +1756,6 @@ GameObject:
   - component: {fileID: 4906411719396794259}
   - component: {fileID: 7674533904027913168}
   - component: {fileID: 7077045957279036703}
-  - component: {fileID: 505788747694407444}
   - component: {fileID: 6668337244336781263}
   m_Layer: 7
   m_Name: Shelf (3)
@@ -1882,33 +1853,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &505788747694407444
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100323613110788717}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!82 &6668337244336781263
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2663,21 +2607,18 @@ MonoBehaviour:
   - {fileID: 7932488869263007566}
   - {fileID: 1024392348078999313}
   - {fileID: 7946469250693778835}
-  - {fileID: 127933927238719153}
   - {fileID: 7306146631339720911}
   - {fileID: 6814243739883374175}
   _allPuzzleObjectsCopy:
   - {fileID: 7817005115513063935}
   - {fileID: 2167256635046515707}
   - {fileID: 4415422166603552684}
-  - {fileID: 8545992630271605258}
   - {fileID: 2568017735388177543}
   - {fileID: 6793981276586418164}
   _allKeyObjects:
   - {fileID: 7965543363384696926}
   - {fileID: 5359718661723357795}
   - {fileID: 6174771361501710499}
-  - {fileID: 1027098315228773791}
   - {fileID: 4556008973415190311}
   - {fileID: 8192502611721358664}
   _myAudioSource: {fileID: 2397185954481017250}
@@ -5286,7 +5227,6 @@ GameObject:
   - component: {fileID: 7635463644318747451}
   - component: {fileID: 243925234977292705}
   - component: {fileID: 3158458772529533270}
-  - component: {fileID: 7054422730947728333}
   - component: {fileID: 2713992222676583217}
   m_Layer: 7
   m_Name: Shelf (2)
@@ -5384,33 +5324,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7054422730947728333
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8525366449552452747}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!82 &2713992222676583217
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5525,7 +5438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4990100113407000050
 Transform:
   m_ObjectHideFlags: 0
@@ -5692,7 +5605,6 @@ GameObject:
   - component: {fileID: 5217330696198883079}
   - component: {fileID: 5144745866831885696}
   - component: {fileID: 7623426535689583882}
-  - component: {fileID: 5684796053570428877}
   - component: {fileID: 4198410600145434723}
   m_Layer: 7
   m_Name: Shelf (5)
@@ -5790,33 +5702,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5684796053570428877
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8856818709122346047}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!82 &4198410600145434723
 AudioSource:
   m_ObjectHideFlags: 0
