@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000004, guid: dd7c6e5d1a7ed9f4a9bd963e0c3fc54b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -160,7 +160,7 @@ AudioSource:
   m_GameObject: {fileID: 29643504}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5041710509537706295, guid: d2ea5db0eb65a9c4197e7edd88a8624c, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -1486,14 +1486,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5637491160249011282, guid: c1c25266e43194440b542ca3c70275d0, type: 3}
-      propertyPath: _firstSceneName
-      value: Integration
-      objectReference: {fileID: 0}
     - target: {fileID: 6542400995256912111, guid: c1c25266e43194440b542ca3c70275d0, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1002183373}
+    - target: {fileID: 6542400995256912111, guid: c1c25266e43194440b542ca3c70275d0, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
