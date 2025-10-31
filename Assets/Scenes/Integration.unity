@@ -32015,12 +32015,12 @@ GameObject:
   - component: {fileID: 7168778490850534593}
   - component: {fileID: 5374201859252449411}
   - component: {fileID: 9009980874962947654}
-  - component: {fileID: 8517245663032027764}
   - component: {fileID: 3065072563900318012}
   - component: {fileID: 8330620052844853845}
   - component: {fileID: 7574385657314842869}
   - component: {fileID: 618598260081132438}
   - component: {fileID: 8274791973874827134}
+  - component: {fileID: 9009980874962947655}
   m_Layer: 0
   m_Name: NST_LightHouse_Container
   m_TagString: Untagged
@@ -70454,28 +70454,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8517245663032027764
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2901698467293126253}
-  m_Material: {fileID: 13400000, guid: 10bde48ef542d6a4fbee12145283824a, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2449669877025044581, guid: 0025ba27531a40b47bc6960b5fb15976, type: 3}
 --- !u!114 &8521763181826583691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74007,6 +73985,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9009980874962947655
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901698467293126253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.16129729, y: 0.37870407, z: 0.16129726}
+  m_Center: {x: 0.000000074505806, y: 0.17765018, z: -0.00000032782555}
 --- !u!4 &9010011912980895617
 Transform:
   m_ObjectHideFlags: 0
