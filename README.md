@@ -3,7 +3,7 @@
 
 Partez à la découverte de votre ancienne vie dans un escape game narratif en réalité virtuelle, où chaque énigme déverrouille un souvenir.
 
-[![Unity Version](https://img.shields.io/badge/Unity-6000.0.34-blue?style=flat&logo=unity)](https://unity.com/)
+[![Unity Version](https://img.shields.io/badge/Unity-6000.0.59-blue?style=flat&logo=unitytyle=flat&logo=unity)](https://unity.com/)
 [![GitHub Release](https://img.shields.io/github/v/release/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/releases)
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/Unity-Template?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template)
