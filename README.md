@@ -8,7 +8,7 @@ Partez à la découverte de votre ancienne vie dans un escape game narratif en r
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/Unity-Template?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template)
 
-<img width="1725" height="896" alt="fever2" src="https://github.com/user-attachments/assets/7abcc822-9e85-4d34-a2e3-0a5dc626016a" />
+<img width="1725" height="896" alt="fever2" src="ReadmePictures/fever2.png" />
 
 ## Table des Matières
 1. [Introduction](#introduction)
@@ -39,7 +39,7 @@ Ce jeu a été conçu par une équipe de 4 étudiants passionnés :
 - **Elias Prévost**: Scrum Master, Programmeur
 - **Christopher Barrera**: Lead Programmeur
 
-<img width="1728" height="904" alt="fever1" src="https://github.com/user-attachments/assets/e7afef7b-acf3-40e4-8a85-278633e4554e" />
+<img width="1728" height="904" alt="fever1" src="ReadmePictures/fever1.png" />
 
 ---
 
@@ -52,7 +52,7 @@ Le but est d'observer et de comprendre un environnement clos qui obéis à ses r
 
 La seule chose qui détermine à quelle point vous êtes proche de la fin est votre compréhension des mécaniques de ce rêve.
 
-<img width="1742" height="869" alt="fever3" src="https://github.com/user-attachments/assets/13041e0e-88d3-4b95-963c-62e58d5e93c7" />
+<img width="1742" height="869" alt="fever3" src="ReadmePictures/fever3.png" />
 
 ---
 
@@ -61,7 +61,7 @@ L’univers de Fever oscille entre centre de réhabilitation dystopique et labor
 
 Le joueur entend des pensées d’un narrateur distant, qui ne sont jamais directement adressé à lui, à l'exception de l'introduction et la conclusion du jeu. À mesure qu’il progresse, il retrouve des indices visuels de son ancienne vie.
 
-<img width="1741" height="881" alt="fever4" src="https://github.com/user-attachments/assets/736631db-9f60-4893-ac9e-743bb927b652" />
+<img width="1741" height="881" alt="fever4" src="ReadmePictures/fever4.png" />
 
 ---
 
