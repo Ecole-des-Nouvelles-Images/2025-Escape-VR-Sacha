@@ -11,6 +11,7 @@ namespace SalleIntro
     public class IntroHandler : Puzzle
     {
         [Header("Puzzle Objects")]
+        [SerializeField] private AudioSource _audioSource;
         [SerializeField] private string _unlockID;
         [SerializeField] private List<PedestalComponent> _portalPedestals;
         [SerializeField] private List<PedestalComponent> _cubePedestals;
@@ -87,6 +88,7 @@ namespace SalleIntro
             {
                 Debug.Log("Portal triggered");
                 UnlockPortal();
+                _audioSource.Play();
                 _portalTriggered = true;
                 
                 _dialogManager.PlayDialogue("6",1f);
