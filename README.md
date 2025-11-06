@@ -66,7 +66,7 @@ Le joueur entend des pensées d’un narrateur distant, qui ne sont jamais direc
 ---
 
 ## Release
-Fever est développé pour les plateformes VR compatibles avec Unity 6000.0.34.
+Fever est développé pour les plateformes VR compatibles avec Unity 6000.0.59.
 Configuration minimale recommandée :
 
 Casque VR (Oculus, HTC Vive ou équivalent).
