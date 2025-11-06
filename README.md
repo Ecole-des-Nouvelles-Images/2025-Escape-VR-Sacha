@@ -62,7 +62,7 @@ TBD
 ## Univers
 L’univers de Fever oscille entre centre de réhabilitation dystopique et laboratoire d’observation mentale.
 
-Le joueur entend des pensées d’un narrateur distant, jamais directement adressées à lui sauf ay début et à la fin de l'histoire. À mesure qu’il progresse, il retrouve des morceaux de photo, indices visuels de son ancienne vie.
+Le joueur entend des pensées d’un narrateur distant, qui ne sont jamais directement adressé à lui, à l'exception de l'introduction et la conclusion du jeu. À mesure qu’il progresse, il retrouve des indices visuels de son ancienne vie.
 
 Chaque salle est construite autour de symboles de mémoire, d’identité, et de regrès.
 ---
