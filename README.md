@@ -8,7 +8,7 @@ Partez à la découverte de votre ancienne vie dans un escape game narratif en r
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/Unity-Template?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template)
 
-![Main Banner](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/main-banner.png)
+<img width="1725" height="896" alt="fever2" src="https://github.com/user-attachments/assets/7abcc822-9e85-4d34-a2e3-0a5dc626016a" />
 
 ## Table des Matières
 1. [Introduction](#introduction)
@@ -30,7 +30,6 @@ Plongé dans un univers clinique et troublant, le joueur incarne un sujet sans m
 
 Le développement du jeu s’est étalé sur 9 semaines, incluant la pré-production, la production et la post-production. Le projet a été pensé pour mettre en valeur l'interaction intuitive, l’immersion sonore, et une narration environnementale progressive.
 
-
 ---
 
 ## Equipe
@@ -40,7 +39,7 @@ Ce jeu a été conçu par une équipe de 4 étudiants passionnés :
 - **Elias Prévost**: Scrum Master, Programmeur
 - **Christopher Barrera**: Lead Programmeur
 
-![Team](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/team-photo.png)
+<img width="1728" height="904" alt="fever1" src="https://github.com/user-attachments/assets/e7afef7b-acf3-40e4-8a85-278633e4554e" />
 
 ---
 
@@ -55,7 +54,7 @@ TBD
 ### Phase 2: [Phase Name]
 TBD
 
-![Gameplay Screenshot](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/gameplay-screenshot.png)
+<img width="1742" height="869" alt="fever3" src="https://github.com/user-attachments/assets/13041e0e-88d3-4b95-963c-62e58d5e93c7" />
 
 ---
 
@@ -64,7 +63,8 @@ L’univers de Fever oscille entre centre de réhabilitation dystopique et labor
 
 Le joueur entend des pensées d’un narrateur distant, qui ne sont jamais directement adressé à lui, à l'exception de l'introduction et la conclusion du jeu. À mesure qu’il progresse, il retrouve des indices visuels de son ancienne vie.
 
-Chaque salle est construite autour de symboles de mémoire, d’identité, et de regrès.
+<img width="1741" height="881" alt="fever4" src="https://github.com/user-attachments/assets/736631db-9f60-4893-ac9e-743bb927b652" />
+
 ---
 
 ## Release
@@ -85,8 +85,6 @@ Le projet est en cours.
 Cette rubrique sera mit à jour lorsque le projet aura une alpha jouable.
 
 Pour toute contribution ou retour, n'hésitez pas à ouvrir un ticket sur le dépôt GitHub.
-
-
 
 ---
 
