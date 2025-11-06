@@ -48,11 +48,9 @@ Fever est une expérience solo en VR mêlant exploration narrative, manipulation
 
 Le joueur interagit directement avec l’environnement pour former des mots qui influence la salle dans laquelle il se trouve, déclencher des mécanismes, ou débloquer des souvenirs enfouis.
 
-### Phase 1: [Phase Name]
-TBD
+Le but est d'observer et de comprendre un environnement clos qui obéis à ses règles, et d'utiliser ces mêmes règles afin de trouver une sortie auparavant invisible, et ce jusqu'à finalement s'échapper du rêve.
 
-### Phase 2: [Phase Name]
-TBD
+La seule chose qui détermine à quelle point vous êtes proche de la fin est votre compréhension des mécaniques de ce rêve.
 
 <img width="1742" height="869" alt="fever3" src="https://github.com/user-attachments/assets/13041e0e-88d3-4b95-963c-62e58d5e93c7" />
 
