@@ -37,6 +37,8 @@ namespace Salle1 {
         [SerializeField] private List<GameObject> _teddyObjects;
         [SerializeField] private List<GameObject> _suitcaseObjects;
         [SerializeField] private List<GameObject> _chestObjects;
+        
+        [SerializeField] private AudioSource _audioSource;
 
         private Dictionary<string, Action> _wordActions = new Dictionary<string, Action>();
 
@@ -77,6 +79,7 @@ namespace Salle1 {
 
             if (!_puzzleCompleted && snappedCount == _pictureObjects.Length) {
                 UnlockPortal();
+                _audioSource.Play();
                 _puzzleCompleted = true;
                 enabled = false;
             }

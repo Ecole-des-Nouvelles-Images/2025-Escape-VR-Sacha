@@ -18,6 +18,8 @@ namespace Salle3 {
         [SerializeField] private GameObject _drawerMirror;
         [SerializeField] private GameObject _closetDoor1, _closetDoor2;
         [SerializeField] private GameObject _closetDoorMirror1, _closetDoorMirror2;
+        
+        [SerializeField] private AudioSource _audioSource;
 
         private void Start() {
             if (_officeObjects == null || _officeObjects.Length == 0) {
@@ -47,6 +49,7 @@ namespace Salle3 {
 
             if (!_puzzleCompleted && snappedCount == _officeObjects.Length) {
                 UnlockPortal();
+                _audioSource.Play();
                 Debug.Log("Puzzle is complete");
                 _puzzleCompleted = true;
                 enabled = false;
