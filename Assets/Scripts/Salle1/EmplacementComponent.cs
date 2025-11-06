@@ -20,7 +20,7 @@ namespace Salle1 {
 
         public void ClearIfOccupant(SnapComponent snap)
         {
-            if (_currentOccupant == snap)
+            if (_currentOccupant == snap || snap == null)
             {
                 CurrentLetter = null;
                 _currentOccupant = null;

@@ -1,32 +1,28 @@
+using System;
 using System.Collections.Generic;
-using SalleIntro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class SnapComponent : MonoBehaviour
 {
+    public static event Action<SnapComponent> OnAnySnapped;
+    public static event Action<SnapComponent> OnAnyUnsnapped;
+
     [SerializeField] private List<Transform> _snapTargets;
-    [SerializeField] private float _positionTolerance;
+    [SerializeField] private float _positionTolerance = 0.1f;
 
     private bool _alreadySnapped = false;
     private Rigidbody _rb;
-    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable _grabInteractable;
+    private XRGrabInteractable _grabInteractable;
+    private Salle1.EmplacementComponent _currentEmplacement;
 
-    private IntroHandler _introHandler;
+    
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
-
-        _introHandler = FindFirstObjectByType<IntroHandler>();
-
-        if (_snapTargets == null || _snapTargets.Count == 0)
-        {
-            var handler = FindFirstObjectByType<Salle1.WordHandler>();
-            if (handler != null)
-                _snapTargets = handler.GetEmplacements();
-        }
+        _grabInteractable = GetComponent<XRGrabInteractable>();
 
         _grabInteractable.selectExited.AddListener(OnReleased);
         _grabInteractable.selectEntered.AddListener(OnGrabbed);
@@ -38,10 +34,7 @@ public class SnapComponent : MonoBehaviour
         _grabInteractable.selectEntered.RemoveListener(OnGrabbed);
     }
 
-    private void OnGrabbed(SelectEnterEventArgs args)
-    {
-        Unsnap();
-    }
+    private void OnGrabbed(SelectEnterEventArgs args) => Unsnap();
 
     private void OnReleased(SelectExitEventArgs args)
     {
@@ -53,7 +46,7 @@ public class SnapComponent : MonoBehaviour
             float distance = Vector3.Distance(transform.position, target.position);
             if (distance <= _positionTolerance)
             {
-                if (target.TryGetComponent(out Salle1.EmplacementComponent emplacement) && emplacement.IsOccupied)
+                if (target.TryGetComponent(out Salle1.EmplacementComponent emp) && emp.IsOccupied)
                     continue;
 
                 if (distance < bestDistance)
@@ -65,20 +58,15 @@ public class SnapComponent : MonoBehaviour
         }
 
         if (bestTarget != null)
-        {
             Snap(bestTarget);
-        }
         else
-        {
             _rb.useGravity = true;
-        }
     }
 
     private void Snap(Transform target)
     {
         transform.position = target.position;
         transform.rotation = target.rotation;
-
         _rb.constraints = RigidbodyConstraints.FreezeAll;
         _rb.useGravity = false;
 
@@ -86,30 +74,26 @@ public class SnapComponent : MonoBehaviour
 
         if (target.TryGetComponent(out Salle1.EmplacementComponent emplacement))
         {
+            _currentEmplacement = emplacement;
             if (TryGetComponent(out Salle1.LetterComponent letter))
-            {
                 emplacement.SetLetter(letter, this);
-            }
         }
 
-        _introHandler?.CheckPedestalGroups(); // 👈 Ajout important
+        OnAnySnapped?.Invoke(this);
     }
 
     private void Unsnap()
     {
+        if (!_alreadySnapped)
+            return;
+
         _alreadySnapped = false;
         _rb.constraints = RigidbodyConstraints.None;
         _rb.useGravity = true;
+        _currentEmplacement?.ClearIfOccupant(null);
+        _currentEmplacement = null;
 
-        foreach (var target in _snapTargets)
-        {
-            if (target.TryGetComponent(out Salle1.EmplacementComponent emplacement))
-            {
-                emplacement.ClearIfOccupant(this);
-            }
-        }
-
-        _introHandler?.CheckPedestalGroups(); // 👈 Ajout important
+        OnAnyUnsnapped?.Invoke(this);
     }
 
     public bool IsSnapped => _alreadySnapped;

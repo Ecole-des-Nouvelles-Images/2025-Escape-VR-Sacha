@@ -29,11 +29,20 @@ namespace SalleIntro
         private void OnEnable()
         {
             GameEvents.OnKeyboardUnlock += Unlock;
+            SnapComponent.OnAnySnapped += OnSnapChanged;
+            SnapComponent.OnAnyUnsnapped += OnSnapChanged;
         }
 
         private void OnDisable()
         {
             GameEvents.OnKeyboardUnlock -= Unlock;
+            SnapComponent.OnAnySnapped -= OnSnapChanged;
+            SnapComponent.OnAnyUnsnapped -= OnSnapChanged;
+        }
+
+        private void OnSnapChanged(SnapComponent snap)
+        {
+            CheckPedestalGroups();
         }
 
         private void Start()

@@ -29,13 +29,28 @@ namespace Salle3 {
             LockPortal();
         }
 
-        private void Update() {
+        private void OnEnable()
+        {
+            SnapComponent.OnAnySnapped += OnSnapChanged;
+            SnapComponent.OnAnyUnsnapped += OnSnapChanged;
+        }
+
+        private void OnDisable()
+        {
+            SnapComponent.OnAnySnapped -= OnSnapChanged;
+            SnapComponent.OnAnyUnsnapped -= OnSnapChanged;
+        }
+
+        private void OnSnapChanged(SnapComponent component)
+        {
             int snappedCount = CountSnappedObjects();
 
-            if (snappedCount > _lastStepReached) {
+            if (snappedCount > _lastStepReached)
+            {
                 _lastStepReached = snappedCount;
 
-                switch (_lastStepReached) {
+                switch (_lastStepReached)
+                {
                     case 2:
                         OpenDrawer();
                         break;
@@ -45,13 +60,14 @@ namespace Salle3 {
                 }
             }
 
-            if (!_puzzleCompleted && snappedCount == _officeObjects.Length) {
+            if (!_puzzleCompleted && snappedCount == _officeObjects.Length)
+            {
                 UnlockPortal();
-                Debug.Log("Puzzle is complete");
                 _puzzleCompleted = true;
                 enabled = false;
             }
         }
+
 
         private int CountSnappedObjects() {
             int count = 0;
