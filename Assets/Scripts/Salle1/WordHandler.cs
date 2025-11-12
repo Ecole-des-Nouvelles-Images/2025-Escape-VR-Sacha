@@ -89,14 +89,15 @@ namespace Salle1
                     GameEvents.OnIncreaseScore.Invoke();
             }
 
-            // Vérifie si tous les objets sont snapés
-            if (!_puzzleCompleted && snappedCount == _pictureObjects.Length)
+            //Intégré la condition de vrai fin ici ?
+            
+            /*if (!_puzzleCompleted && snappedCount == _pictureObjects.Length)
             {
                 UnlockPortal();
                 _audioSource?.Play();
                 _puzzleCompleted = true;
                 enabled = false;
-            }
+            }*/
         }
 
         private int CountSnappedObjects()
@@ -116,7 +117,6 @@ namespace Salle1
 
             _isCheckingWord = true;
 
-            // Construire la séquence avec "-" pour les emplacements vides
             string sequence = "";
             foreach (var emplacement in _emplacements)
             {
@@ -125,7 +125,6 @@ namespace Salle1
 
             Debug.Log($"Current sequence: {sequence}");
 
-            // Vérifier chaque mot dans la séquence
             foreach (var kvp in _wordActions)
             {
                 string targetWord = kvp.Key;
@@ -133,9 +132,7 @@ namespace Salle1
                 int index = sequence.IndexOf(targetWord);
                 if (index >= 0)
                 {
-                    // Le mot est présent dans la séquence, on déclenche l'action
                     kvp.Value?.Invoke();
-                    // On ne supprime plus les lettres automatiquement
                 }
             }
 
