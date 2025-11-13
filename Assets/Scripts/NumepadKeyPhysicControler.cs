@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NumepadKeyPhysicControler : MonoBehaviour
@@ -10,6 +11,10 @@ public class NumepadKeyPhysicControler : MonoBehaviour
     }
     [SerializeField] private Axes _axes = Axes.X;
     [SerializeField] private Rigidbody[] _keyPhysicList;
+
+    public Axes axes { get; private set ;}
+
+    private List<Vector3> _keysOriginPosition = new List<Vector3>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,6 +47,14 @@ public class NumepadKeyPhysicControler : MonoBehaviour
                     keyPhysic.constraints = RigidbodyConstraints.FreezePositionY;
                 }
                 break;
+        }
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < _keysOriginPosition.Count; i++)
+        {
+            
         }
     }
 }
