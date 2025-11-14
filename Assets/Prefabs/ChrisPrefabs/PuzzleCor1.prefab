@@ -342,15 +342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a3059c22987f4a915d312a45c8f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myAudioSource: {fileID: 6472092099785731801}
-  _myClipList:
-  - {fileID: 8300000, guid: 8e84796cdb751e349b3ee32c287015e4, type: 3}
-  - {fileID: 8300000, guid: 507479ef0b0b36845a8a9200fdbb4761, type: 3}
-  - {fileID: 8300000, guid: f6fdb7abeaf3afa43b423a2c2b39ad98, type: 3}
-  - {fileID: 8300000, guid: 04dec8470d7e31848a255ace961ff64d, type: 3}
-  - {fileID: 8300000, guid: c7005112985917248a7548b3a2c70ad8, type: 3}
-  _isLooping: 0
-  _isRandomDelay: 0
+  _myAudioSource: {fileID: 0}
+  _myClipList: []
+  _isLooping: 1
+  _isRandomDelay: 1
   _dontPlaySameSound: 0
   _delayTime: 0
   _minDelayTime: 0
@@ -379,9 +374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBeforeRespawn: 5
-  _myAudioSource: {fileID: 6472092099785731801}
-  _myDetector: {fileID: 693917276619585094}
+  _timeBeforeRespawn: 0
+  _myAudioSource: {fileID: 0}
+  _myDetector: {fileID: 0}
 --- !u!1 &483855998800090502
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,8 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f3d7edd07f1074fbdfcf5ab8d67f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectDetected: 1
-  _tagName: Respawn
+  ObjectDetected: 0
+  _tagName: 
 --- !u!1 &1012943515964022324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,15 +1037,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a3059c22987f4a915d312a45c8f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myAudioSource: {fileID: 895203628133455596}
-  _myClipList:
-  - {fileID: 8300000, guid: 8e84796cdb751e349b3ee32c287015e4, type: 3}
-  - {fileID: 8300000, guid: 507479ef0b0b36845a8a9200fdbb4761, type: 3}
-  - {fileID: 8300000, guid: f6fdb7abeaf3afa43b423a2c2b39ad98, type: 3}
-  - {fileID: 8300000, guid: 04dec8470d7e31848a255ace961ff64d, type: 3}
-  - {fileID: 8300000, guid: c7005112985917248a7548b3a2c70ad8, type: 3}
-  _isLooping: 0
-  _isRandomDelay: 0
+  _myAudioSource: {fileID: 0}
+  _myClipList: []
+  _isLooping: 1
+  _isRandomDelay: 1
   _dontPlaySameSound: 0
   _delayTime: 0
   _minDelayTime: 0
@@ -1079,9 +1069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBeforeRespawn: 5
-  _myAudioSource: {fileID: 895203628133455596}
-  _myDetector: {fileID: 5487986126140041326}
+  _timeBeforeRespawn: 0
+  _myAudioSource: {fileID: 0}
+  _myDetector: {fileID: 0}
 --- !u!1 &1027098315228773791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,8 +1732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f3d7edd07f1074fbdfcf5ab8d67f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectDetected: 1
-  _tagName: Respawn
+  ObjectDetected: 0
+  _tagName: 
 --- !u!1 &4100323613110788717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,8 +2006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f3d7edd07f1074fbdfcf5ab8d67f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectDetected: 1
-  _tagName: Respawn
+  ObjectDetected: 0
+  _tagName: 
 --- !u!1 &4415422166603552684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,24 +2597,24 @@ MonoBehaviour:
   - {fileID: 7932488869263007566}
   - {fileID: 1024392348078999313}
   - {fileID: 7946469250693778835}
+  - {fileID: 127933927238719153}
   - {fileID: 7306146631339720911}
   - {fileID: 6814243739883374175}
-  - {fileID: 127933927238719153}
   _allPuzzleObjectsCopy:
   - {fileID: 7817005115513063935}
   - {fileID: 2167256635046515707}
   - {fileID: 4415422166603552684}
+  - {fileID: 8545992630271605258}
   - {fileID: 2568017735388177543}
   - {fileID: 6793981276586418164}
-  - {fileID: 8545992630271605258}
   _allKeyObjects:
   - {fileID: 7965543363384696926}
   - {fileID: 5359718661723357795}
   - {fileID: 6174771361501710499}
+  - {fileID: 1027098315228773791}
   - {fileID: 4556008973415190311}
   - {fileID: 8192502611721358664}
-  - {fileID: 1027098315228773791}
-  _myAudioSource: {fileID: 2397185954481017250}
+  _myAudioSource: {fileID: 4961628877980370758}
   _successAudioSource: {fileID: 4961628877980370758}
   _ghostMat: {fileID: 2100000, guid: 2d488d6c0369c1a4093f8f4f11d52b56, type: 2}
 --- !u!65 &3540096622126458932
@@ -2800,8 +2790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f3d7edd07f1074fbdfcf5ab8d67f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectDetected: 1
-  _tagName: Respawn
+  ObjectDetected: 0
+  _tagName: 
 --- !u!1 &6793981276586418164
 GameObject:
   m_ObjectHideFlags: 0
@@ -3231,15 +3221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a3059c22987f4a915d312a45c8f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myAudioSource: {fileID: 8747794612290040009}
-  _myClipList:
-  - {fileID: 8300000, guid: 8e84796cdb751e349b3ee32c287015e4, type: 3}
-  - {fileID: 8300000, guid: 507479ef0b0b36845a8a9200fdbb4761, type: 3}
-  - {fileID: 8300000, guid: f6fdb7abeaf3afa43b423a2c2b39ad98, type: 3}
-  - {fileID: 8300000, guid: 04dec8470d7e31848a255ace961ff64d, type: 3}
-  - {fileID: 8300000, guid: c7005112985917248a7548b3a2c70ad8, type: 3}
-  _isLooping: 0
-  _isRandomDelay: 0
+  _myAudioSource: {fileID: 0}
+  _myClipList: []
+  _isLooping: 1
+  _isRandomDelay: 1
   _dontPlaySameSound: 0
   _delayTime: 0
   _minDelayTime: 0
@@ -3268,9 +3253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBeforeRespawn: 5
-  _myAudioSource: {fileID: 8747794612290040009}
-  _myDetector: {fileID: 106808667422006952}
+  _timeBeforeRespawn: 0
+  _myAudioSource: {fileID: 0}
+  _myDetector: {fileID: 0}
 --- !u!1 &7306146631339720911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3572,16 +3557,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a3059c22987f4a915d312a45c8f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myAudioSource: {fileID: 1093803881934399239}
-  _myClipList:
-  - {fileID: 8300000, guid: 8e84796cdb751e349b3ee32c287015e4, type: 3}
-  - {fileID: 8300000, guid: 507479ef0b0b36845a8a9200fdbb4761, type: 3}
-  - {fileID: 8300000, guid: f6fdb7abeaf3afa43b423a2c2b39ad98, type: 3}
-  - {fileID: 8300000, guid: 04dec8470d7e31848a255ace961ff64d, type: 3}
-  - {fileID: 8300000, guid: c7005112985917248a7548b3a2c70ad8, type: 3}
-  _isLooping: 0
-  _isRandomDelay: 0
-  _dontPlaySameSound: 1
+  _myAudioSource: {fileID: 0}
+  _myClipList: []
+  _isLooping: 1
+  _isRandomDelay: 1
+  _dontPlaySameSound: 0
   _delayTime: 0
   _minDelayTime: 0
   _maxDelayTime: 0
@@ -3706,9 +3686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBeforeRespawn: 5
-  _myAudioSource: {fileID: 1093803881934399239}
-  _myDetector: {fileID: 7561495680238768424}
+  _timeBeforeRespawn: 0
+  _myAudioSource: {fileID: 0}
+  _myDetector: {fileID: 0}
 --- !u!1 &7444879523917753515
 GameObject:
   m_ObjectHideFlags: 0
@@ -4070,8 +4050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f3d7edd07f1074fbdfcf5ab8d67f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectDetected: 1
-  _tagName: Respawn
+  ObjectDetected: 0
+  _tagName: 
 --- !u!1 &7932488869263007566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4414,15 +4394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a3059c22987f4a915d312a45c8f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myAudioSource: {fileID: 8403866864797557966}
-  _myClipList:
-  - {fileID: 8300000, guid: 8e84796cdb751e349b3ee32c287015e4, type: 3}
-  - {fileID: 8300000, guid: 507479ef0b0b36845a8a9200fdbb4761, type: 3}
-  - {fileID: 8300000, guid: f6fdb7abeaf3afa43b423a2c2b39ad98, type: 3}
-  - {fileID: 8300000, guid: 04dec8470d7e31848a255ace961ff64d, type: 3}
-  - {fileID: 8300000, guid: c7005112985917248a7548b3a2c70ad8, type: 3}
-  _isLooping: 0
-  _isRandomDelay: 0
+  _myAudioSource: {fileID: 0}
+  _myClipList: []
+  _isLooping: 1
+  _isRandomDelay: 1
   _dontPlaySameSound: 0
   _delayTime: 0
   _minDelayTime: 0
@@ -4451,9 +4426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBeforeRespawn: 5
-  _myAudioSource: {fileID: 8403866864797557966}
-  _myDetector: {fileID: 1422295506713087544}
+  _timeBeforeRespawn: 0
+  _myAudioSource: {fileID: 0}
+  _myDetector: {fileID: 0}
 --- !u!1 &7946469250693778835
 GameObject:
   m_ObjectHideFlags: 0
@@ -4852,15 +4827,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a3059c22987f4a915d312a45c8f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myAudioSource: {fileID: 7453652522759831}
-  _myClipList:
-  - {fileID: 8300000, guid: 8e84796cdb751e349b3ee32c287015e4, type: 3}
-  - {fileID: 8300000, guid: 507479ef0b0b36845a8a9200fdbb4761, type: 3}
-  - {fileID: 8300000, guid: f6fdb7abeaf3afa43b423a2c2b39ad98, type: 3}
-  - {fileID: 8300000, guid: 04dec8470d7e31848a255ace961ff64d, type: 3}
-  - {fileID: 8300000, guid: c7005112985917248a7548b3a2c70ad8, type: 3}
-  _isLooping: 0
-  _isRandomDelay: 0
+  _myAudioSource: {fileID: 0}
+  _myClipList: []
+  _isLooping: 1
+  _isRandomDelay: 1
   _dontPlaySameSound: 0
   _delayTime: 0
   _minDelayTime: 0
@@ -4889,9 +4859,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e81fa17ab507e479d63b0eb2c774e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBeforeRespawn: 5
-  _myAudioSource: {fileID: 7453652522759831}
-  _myDetector: {fileID: 6251393614242219378}
+  _timeBeforeRespawn: 0
+  _myAudioSource: {fileID: 0}
+  _myDetector: {fileID: 0}
 --- !u!1 &7965543363384696926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5216,8 +5186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f3d7edd07f1074fbdfcf5ab8d67f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectDetected: 1
-  _tagName: Respawn
+  ObjectDetected: 0
+  _tagName: 
 --- !u!1 &8525366449552452747
 GameObject:
   m_ObjectHideFlags: 0
